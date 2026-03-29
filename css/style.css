@@ -146,7 +146,7 @@ body::after {
   gap: 0.5rem;
   text-decoration: none;
   color: var(--white);
-  margin-right: 1.5rem;
+  margin-right: 2.5rem;
 }
 
 .nav-logo img {
