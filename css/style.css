@@ -137,7 +137,7 @@ body::after {
   justify-content: space-between;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 2rem 0 1rem;
+  padding: 0 2rem 0 0;
 }
 
 .nav-logo {
@@ -146,11 +146,11 @@ body::after {
   gap: 0.5rem;
   text-decoration: none;
   color: var(--white);
-  margin-right: 3rem;
+  margin-right: 4rem;
 }
 
 .nav-logo img {
-  height: 56px;
+  height: 74px;
   width: auto;
   transition: transform 0.4s ease, filter 0.4s ease;
 }
@@ -209,7 +209,7 @@ body::after {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 1.3rem;
   align-items: center;
 }
 
