@@ -231,6 +231,8 @@
         <form id="partnerForm" action="https://formspree.io/f/xeepaekp" method="POST" class="partner-form">
           <!-- Hidden field for form identification -->
           <input type="hidden" name="_subject" value="New Partnership Enquiry — Novaural Website">
+          <!-- Honeypot anti-spam: bots fill this, humans don't see it -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
           <div class="form-row">
             <div class="form-group">
