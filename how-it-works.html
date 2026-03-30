@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="How ReFittingLab works — Objective phoneme discrimination testing that fills the verification gap in hearing aid fine-tuning. See the full clinical workflow.">
-  <meta name="keywords" content="ReFittingLab, hearing aid verification, fine-tuning, phoneme discrimination, speech audiometry, NAL-NL2, DSLv5, fitting software, audiology workflow">
+  <meta name="description" content="How ReFittingLab works — Objective phoneme discrimination testing that fills the verification gap in hearing aid fine-tuning. See the full clinical workflow, safety mechanisms, and evidence-based algorithm.">
+  <meta name="keywords" content="ReFittingLab, hearing aid verification, fine-tuning, phoneme discrimination, speech audiometry, NAL-NL2, DSLv5, fitting software, audiology workflow, safety mechanisms, UCL protection, loudness summation">
   <title>How ReFittingLab Works — Clinical Workflow | Novaural</title>
   <link rel="icon" type="image/png" href="logo/novaural_profile_pic.png">
   <link rel="canonical" href="https://novaural.com/how-it-works.html">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="How ReFittingLab Works — Clinical Workflow">
-  <meta property="og:description" content="Objective phoneme discrimination testing that fills the verification gap in hearing aid fine-tuning.">
+  <meta property="og:description" content="Objective phoneme discrimination testing that fills the verification gap in hearing aid fine-tuning. 5-layer safety validation, evidence-based algorithm.">
   <meta property="og:url" content="https://novaural.com/how-it-works.html">
   <meta property="og:image" content="https://novaural.com/assets/images/og_social_preview.png">
   <meta property="og:site_name" content="Novaural">
@@ -31,7 +31,7 @@
     "mainEntity": {
       "@type": "Product",
       "name": "ReFittingLab",
-      "description": "Evidence-based hearing aid verification and fine-tuning system",
+      "description": "Evidence-based hearing aid verification and fine-tuning system with 5-layer safety validation",
       "brand": {
         "@type": "Organization",
         "name": "Novaural Ltd",
@@ -318,6 +318,222 @@
       .pipeline { flex-direction: column; }
       .pipe-arrow { transform: rotate(90deg); }
     }
+
+    /* Safety layers — new section */
+    .safety-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .safety-card {
+      background: var(--navy-800);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .safety-card:hover {
+      border-color: rgba(46, 196, 182, 0.3);
+      transform: translateY(-4px);
+    }
+    .safety-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--teal-500), var(--cyan-accent));
+      opacity: 0.6;
+    }
+    .safety-card .safety-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+    .safety-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .safety-card p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .safety-card .safety-detail {
+      margin-top: 0.8rem;
+      padding: 0.6rem 0.8rem;
+      background: rgba(46, 196, 182, 0.04);
+      border: 1px solid rgba(46, 196, 182, 0.1);
+      border-radius: 8px;
+      font-size: 0.8rem;
+      color: var(--teal-400);
+      font-family: 'Inter', monospace;
+    }
+
+    /* Algorithm depth cards */
+    .algo-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .algo-feature {
+      background: var(--navy-800);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 1.8rem;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .algo-feature:hover {
+      border-color: rgba(46, 196, 182, 0.3);
+      transform: translateY(-3px);
+    }
+    .algo-feature .af-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+    }
+    .algo-feature h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    .algo-feature p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Enhanced pipeline — multi-row */
+    .pipeline-extended {
+      max-width: 900px;
+      margin: 2.5rem auto 0;
+    }
+    .pipeline-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+    .pipe-node-ext {
+      background: var(--navy-800);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 0.7rem 1rem;
+      text-align: center;
+      min-width: 100px;
+      flex: 1;
+      max-width: 180px;
+    }
+    .pipe-node-ext.active {
+      border-color: rgba(46, 196, 182, 0.4);
+      background: rgba(46, 196, 182, 0.06);
+    }
+    .pipe-node-ext.safety-node {
+      border-color: rgba(255, 171, 64, 0.3);
+      background: rgba(255, 171, 64, 0.04);
+    }
+    .pipe-node-ext h5 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.15rem;
+    }
+    .pipe-node-ext.active h5 { color: var(--teal-400); }
+    .pipe-node-ext.safety-node h5 { color: #ffab40; }
+    .pipe-node-ext p {
+      font-size: 0.65rem;
+      color: var(--gray-400);
+      margin: 0;
+    }
+    .pipe-connector {
+      color: var(--gray-500);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    @media (max-width: 700px) {
+      .pipeline-row { flex-direction: column; }
+      .pipe-connector { transform: rotate(90deg); }
+      .pipe-node-ext { max-width: 100%; }
+    }
+
+    /* Better outcomes section — dual columns */
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 768px) { .outcomes-grid { grid-template-columns: 1fr; } }
+    .outcome-col {
+      background: var(--navy-800);
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid var(--border-subtle);
+      position: relative;
+      overflow: hidden;
+    }
+    .outcome-col::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+    }
+    .outcome-col.nhs::before {
+      background: linear-gradient(90deg, #42a5f5, #66bb6a);
+    }
+    .outcome-col.private::before {
+      background: linear-gradient(90deg, var(--teal-500), var(--cyan-accent));
+    }
+    .outcome-col .oc-header {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .outcome-col .oc-icon {
+      font-size: 2rem;
+    }
+    .outcome-col .oc-header h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .outcome-col .oc-header p {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+    }
+    .outcome-col ul {
+      list-style: none;
+      padding: 0;
+    }
+    .outcome-col ul li {
+      padding: 0.5rem 0;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border-subtle);
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .outcome-col ul li:last-child { border-bottom: none; }
+    .outcome-col ul li .check-mark {
+      color: var(--teal-400);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
   </style>
 </head>
 <body>
@@ -364,7 +580,7 @@
         in <span class="gradient-text">Your Clinical Workflow</span>?
       </h1>
       <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 720px; line-height: 1.7;">
-        Current best practice excels at measuring what <strong>reaches the ear</strong> — REM, REAR, audiogram targets. But it has no standardised way to measure what the patient actually <strong>perceives and discriminates</strong> after fitting. That's the gap ReFittingLab fills.
+        Current best practice excels at measuring what <strong>reaches the ear</strong> — REM, REAR, audiogram targets. But it has no standardised way to measure what the patient actually <strong>perceives and discriminates</strong> after fitting. That's the gap ReFittingLab fills — with a patent-backed, evidence-based algorithm that includes 5 independent safety layers and a multi-factor computation engine.
       </p>
     </div>
   </section>
@@ -397,11 +613,11 @@
         <div class="compare-col after">
           <h4>✅ What changes with ReFittingLab</h4>
           <ul>
-            <li><strong>Objective phoneme discrimination scores</strong> — Per-contrast, per-frequency, quantified</li>
-            <li><strong>Targeted adjustments</strong> — The algorithm tells you <em>exactly</em> which bands need +1, +2, +3 dB</li>
-            <li><strong>Measurable improvement</strong> — Re-test immediately to confirm the adjustment worked</li>
+            <li><strong>Objective phoneme discrimination scores</strong> — Per-contrast, per-frequency, quantified across 3 intensity levels</li>
+            <li><strong>Targeted adjustments</strong> — The multi-factor algorithm tells you <em>exactly</em> which bands need adjustment, calibrated to the patient's audiometric profile</li>
+            <li><strong>5 safety validations</strong> — UCL proximity, loudness summation, dynamic range, MPO headroom, and compression ratio are checked before any recommendation</li>
             <li><strong>Fewer visits</strong> — More gets resolved in the first session because you have data, not guesses</li>
-            <li><strong>Clinical documentation</strong> — Every decision is evidence-based and auditable</li>
+            <li><strong>Clinical documentation</strong> — Every decision is evidence-based, auditable, and IEC 62304 traceable</li>
           </ul>
         </div>
       </div>
@@ -409,9 +625,9 @@
       <div class="gap-callout">
         <h4>The verification gap in current practice</h4>
         <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
-          <strong>Pre-fitting</strong> has excellent objective tools: audiogram, REM/REAR, RECD, prescriptive formulas (NAL-NL2, DSLv5, manufacturer-based).<br>
+          <strong>Pre-fitting</strong> has excellent objective tools: audiogram, REM/REAR, RECD, prescriptive formulas (NAL-NL2, DSLv5.0, manufacturer-based).<br>
           <strong>Post-fitting fine-tuning</strong> has almost none. The clinician adjusts based on subjective patient reports and their own experience — with no way to measure if a specific phoneme pair (/s/ vs /θ/, /p/ vs /b/) improved after a gain change.<br><br>
-          <strong>ReFittingLab bridges this gap</strong> by providing a structured, quantitative verification protocol that maps phoneme discrimination performance directly to frequency-band gain adjustments.
+          <strong>ReFittingLab bridges this gap</strong> by providing a structured, quantitative verification protocol that maps phoneme discrimination performance directly to frequency-band gain adjustments — backed by a multi-factor computation engine with built-in safety mechanisms.
         </p>
       </div>
     </div>
@@ -454,7 +670,7 @@
           <div class="wf-marker">★</div>
           <h4>ReFittingLab — Phoneme Discrimination Verification</h4>
           <p>
-            <strong>This is where ReFittingLab enters.</strong> The system evaluates the patient's ability to discriminate speech sounds across frequency bands — using minimal pairs, word lists, and speech-in-noise — and outputs <strong>specific, per-band gain adjustments</strong> (ΔG50, ΔG65, ΔG80) to resolve measured deficits.
+            <strong>This is where ReFittingLab enters.</strong> Using extremely select minimal pairs — curated through rigorous phonological, phonetic, and psychometric criteria — the system evaluates the patient's ability to discriminate speech sounds across frequency bands at multiple intensity levels (50, 65, 80 dB SPL), and outputs <strong>specific, per-band gain adjustments</strong> (ΔG50, ΔG65, ΔG80) validated through 5 independent safety checks.
           </p>
           <p style="margin-top: 0.5rem;">
             The clinician then applies these adjustments in their fitting software and re-tests to confirm measurable improvement. <strong>No guesswork. No waiting for the next appointment.</strong>
@@ -464,12 +680,12 @@
         <div class="wf-step standard">
           <div class="wf-marker">6</div>
           <h4>Fine-Tuning with Data</h4>
-          <p>Apply ReFittingLab's recommendations in your fitting software. Adjust G65 for conversational speech, G50 for soft sounds, G80 for loud environments — each adjustment mapped to a specific phoneme discrimination deficit.</p>
+          <p>Apply ReFittingLab's recommendations in your fitting software. Adjust G65 for conversational speech, G50 for soft sounds, G80 for loud environments — each adjustment mapped to a specific phoneme discrimination deficit and validated against the patient's dynamic range.</p>
         </div>
         <div class="wf-step standard">
           <div class="wf-marker">7</div>
           <h4>Verified Outcome & Discharge</h4>
-          <p>Re-test with ReFittingLab to confirm improvement. Document results. Discharge with confidence — or schedule follow-up only if objective data warrants it.</p>
+          <p>Re-test with ReFittingLab to confirm improvement. Document results with statistical significance verification (Thornton-Raffin critical difference). Discharge with confidence — or schedule follow-up only if objective data warrants it.</p>
         </div>
       </div>
     </div>
@@ -483,7 +699,7 @@
       <span class="section-label">The Process — In Detail</span>
       <h2 class="section-title">What Happens During a ReFittingLab Session</h2>
       <p class="section-subtitle" style="max-width: 700px; margin: 0 auto;">
-        A complete verification session takes 20–30 minutes and produces actionable, per-band gain adjustment recommendations.
+        A complete verification session takes 20–30 minutes and produces actionable, per-band gain adjustment recommendations — each validated against 5 safety layers.
       </p>
 
       <div class="detail-steps">
@@ -491,7 +707,7 @@
         <div class="detail-step fade-in">
           <span class="ds-num">STEP 1</span>
           <h4>Input Patient Profile</h4>
-          <p>Enter the audiogram (air/bone conduction, UCL), current gain tables (G50/G65/G80/CR from your fitting software), and clinical context: experience level, tinnitus, hyperacusis, coupling type.</p>
+          <p>Enter the audiogram (air/bone conduction, UCL), current gain tables (G50/G65/G80/CR/MPO from your fitting software), and clinical context: experience level, tinnitus, hyperacusis, coupling type, bilateral status.</p>
           <div class="ds-meta">
             <span class="ds-tag">~2 min</span>
             <span class="ds-tag">Pre-session</span>
@@ -511,7 +727,7 @@
         <div class="detail-step fade-in">
           <span class="ds-num">STEP 3</span>
           <h4>Phoneme Discrimination Testing</h4>
-          <p>Calibrated minimal pair stimuli are presented at 65 dB SPL (conversational level). The patient identifies what they hear — <em>casa</em> or <em>caza</em>? <em>peso</em> or <em>beso</em>? Each error maps to a specific frequency band and distinctive feature.</p>
+          <p>Calibrated minimal pair stimuli — each pair differing in exactly one phonemic segment — are presented via a forced-choice paradigm. The patient selects what they hear: each error maps to a specific frequency band through the distinctive feature → frequency correspondence table.</p>
           <div class="ds-meta">
             <span class="ds-tag">~12 min</span>
             <span class="ds-tag">65 dB SPL</span>
@@ -522,7 +738,7 @@
         <div class="detail-step fade-in">
           <span class="ds-num">STEP 4</span>
           <h4>Multi-Level Testing</h4>
-          <p>Optionally extend to <strong>50 dB</strong> (audibility of soft sounds) and <strong>80 dB</strong> (comfort and tolerance). This maps to G50, G65, and G80 adjustments across the full dynamic range — not just conversational level.</p>
+          <p>Extend to <strong>50 dB</strong> (audibility of soft sounds) and <strong>80 dB</strong> (comfort and tolerance). This maps to G50, G65, and G80 adjustments across the full dynamic range — not just conversational level.</p>
           <div class="ds-meta">
             <span class="ds-tag">~8 min</span>
             <span class="ds-tag">50/65/80 dB</span>
@@ -541,19 +757,19 @@
 
         <div class="detail-step fade-in">
           <span class="ds-num">STEP 6</span>
-          <h4>Analysis & Recommendations</h4>
-          <p>The algorithm maps each phoneme error to its acoustic correlate (distinctive feature → frequency band), then calculates the gain delta needed to resolve the deficit. Output: prioritised per-band ΔG50/ΔG65/ΔG80 and compression ratio adjustments.</p>
+          <h4>Multi-Factor Analysis & Safety Validation</h4>
+          <p>The algorithm maps each phoneme error to its acoustic correlate (distinctive feature → frequency band → NFM band matching), then computes the gain delta using a multi-factor formula that considers hearing threshold, dynamic range, session history, and effective audibility. Every recommendation passes through 5 independent safety checks before presentation.</p>
           <div class="ds-meta">
             <span class="ds-tag">Instant</span>
             <span class="ds-tag">20 bands</span>
-            <span class="ds-tag">170 Hz – 9.6 kHz</span>
+            <span class="ds-tag">5 safety checks</span>
           </div>
         </div>
 
         <div class="detail-step fade-in">
           <span class="ds-num">STEP 7</span>
           <h4>Apply in Your Fitting Software</h4>
-          <p>Take the recommendations and apply them directly in Phonak Target, Oticon Genie 2, ReSound Smart Fit, or whichever fitting software you use. ReFittingLab tells you <em>what</em> to change and <em>why</em> — you stay in control.</p>
+          <p>Take the recommendations and apply them directly in Phonak Target, Oticon Genie 2, ReSound Smart Fit, or whichever fitting software you use. ReFittingLab tells you <em>what</em> to change, <em>why</em>, and <em>how much is safe</em> — you stay in control.</p>
           <div class="ds-meta">
             <span class="ds-tag">~3 min</span>
             <span class="ds-tag">Any manufacturer</span>
@@ -563,10 +779,11 @@
         <div class="detail-step fade-in">
           <span class="ds-num">STEP 8</span>
           <h4>Re-Test & Verify</h4>
-          <p>Re-administer the tests that showed deficits. If the adjustment was correct, discrimination scores improve measurably (using Thornton-Raffin critical difference tables to confirm statistical significance). Document and discharge — or iterate.</p>
+          <p>Re-administer the tests that showed deficits. If the adjustment was correct, discrimination scores improve measurably. Statistical significance is verified using Thornton-Raffin critical difference tables, with full longitudinal tracking across sessions.</p>
           <div class="ds-meta">
             <span class="ds-tag">~5 min</span>
             <span class="ds-tag">Evidence-based</span>
+            <span class="ds-tag">Closed-loop</span>
           </div>
         </div>
 
@@ -580,9 +797,9 @@
   <section class="how-it-works" id="algorithm">
     <div class="container" style="text-align: center;">
       <span class="section-label">Under the Hood</span>
-      <h2 class="section-title">From Phoneme Error to Gain Adjustment</h2>
-      <p class="section-subtitle" style="max-width: 700px; margin: 0 auto;">
-        The core algorithm translates a perceptual error into a precise, band-specific gain change. Here's the pipeline:
+      <h2 class="section-title">From Phoneme Error to Safe Gain Adjustment</h2>
+      <p class="section-subtitle" style="max-width: 720px; margin: 0 auto;">
+        The core algorithm translates a perceptual error into a precise, band-specific gain change through a multi-stage pipeline. Each adjustment is bounded, safe, and grounded in the patient's individual audiometric profile.
       </p>
 
       <div class="pipeline">
@@ -597,18 +814,122 @@
         </div>
         <span class="pipe-arrow">→</span>
         <div class="pipe-node active">
-          <h5>Frequency Band</h5>
-          <p>4–8 kHz</p>
+          <h5>NFM Band Mapping</h5>
+          <p>→ 4 kHz band</p>
         </div>
         <span class="pipe-arrow">→</span>
         <div class="pipe-node active">
-          <h5>Gain Delta</h5>
-          <p>G65 +3 dB @ 4 kHz</p>
+          <h5>Multi-Factor ΔdB</h5>
+          <p>base × EA × DR × session</p>
+        </div>
+        <span class="pipe-arrow">→</span>
+        <div class="pipe-node" style="border-color: rgba(255, 171, 64, 0.3); background: rgba(255, 171, 64, 0.04);">
+          <h5 style="color: #ffab40;">5 Safety Checks</h5>
+          <p>UCL · MPO · LS · DR · CR</p>
         </div>
       </div>
 
-      <p style="max-width: 700px; margin: 1rem auto 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;">
-        This is not a generic "boost highs if speech is unclear" approach. Each phoneme contrast maps to a specific set of distinctive features (Jakobson-Halle-Fant framework), which in turn correspond to specific frequency bands. The algorithm considers the patient's audiogram, current gains, dynamic range, and clinical profile to calculate a bounded, safe adjustment — typically 1–3 dB per band.
+      <p style="max-width: 740px; margin: 1.5rem auto 0; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; text-align: left;">
+        This is not a generic "boost highs if speech is unclear" approach. Each phoneme contrast maps to a specific set of distinctive features (Jakobson-Halle-Fant framework), which in turn correspond to specific frequency bands via the <strong>Nearest Frequency Matching (NFM)</strong> mechanism — automatically adapting to any hearing device's band configuration (5-band consumer earbud or 20-band clinical aid). The <strong>multi-factor formula</strong> considers:
+      </p>
+
+      <div class="algo-features">
+        <div class="algo-feature fade-in">
+          <div class="af-icon">📐</div>
+          <h4>Effective Audibility (EA)</h4>
+          <p>Based on Ching, Dillon et al. (2001, NAL-NL2): as hearing loss increases, the ability to extract speech information diminishes even when sound is audible. The algorithm scales adjustments per-band based on the patient's threshold — not a naive flat boost. At 66 dB HL, contribution drops ~50%.</p>
+        </div>
+        <div class="algo-feature fade-in">
+          <div class="af-icon">📊</div>
+          <h4>SII-Weighted Prioritisation</h4>
+          <p>Band importance follows ANSI S3.5-1997 Speech Intelligibility Index weights. The 2–4 kHz region contributes ~54% of speech intelligibility — adjustments in these bands are computed and prioritised proportionally.</p>
+        </div>
+        <div class="algo-feature fade-in">
+          <div class="af-icon">🔄</div>
+          <h4>Session-Aware Graduation</h4>
+          <p>First-session adjustments are conservatively bounded. Subsequent sessions can build on previous data, with the algorithm tracking longitudinal improvement per contrast per band — enabling precise, progressive optimisation.</p>
+        </div>
+        <div class="algo-feature fade-in">
+          <div class="af-icon">🎯</div>
+          <h4>Dynamic Range Awareness</h4>
+          <p>The gain delta is bounded by each band's available dynamic range (UCL − threshold). Patients with narrow dynamic range (< 30 dB) receive proportionally smaller adjustments to preserve comfort headroom.</p>
+        </div>
+        <div class="algo-feature fade-in">
+          <div class="af-icon">🔧</div>
+          <h4>NFM Band Adaptation</h4>
+          <p>The Nearest Frequency Matching mechanism maps phoneme-specific frequencies to the closest adjustable band of <em>any</em> hearing device — whether it has 5 bands (consumer earbud) or 20 bands (clinical hearing aid). One evaluation, any device.</p>
+        </div>
+        <div class="algo-feature fade-in">
+          <div class="af-icon">📋</div>
+          <h4>Cross-Device Portability</h4>
+          <p>Discrimination data is device-independent — it characterises the patient's perceptual profile, not the hearing device. When the patient changes devices, only steps (b)–(d) are re-executed with the new band configuration. No re-evaluation needed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- 5-LAYER SAFETY SYSTEM                         -->
+  <!-- ============================================= -->
+  <section class="about" id="safety">
+    <div class="container">
+      <span class="section-label">Built-In Protection</span>
+      <h2 class="section-title">5-Layer Clinical Safety Validation</h2>
+      <p class="section-subtitle" style="max-width: 740px; margin: 0 auto;">
+        Every adjustment recommendation passes through 5 independent safety checks before being presented to the clinician. This isn't just gain boosting — it's a validated, bounded computation with multiple protective mechanisms.
+      </p>
+
+      <div class="safety-grid">
+
+        <div class="safety-card fade-in">
+          <span class="safety-icon">🛡️</span>
+          <h4>1. UCL Proximity Check</h4>
+          <p>Estimates the post-adjustment output level and verifies it stays at least 7 dB below the patient's Uncomfortable Loudness Level (ASHA guideline: 5–10 dB margin). If exceeded, the system caps the recommendation and flags the band.</p>
+          <div class="safety-detail">
+            Output = 65 dB + G65<sub>current</sub> + Δ dB → must not exceed UCL − 7 dB
+          </div>
+        </div>
+
+        <div class="safety-card fade-in">
+          <span class="safety-icon">📈</span>
+          <h4>2. Spectral Loudness Summation</h4>
+          <p>When 3 or more high-frequency bands receive simultaneous gain increases, perceived loudness exceeds their arithmetic sum (Keidser & Moore). The system applies a 1.5× summation factor and limits total perceived HF increase to 8 dB per session.</p>
+          <div class="safety-detail">
+            Perceived loudness = Σ(ΔdB<sub>HF</sub>) × 1.5 → max 8 dB/session
+          </div>
+        </div>
+
+        <div class="safety-card fade-in">
+          <span class="safety-icon">⚖️</span>
+          <h4>3. Dynamic Range Protection</h4>
+          <p>For patients with narrow dynamic range (< 30 dB between threshold and UCL), adjustments exceeding 3 dB are flagged with specific warnings. The recommendation is bounded to preserve comfortable headroom.</p>
+          <div class="safety-detail">
+            DR = UCL − HTL → if DR < 30 dB, Δ dB capped at 2 dB
+          </div>
+        </div>
+
+        <div class="safety-card fade-in">
+          <span class="safety-icon">🔊</span>
+          <h4>4. MPO Headroom Verification</h4>
+          <p>Cross-references the proposed adjustment against the hearing device's Maximum Power Output to ensure the recommendation doesn't push the output level into saturation. Requires the actual gain table from fitting software.</p>
+          <div class="safety-detail">
+            Headroom = MPO − (65 + G65) → Δ dB must not exceed headroom
+          </div>
+        </div>
+
+        <div class="safety-card fade-in">
+          <span class="safety-icon">⏱️</span>
+          <h4>5. Compression Ratio Guard</h4>
+          <p>For frequency bands involved in temporal contrasts (voiced/voiceless stop consonants: /p/ vs /b/, /t/ vs /d/, /k/ vs /g/), the system detects compression ratios exceeding 3:1 — which degrade Voice Onset Time discrimination (up to 19.4% intelligibility loss).</p>
+          <div class="safety-detail">
+            CR = 30 / (30 + G80 − G50) → if CR > 3:1, alert generated
+          </div>
+        </div>
+
+      </div>
+
+      <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: var(--text-secondary); max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+        All safety constants are derived from published clinical guidelines (ASHA, BSA, NAL-NL2, ANSI S3.5-1997, Keidser & Moore) and are configurable per-deployment. The system generates a <strong>ValidationReport</strong> classifying the overall recommendation as PROCEED, PROCEED WITH CAUTION, or REVIEW REQUIRED.
       </p>
     </div>
   </section>
@@ -616,12 +937,12 @@
   <!-- ============================================= -->
   <!-- MANUFACTURER COMPATIBILITY                    -->
   <!-- ============================================= -->
-  <section class="about" id="compatibility">
+  <section class="how-it-works" id="compatibility">
     <div class="container" style="text-align: center;">
       <span class="section-label">Universal Compatibility</span>
       <h2 class="section-title">Works With Your Existing Fitting Software</h2>
       <p class="section-subtitle" style="max-width: 700px; margin: 0 auto;">
-        ReFittingLab is manufacturer-agnostic. It generates per-band gain adjustment recommendations that you apply in whichever fitting software you already use.
+        ReFittingLab is manufacturer-agnostic. It generates per-band gain adjustment recommendations that you apply in whichever fitting software you already use. The NFM mechanism automatically adapts to any device's band configuration.
       </p>
 
       <div class="compat-grid">
@@ -664,6 +985,77 @@
   </section>
 
   <!-- ============================================= -->
+  <!-- BETTER OUTCOMES FOR EVERYONE                  -->
+  <!-- ============================================= -->
+  <section class="about" id="outcomes">
+    <div class="container">
+      <span class="section-label">Value Proposition</span>
+      <h2 class="section-title">Better Outcomes for Everyone</h2>
+      <p class="section-subtitle" style="max-width: 740px; margin: 0 auto;">
+        ReFittingLab creates measurable value across the entire hearing care ecosystem — from NHS trusts managing thousands of patients to private practices competing on quality.
+      </p>
+
+      <div class="outcomes-grid">
+        <div class="outcome-col nhs">
+          <div class="oc-header">
+            <span class="oc-icon">🏥</span>
+            <div>
+              <h3>For NHS & Public Health</h3>
+              <p>Efficiency at scale</p>
+            </div>
+          </div>
+          <ul>
+            <li>
+              <span class="check-mark">✓</span>
+              <span><strong>Reduce follow-up visits</strong> — Objective verification in the first session means fewer return appointments clogging waiting lists.</span>
+            </li>
+            <li>
+              <span class="check-mark">✓</span>
+              <span><strong>Shorten waiting lists</strong> — Faster, more efficient fitting sessions free up clinic capacity for new patients.</span>
+            </li>
+            <li>
+              <span class="check-mark">✓</span>
+              <span><strong>Standardise quality</strong> — Quantitative protocols reduce variability between clinicians and clinics across trusts.</span>
+            </li>
+            <li>
+              <span class="check-mark">✓</span>
+              <span><strong>Evidence for commissioners</strong> — Measurable outcomes data supports service quality reporting and funding justification (CQC audit-ready).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="outcome-col private">
+          <div class="oc-header">
+            <span class="oc-icon">🏢</span>
+            <div>
+              <h3>For Private Clinics</h3>
+              <p>Competitive advantage</p>
+            </div>
+          </div>
+          <ul>
+            <li>
+              <span class="check-mark">✓</span>
+              <span><strong>Differentiating technology</strong> — Offer patients verifiable proof of fitting quality that competitors cannot match.</span>
+            </li>
+            <li>
+              <span class="check-mark">✓</span>
+              <span><strong>Reduce staff costs</strong> — Shorter sessions and fewer follow-ups mean lower cost per patient and higher throughput.</span>
+            </li>
+            <li>
+              <span class="check-mark">✓</span>
+              <span><strong>Higher conversion rates</strong> — Patients who experience measurable improvement in-session are more likely to commit to purchase.</span>
+            </li>
+            <li>
+              <span class="check-mark">✓</span>
+              <span><strong>Lower return rates</strong> — Getting the fitting right the first time reduces costly device returns and exchanges.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
   <!-- WHY THIS MATTERS                              -->
   <!-- ============================================= -->
   <section class="how-it-works" id="why-matters">
@@ -676,25 +1068,25 @@
         <div class="why-card fade-in">
           <div class="card-icon">📊</div>
           <h3>From Subjective to Objective</h3>
-          <p>Instead of <em>"How does it sound?"</em>, you get <em>"/s/ vs /θ/ discrimination: 68% → needs +3 dB at 4 kHz"</em>. Every adjustment has a reason. Every reason has data.</p>
+          <p>Instead of <em>"How does it sound?"</em>, you get <em>"/s/ vs /θ/ discrimination: 68% → needs +1.19 dB at 4 kHz (bounded by EA factor 0.85, DR factor 0.70)"</em>. Every adjustment has a reason. Every reason has data.</p>
         </div>
 
         <div class="why-card fade-in">
           <div class="card-icon">🎯</div>
           <h3>Targeted, Not Global</h3>
-          <p>ReFittingLab doesn't suggest "boost highs." It identifies <em>which</em> frequency band is causing <em>which</em> phoneme confusion, and calculates the minimum effective adjustment — typically 1–3 dB.</p>
+          <p>ReFittingLab doesn't suggest "boost highs." It identifies <em>which</em> frequency band is causing <em>which</em> phoneme confusion through distinctive feature analysis, and calculates the minimum effective adjustment — typically 0.5–3 dB, bounded by 5 safety layers.</p>
         </div>
 
         <div class="why-card fade-in">
           <div class="card-icon">🔄</div>
-          <h3>Immediate Verification Loop</h3>
-          <p>Adjust → Re-test → Confirm. In the same session. No more "come back in two weeks and tell me how it went." Statistically significant improvement is verified on the spot.</p>
+          <h3>Closed-Loop Verification</h3>
+          <p>Adjust → Re-test → Confirm. In the same session. Statistical significance is verified using Thornton-Raffin critical difference tables. The system tracks longitudinal improvement per contrast per band across sessions.</p>
         </div>
 
         <div class="why-card fade-in">
           <div class="card-icon">📋</div>
           <h3>Clinical Documentation</h3>
-          <p>Every test result, every recommendation, every re-test is recorded. Useful for clinical governance, audits (NHS/CQC), and longitudinal tracking of patient outcomes.</p>
+          <p>Every test result, every recommendation, every safety check, every re-test is recorded in an IEC 62304 traceable audit trail. Useful for clinical governance, audits (NHS/CQC), and longitudinal patient outcomes tracking.</p>
         </div>
 
         <div class="why-card fade-in">
@@ -706,7 +1098,7 @@
         <div class="why-card fade-in">
           <div class="card-icon">🌍</div>
           <h3>Language-Independent Architecture</h3>
-          <p>The system uses interchangeable language packs with language-specific phoneme inventories and minimal pairs. Currently calibrated for Peninsular Spanish, with English in preparation.</p>
+          <p>The system uses interchangeable language packs with language-specific phoneme inventories, minimal pairs curated through rigorous phonological criteria, and i18n-ready clinical terminology. Currently calibrated for Peninsular Spanish, with English in preparation.</p>
         </div>
 
       </div>
@@ -732,38 +1124,30 @@
   </main>
 
   <!-- ============================================= -->
-  <!-- FOOTER                                        -->
+  <!-- FOOTER (unified with index.html)              -->
   <!-- ============================================= -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-content">
         <div class="footer-brand">
           <div class="footer-logo">
-            <img src="logo/novaural_wave_transparent.png" alt="Novaural" width="40" height="40">
-            <span>N<span class="logo-o">O</span>VAURAL</span>
+            <span>Novaural Ltd</span>
           </div>
-          <p class="footer-tagline">Advancing hearing through intelligent technology.</p>
+          <div class="footer-company-info">
+            <address class="footer-address">71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom</address>
+            <div class="footer-reg">Registered in England & Wales · Company No. 17120454</div>
+          </div>
         </div>
-        <div class="footer-links-group">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#product">ReFittingLab</a></li>
-            <li><a href="how-it-works.html">How It Works</a></li>
-            <li><a href="collaborate.html">Partner With Us</a></li>
-          </ul>
+        <div class="footer-links">
+          <a href="index.html#about">About</a>
+          <a href="index.html#product">Technology</a>
+          <a href="beyond-clinical.html">Consumer</a>
+          <a href="collaborate.html">Partner With Us</a>
+          <a href="index.html#contact">Contact</a>
         </div>
-        <div class="footer-links-group">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="beyond-clinical.html">Consumer Audio</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="mailto:enquiries@novaural.com">enquiries@novaural.com</a></li>
-          </ul>
+        <div class="footer-legal">
+          © 2026 Novaural Ltd. All rights reserved. · Patent Pending (UKIPO filed · EU &amp; US filing in progress) · <a href="privacy.html" style="color: var(--text-muted); text-decoration: underline;">Privacy Policy</a>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2025 Novaural Ltd · UK Company · Patent Pending</p>
       </div>
     </div>
   </footer>
