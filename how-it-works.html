@@ -626,8 +626,8 @@
         <h4>The verification gap in current practice</h4>
         <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
           <strong>Pre-fitting</strong> has excellent objective tools: audiogram, REM/REAR, RECD, prescriptive formulas (NAL-NL2, DSLv5.0, manufacturer-based).<br>
-          <strong>Post-fitting fine-tuning</strong> has almost none. The clinician adjusts based on subjective patient reports and their own experience — with no way to measure if a specific phoneme pair (/s/ vs /θ/, /p/ vs /b/) improved after a gain change.<br><br>
-          <strong>ReFittingLab bridges this gap</strong> by providing a structured, quantitative verification protocol that maps phoneme discrimination performance directly to frequency-band gain adjustments — backed by a multi-factor computation engine with built-in safety mechanisms.
+          <strong>Post-fitting fine-tuning</strong> has almost none. The clinician adjusts based on subjective patient reports and their own experience — with no objective way to measure whether <em>word understanding</em> actually improved after a gain change. Did the patient's ability to distinguish similar-sounding words get better? Worse? By how much? Nobody knows.<br><br>
+          <strong>ReFittingLab bridges this gap</strong> with a complete fine-tuning verification system: it evaluates the patient's ability to discriminate and understand speech sounds — using minimal pairs, word lists, and speech-in-noise tests — then maps the results directly to per-band gain adjustments. The entire process is backed by a multi-factor computation engine with 5 independent safety layers, producing targeted, bounded recommendations that improve <em>real-world word understanding</em>, not just acoustic output.
         </p>
       </div>
     </div>
@@ -643,6 +643,29 @@
       <p class="section-subtitle" style="max-width: 700px; margin: 0 auto;">
         ReFittingLab does not replace your fitting software or prescriptive formula. It enters the workflow <strong>after</strong> the initial fitting, exactly where objective data disappears.
       </p>
+
+      <div class="compare-grid" style="margin-bottom: 2.5rem;">
+        <div class="compare-col before">
+          <h4>❌ Without ReFittingLab</h4>
+          <ul>
+            <li>Fitting session ends after REM verification — no measurement of actual <em>word understanding</em></li>
+            <li>Patient goes home with "come back in 2 weeks and tell me how it sounds"</li>
+            <li>If unhappy, clinician adjusts gains based on vague subjective feedback with no data on <em>which sounds</em> are problematic</li>
+            <li>3–5 return visits, each repeating the same subjective loop — costly for the clinic, frustrating for the patient</li>
+            <li>No documentation of fine-tuning rationale — if audited, no evidence trail of <em>why</em> adjustments were made</li>
+          </ul>
+        </div>
+        <div class="compare-col after">
+          <h4>✅ With ReFittingLab</h4>
+          <ul>
+            <li>After REM, run a 20-minute verification session — objective measurement of the patient's <em>actual word discrimination</em></li>
+            <li>Algorithm identifies exactly which frequency bands need adjustment and by how much — validated against 5 safety checks</li>
+            <li>Apply the recommendations in your fitting software, re-test, and confirm measurable improvement — all in the same session</li>
+            <li>Patient leaves with a data-verified fitting — fewer return visits, higher satisfaction, lower abandonment</li>
+            <li>Full audit trail: every test, every recommendation, every re-test is documented and IEC 62304 traceable</li>
+          </ul>
+        </div>
+      </div>
 
       <div class="workflow-timeline">
         <div class="wf-step standard">
@@ -804,8 +827,8 @@
 
       <div class="pipeline">
         <div class="pipe-node">
-          <h5>Phoneme Error</h5>
-          <p>"casa" heard as "caza"</p>
+          <h5>Speech Error</h5>
+          <p>"thin" heard as "sin"</p>
         </div>
         <span class="pipe-arrow">→</span>
         <div class="pipe-node">
@@ -854,10 +877,10 @@
           <h4>Dynamic Range Awareness</h4>
           <p>The gain delta is bounded by each band's available dynamic range (UCL − threshold). Patients with narrow dynamic range (< 30 dB) receive proportionally smaller adjustments to preserve comfort headroom.</p>
         </div>
-        <div class="algo-feature fade-in">
+        <div class="algo-feature fade-in" style="border-color: rgba(46, 196, 182, 0.25); background: linear-gradient(135deg, rgba(46, 196, 182, 0.04), transparent);">
           <div class="af-icon">🔧</div>
-          <h4>NFM Band Adaptation</h4>
-          <p>The Nearest Frequency Matching mechanism maps phoneme-specific frequencies to the closest adjustable band of <em>any</em> hearing device — whether it has 5 bands (consumer earbud) or 20 bands (clinical hearing aid). One evaluation, any device.</p>
+          <h4>NFM — Nearest Frequency Matching</h4>
+          <p>The core technology that makes ReFittingLab universally compatible: NFM automatically maps each speech-relevant frequency to the closest adjustable band of <em>any</em> hearing device — whether it has 4 bands (basic aid), 10 bands (mid-range), or 20 bands (premium clinical device). The system consolidates multiple speech frequency regions that fall within the resolution of a single band, weighting each by the magnitude of the discrimination deficit and spectral proximity. <strong>One evaluation &#8594; any device &#8594; optimal result regardless of band count.</strong></p>
         </div>
         <div class="algo-feature fade-in">
           <div class="af-icon">📋</div>
@@ -1098,7 +1121,7 @@
         <div class="why-card fade-in">
           <div class="card-icon">🌍</div>
           <h3>Language-Independent Architecture</h3>
-          <p>The system uses interchangeable language packs with language-specific phoneme inventories, minimal pairs curated through rigorous phonological criteria, and i18n-ready clinical terminology. Currently calibrated for Peninsular Spanish, with English in preparation.</p>
+          <p>The system uses interchangeable language packs with language-specific phoneme inventories, minimal pairs curated through rigorous phonological criteria, and fully localised clinical terminology. Currently calibrated for English, with the architecture designed to support any additional language — simply add a validated language pack and the entire system adapts automatically.</p>
         </div>
 
       </div>
