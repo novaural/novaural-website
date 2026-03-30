@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How ReFittingLab works — Objective phoneme discrimination testing that fills the verification gap in hearing aid fine-tuning. See the full clinical workflow.">
+  <meta name="keywords" content="ReFittingLab, hearing aid verification, fine-tuning, phoneme discrimination, speech audiometry, NAL-NL2, DSLv5, fitting software, audiology workflow">
+  <title>How ReFittingLab Works — Clinical Workflow | Novaural</title>
+  <link rel="icon" type="image/png" href="logo/novaural_profile_pic.png">
+  <link rel="canonical" href="https://novaural.com/how-it-works.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="How ReFittingLab Works — Clinical Workflow">
+  <meta property="og:description" content="Objective phoneme discrimination testing that fills the verification gap in hearing aid fine-tuning.">
+  <meta property="og:url" content="https://novaural.com/how-it-works.html">
+  <meta property="og:image" content="https://novaural.com/assets/images/og_social_preview.png">
+  <meta property="og:site_name" content="Novaural">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How ReFittingLab Works — Clinical Workflow">
+  <meta name="twitter:description" content="Objective phoneme discrimination testing for hearing aid fine-tuning.">
+  <meta name="twitter:image" content="https://novaural.com/assets/images/og_social_preview.png">
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "How ReFittingLab Works",
+    "description": "Objective phoneme discrimination testing that fills the verification gap in hearing aid fine-tuning.",
+    "url": "https://novaural.com/how-it-works.html",
+    "mainEntity": {
+      "@type": "Product",
+      "name": "ReFittingLab",
+      "description": "Evidence-based hearing aid verification and fine-tuning system",
+      "brand": {
+        "@type": "Organization",
+        "name": "Novaural Ltd",
+        "url": "https://novaural.com"
+      }
+    }
+  }
+  </script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Page-specific styles */
+    .workflow-timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 3rem auto 0;
+    }
+    .workflow-timeline::before {
+      content: '';
+      position: absolute;
+      left: 32px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--border-subtle), var(--teal-500), var(--border-subtle));
+    }
+    .wf-step {
+      position: relative;
+      padding-left: 80px;
+      margin-bottom: 2.5rem;
+    }
+    .wf-step:last-child { margin-bottom: 0; }
+    .wf-step .wf-marker {
+      position: absolute;
+      left: 16px;
+      top: 4px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      z-index: 1;
+    }
+    .wf-step.standard .wf-marker {
+      background: var(--navy-800);
+      border: 2px solid var(--gray-600);
+      color: var(--gray-400);
+    }
+    .wf-step.highlight .wf-marker {
+      background: linear-gradient(135deg, var(--teal-500), var(--cyan-accent));
+      border: none;
+      color: var(--navy-900);
+      box-shadow: 0 0 20px rgba(46, 196, 182, 0.4);
+    }
+    .wf-step h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .wf-step.standard h4 { color: var(--gray-300); }
+    .wf-step.highlight h4 { color: var(--teal-400); }
+    .wf-step p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .wf-step.highlight {
+      background: rgba(46, 196, 182, 0.04);
+      border: 1px solid rgba(46, 196, 182, 0.15);
+      border-radius: 12px;
+      padding: 1.5rem 1.5rem 1.5rem 80px;
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+
+    /* Gap callout */
+    .gap-callout {
+      background: linear-gradient(135deg, rgba(255, 82, 82, 0.06), rgba(255, 82, 82, 0.02));
+      border: 1px solid rgba(255, 82, 82, 0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2.5rem 0;
+      position: relative;
+    }
+    .gap-callout::before {
+      content: '⚠';
+      position: absolute;
+      top: -14px;
+      left: 24px;
+      font-size: 1.4rem;
+      background: var(--navy-900);
+      padding: 0 0.5rem;
+    }
+    .gap-callout h4 {
+      color: #ff7043;
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    /* Comparison table */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 768px) { .compare-grid { grid-template-columns: 1fr; } }
+    .compare-col {
+      background: var(--navy-800);
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid var(--border-subtle);
+    }
+    .compare-col.before {
+      border-color: rgba(255, 82, 82, 0.2);
+    }
+    .compare-col.after {
+      border-color: rgba(46, 196, 182, 0.3);
+      background: linear-gradient(135deg, rgba(46, 196, 182, 0.05), transparent);
+    }
+    .compare-col h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .compare-col.before h4 { color: #ff7043; }
+    .compare-col.after h4 { color: var(--teal-400); }
+    .compare-col ul {
+      list-style: none;
+      padding: 0;
+    }
+    .compare-col ul li {
+      padding: 0.6rem 0;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border-subtle);
+      line-height: 1.5;
+    }
+    .compare-col ul li:last-child { border-bottom: none; }
+
+    /* Detailed steps */
+    .detail-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .detail-step {
+      background: var(--navy-800);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 2rem;
+      position: relative;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .detail-step:hover {
+      border-color: rgba(46, 196, 182, 0.3);
+      transform: translateY(-4px);
+    }
+    .detail-step .ds-num {
+      position: absolute;
+      top: -14px;
+      left: 20px;
+      background: linear-gradient(135deg, var(--teal-500), var(--cyan-accent));
+      color: var(--navy-900);
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 4px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .detail-step h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin: 0.5rem 0 0.6rem;
+    }
+    .detail-step p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .detail-step .ds-meta {
+      margin-top: 1rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .detail-step .ds-tag {
+      font-size: 0.75rem;
+      color: var(--teal-400);
+      background: rgba(46, 196, 182, 0.08);
+      padding: 3px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(46, 196, 182, 0.15);
+    }
+
+    /* Compatibility cards */
+    .compat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .compat-card {
+      background: var(--navy-800);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .compat-card:hover {
+      border-color: rgba(46, 196, 182, 0.3);
+      transform: translateY(-3px);
+    }
+    .compat-card .cc-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .compat-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+    }
+    .compat-card p {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+
+    /* Pipeline diagram */
+    .pipeline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 2.5rem auto;
+      max-width: 850px;
+    }
+    .pipe-node {
+      background: var(--navy-800);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 0.8rem 1.2rem;
+      text-align: center;
+      min-width: 120px;
+    }
+    .pipe-node.active {
+      border-color: rgba(46, 196, 182, 0.4);
+      background: rgba(46, 196, 182, 0.06);
+    }
+    .pipe-node h5 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+    .pipe-node.active h5 { color: var(--teal-400); }
+    .pipe-node p {
+      font-size: 0.7rem;
+      color: var(--gray-400);
+      margin: 0;
+    }
+    .pipe-arrow {
+      color: var(--gray-500);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    @media (max-width: 600px) {
+      .pipeline { flex-direction: column; }
+      .pipe-arrow { transform: rotate(90deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================= -->
+  <!-- NAVIGATION                                    -->
+  <!-- ============================================= -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-content">
+      <a href="index.html" class="nav-logo">
+        <img src="logo/novaural_wave_transparent.png" alt="Novaural" width="40" height="40">
+        <div class="nav-logo-text">
+          <span class="nav-logo-brand">N<span class="logo-o">O</span>VAURAL</span>
+          <span class="nav-logo-sub">MEDICAL<span class="sub-dot"></span>DEEP-TECH</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#challenge">The Challenge</a></li>
+        <li><a href="index.html#product">ReFittingLab</a></li>
+        <li><a href="#" style="color: var(--teal-400);">How It Works</a></li>
+        <li><a href="index.html#stage">Our Stage</a></li>
+        <li><a href="beyond-clinical.html">Consumer</a></li>
+        <li><a href="collaborate.html" class="nav-cta">Partner With Us</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+  <!-- ============================================= -->
+  <!-- HERO                                          -->
+  <!-- ============================================= -->
+  <section class="hero" id="hiw-hero" style="min-height: auto; padding: 10rem 0 4rem;">
+    <div class="hero-content" style="text-align: left; max-width: var(--container-max); margin: 0 auto; padding: 0 2rem;">
+      <span class="section-label">For Audiologists & Hearing Professionals</span>
+      <h1 style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 1.5rem;">
+        Where Does ReFittingLab Fit<br>
+        in <span class="gradient-text">Your Clinical Workflow</span>?
+      </h1>
+      <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 720px; line-height: 1.7;">
+        Current best practice excels at measuring what <strong>reaches the ear</strong> — REM, REAR, audiogram targets. But it has no standardised way to measure what the patient actually <strong>perceives and discriminates</strong> after fitting. That's the gap ReFittingLab fills.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- THE VERIFICATION GAP                          -->
+  <!-- ============================================= -->
+  <section class="about" id="the-gap">
+    <div class="container">
+      <span class="section-label">The Problem</span>
+      <h2 class="section-title">The Fine-Tuning Gap</h2>
+      <p class="section-subtitle" style="max-width: 760px; margin: 0 auto 1rem;">
+        After applying a prescriptive formula and verifying with REM, the clinician enters the fine-tuning phase — and suddenly loses access to objective data.
+      </p>
+
+      <div class="compare-grid">
+        <!-- Before fitting: lots of tools -->
+        <div class="compare-col before">
+          <h4>❌ What happens today during fine-tuning</h4>
+          <ul>
+            <li><strong>"How does it sound?"</strong> — Clinicians ask subjective questions with no quantifiable answers</li>
+            <li><strong>Trial and error</strong> — Adjust gains, send patient home, wait for next appointment</li>
+            <li><strong>3–5 return visits</strong> — Each one essentially repeating the same subjective loop</li>
+            <li><strong>No phoneme-level data</strong> — If the patient says "I can't understand speech," the clinician doesn't know <em>which</em> frequencies are causing the issue</li>
+            <li><strong>Patient frustration</strong> — 30% of hearing aid users abandon their devices within 12 months</li>
+          </ul>
+        </div>
+
+        <!-- After: with ReFittingLab -->
+        <div class="compare-col after">
+          <h4>✅ What changes with ReFittingLab</h4>
+          <ul>
+            <li><strong>Objective phoneme discrimination scores</strong> — Per-contrast, per-frequency, quantified</li>
+            <li><strong>Targeted adjustments</strong> — The algorithm tells you <em>exactly</em> which bands need +1, +2, +3 dB</li>
+            <li><strong>Measurable improvement</strong> — Re-test immediately to confirm the adjustment worked</li>
+            <li><strong>Fewer visits</strong> — More gets resolved in the first session because you have data, not guesses</li>
+            <li><strong>Clinical documentation</strong> — Every decision is evidence-based and auditable</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="gap-callout">
+        <h4>The verification gap in current practice</h4>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+          <strong>Pre-fitting</strong> has excellent objective tools: audiogram, REM/REAR, RECD, prescriptive formulas (NAL-NL2, DSLv5, manufacturer-based).<br>
+          <strong>Post-fitting fine-tuning</strong> has almost none. The clinician adjusts based on subjective patient reports and their own experience — with no way to measure if a specific phoneme pair (/s/ vs /θ/, /p/ vs /b/) improved after a gain change.<br><br>
+          <strong>ReFittingLab bridges this gap</strong> by providing a structured, quantitative verification protocol that maps phoneme discrimination performance directly to frequency-band gain adjustments.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- WHERE IT FITS IN THE WORKFLOW                 -->
+  <!-- ============================================= -->
+  <section class="how-it-works" id="workflow">
+    <div class="container">
+      <span class="section-label">Clinical Context</span>
+      <h2 class="section-title">Where ReFittingLab Fits in Your Workflow</h2>
+      <p class="section-subtitle" style="max-width: 700px; margin: 0 auto;">
+        ReFittingLab does not replace your fitting software or prescriptive formula. It enters the workflow <strong>after</strong> the initial fitting, exactly where objective data disappears.
+      </p>
+
+      <div class="workflow-timeline">
+        <div class="wf-step standard">
+          <div class="wf-marker">1</div>
+          <h4>Audiogram & Patient History</h4>
+          <p>Standard audiometric evaluation: air/bone conduction, UCL, speech recognition threshold. This is your baseline.</p>
+        </div>
+        <div class="wf-step standard">
+          <div class="wf-marker">2</div>
+          <h4>Prescriptive Formula</h4>
+          <p>Apply your formula of choice — NAL-NL2, DSLv5.0, or a manufacturer-based formula (Phonak APD, Oticon VAC+, etc.) — to generate initial gain targets.</p>
+        </div>
+        <div class="wf-step standard">
+          <div class="wf-marker">3</div>
+          <h4>Initial Fitting in Manufacturer Software</h4>
+          <p>Program the hearing aids in Phonak Target, Oticon Genie 2, ReSound Smart Fit, Signia Connexx, Widex Compass GPS, or any other fitting software. Configure coupling, feedback management, features.</p>
+        </div>
+        <div class="wf-step standard">
+          <div class="wf-marker">4</div>
+          <h4>Real-Ear Measurement (REM/REAR)</h4>
+          <p>Verify that the acoustic output at the eardrum matches prescriptive targets. This confirms the <em>physical delivery</em> of sound — but not the <em>perceptual outcome</em>.</p>
+        </div>
+
+        <div class="wf-step highlight">
+          <div class="wf-marker">★</div>
+          <h4>ReFittingLab — Phoneme Discrimination Verification</h4>
+          <p>
+            <strong>This is where ReFittingLab enters.</strong> The system evaluates the patient's ability to discriminate speech sounds across frequency bands — using minimal pairs, word lists, and speech-in-noise — and outputs <strong>specific, per-band gain adjustments</strong> (ΔG50, ΔG65, ΔG80) to resolve measured deficits.
+          </p>
+          <p style="margin-top: 0.5rem;">
+            The clinician then applies these adjustments in their fitting software and re-tests to confirm measurable improvement. <strong>No guesswork. No waiting for the next appointment.</strong>
+          </p>
+        </div>
+
+        <div class="wf-step standard">
+          <div class="wf-marker">6</div>
+          <h4>Fine-Tuning with Data</h4>
+          <p>Apply ReFittingLab's recommendations in your fitting software. Adjust G65 for conversational speech, G50 for soft sounds, G80 for loud environments — each adjustment mapped to a specific phoneme discrimination deficit.</p>
+        </div>
+        <div class="wf-step standard">
+          <div class="wf-marker">7</div>
+          <h4>Verified Outcome & Discharge</h4>
+          <p>Re-test with ReFittingLab to confirm improvement. Document results. Discharge with confidence — or schedule follow-up only if objective data warrants it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- WHAT REFITTINGLAB ACTUALLY DOES               -->
+  <!-- ============================================= -->
+  <section class="about" id="detailed-process">
+    <div class="container">
+      <span class="section-label">The Process — In Detail</span>
+      <h2 class="section-title">What Happens During a ReFittingLab Session</h2>
+      <p class="section-subtitle" style="max-width: 700px; margin: 0 auto;">
+        A complete verification session takes 20–30 minutes and produces actionable, per-band gain adjustment recommendations.
+      </p>
+
+      <div class="detail-steps">
+
+        <div class="detail-step fade-in">
+          <span class="ds-num">STEP 1</span>
+          <h4>Input Patient Profile</h4>
+          <p>Enter the audiogram (air/bone conduction, UCL), current gain tables (G50/G65/G80/CR from your fitting software), and clinical context: experience level, tinnitus, hyperacusis, coupling type.</p>
+          <div class="ds-meta">
+            <span class="ds-tag">~2 min</span>
+            <span class="ds-tag">Pre-session</span>
+          </div>
+        </div>
+
+        <div class="detail-step fade-in">
+          <span class="ds-num">STEP 2</span>
+          <h4>Automatic Test Selection</h4>
+          <p>Based on the audiometric profile, the system selects which phoneme contrasts to prioritise. Steep high-frequency loss? Prioritise fricatives (/s/ vs /θ/). Flat moderate loss? Include stops and nasals. Severe HF loss? Flag for frequency lowering verification.</p>
+          <div class="ds-meta">
+            <span class="ds-tag">Automatic</span>
+            <span class="ds-tag">Profile-driven</span>
+          </div>
+        </div>
+
+        <div class="detail-step fade-in">
+          <span class="ds-num">STEP 3</span>
+          <h4>Phoneme Discrimination Testing</h4>
+          <p>Calibrated minimal pair stimuli are presented at 65 dB SPL (conversational level). The patient identifies what they hear — <em>casa</em> or <em>caza</em>? <em>peso</em> or <em>beso</em>? Each error maps to a specific frequency band and distinctive feature.</p>
+          <div class="ds-meta">
+            <span class="ds-tag">~12 min</span>
+            <span class="ds-tag">65 dB SPL</span>
+            <span class="ds-tag">12 contrasts</span>
+          </div>
+        </div>
+
+        <div class="detail-step fade-in">
+          <span class="ds-num">STEP 4</span>
+          <h4>Multi-Level Testing</h4>
+          <p>Optionally extend to <strong>50 dB</strong> (audibility of soft sounds) and <strong>80 dB</strong> (comfort and tolerance). This maps to G50, G65, and G80 adjustments across the full dynamic range — not just conversational level.</p>
+          <div class="ds-meta">
+            <span class="ds-tag">~8 min</span>
+            <span class="ds-tag">50/65/80 dB</span>
+          </div>
+        </div>
+
+        <div class="detail-step fade-in">
+          <span class="ds-num">STEP 5</span>
+          <h4>Speech-in-Noise Verification</h4>
+          <p>Sentences are presented with calibrated noise (ICRA/ISTS) at multiple signal-to-noise ratios (+5, 0, −5 dB). Calculates the patient's SNR loss — how many extra dB of signal they need compared to a normal listener.</p>
+          <div class="ds-meta">
+            <span class="ds-tag">~6 min</span>
+            <span class="ds-tag">3 SNR levels</span>
+          </div>
+        </div>
+
+        <div class="detail-step fade-in">
+          <span class="ds-num">STEP 6</span>
+          <h4>Analysis & Recommendations</h4>
+          <p>The algorithm maps each phoneme error to its acoustic correlate (distinctive feature → frequency band), then calculates the gain delta needed to resolve the deficit. Output: prioritised per-band ΔG50/ΔG65/ΔG80 and compression ratio adjustments.</p>
+          <div class="ds-meta">
+            <span class="ds-tag">Instant</span>
+            <span class="ds-tag">20 bands</span>
+            <span class="ds-tag">170 Hz – 9.6 kHz</span>
+          </div>
+        </div>
+
+        <div class="detail-step fade-in">
+          <span class="ds-num">STEP 7</span>
+          <h4>Apply in Your Fitting Software</h4>
+          <p>Take the recommendations and apply them directly in Phonak Target, Oticon Genie 2, ReSound Smart Fit, or whichever fitting software you use. ReFittingLab tells you <em>what</em> to change and <em>why</em> — you stay in control.</p>
+          <div class="ds-meta">
+            <span class="ds-tag">~3 min</span>
+            <span class="ds-tag">Any manufacturer</span>
+          </div>
+        </div>
+
+        <div class="detail-step fade-in">
+          <span class="ds-num">STEP 8</span>
+          <h4>Re-Test & Verify</h4>
+          <p>Re-administer the tests that showed deficits. If the adjustment was correct, discrimination scores improve measurably (using Thornton-Raffin critical difference tables to confirm statistical significance). Document and discharge — or iterate.</p>
+          <div class="ds-meta">
+            <span class="ds-tag">~5 min</span>
+            <span class="ds-tag">Evidence-based</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- THE ALGORITHM PIPELINE                        -->
+  <!-- ============================================= -->
+  <section class="how-it-works" id="algorithm">
+    <div class="container" style="text-align: center;">
+      <span class="section-label">Under the Hood</span>
+      <h2 class="section-title">From Phoneme Error to Gain Adjustment</h2>
+      <p class="section-subtitle" style="max-width: 700px; margin: 0 auto;">
+        The core algorithm translates a perceptual error into a precise, band-specific gain change. Here's the pipeline:
+      </p>
+
+      <div class="pipeline">
+        <div class="pipe-node">
+          <h5>Phoneme Error</h5>
+          <p>"casa" heard as "caza"</p>
+        </div>
+        <span class="pipe-arrow">→</span>
+        <div class="pipe-node">
+          <h5>Distinctive Feature</h5>
+          <p>[+strident] vs [−strident]</p>
+        </div>
+        <span class="pipe-arrow">→</span>
+        <div class="pipe-node active">
+          <h5>Frequency Band</h5>
+          <p>4–8 kHz</p>
+        </div>
+        <span class="pipe-arrow">→</span>
+        <div class="pipe-node active">
+          <h5>Gain Delta</h5>
+          <p>G65 +3 dB @ 4 kHz</p>
+        </div>
+      </div>
+
+      <p style="max-width: 700px; margin: 1rem auto 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;">
+        This is not a generic "boost highs if speech is unclear" approach. Each phoneme contrast maps to a specific set of distinctive features (Jakobson-Halle-Fant framework), which in turn correspond to specific frequency bands. The algorithm considers the patient's audiogram, current gains, dynamic range, and clinical profile to calculate a bounded, safe adjustment — typically 1–3 dB per band.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- MANUFACTURER COMPATIBILITY                    -->
+  <!-- ============================================= -->
+  <section class="about" id="compatibility">
+    <div class="container" style="text-align: center;">
+      <span class="section-label">Universal Compatibility</span>
+      <h2 class="section-title">Works With Your Existing Fitting Software</h2>
+      <p class="section-subtitle" style="max-width: 700px; margin: 0 auto;">
+        ReFittingLab is manufacturer-agnostic. It generates per-band gain adjustment recommendations that you apply in whichever fitting software you already use.
+      </p>
+
+      <div class="compat-grid">
+        <div class="compat-card fade-in">
+          <div class="cc-icon">🔧</div>
+          <h4>Phonak Target</h4>
+          <p>Paradise, Lumity, Infinio</p>
+        </div>
+        <div class="compat-card fade-in">
+          <div class="cc-icon">🔧</div>
+          <h4>Oticon Genie 2</h4>
+          <p>More, Real, Intent</p>
+        </div>
+        <div class="compat-card fade-in">
+          <div class="cc-icon">🔧</div>
+          <h4>ReSound Smart Fit</h4>
+          <p>ONE, Nexia, Omnia</p>
+        </div>
+        <div class="compat-card fade-in">
+          <div class="cc-icon">🔧</div>
+          <h4>Signia Connexx</h4>
+          <p>IX, AX, Pure</p>
+        </div>
+        <div class="compat-card fade-in">
+          <div class="cc-icon">🔧</div>
+          <h4>Widex Compass GPS</h4>
+          <p>SmartRIC, Moment, Sheer</p>
+        </div>
+        <div class="compat-card fade-in">
+          <div class="cc-icon">🔧</div>
+          <h4>Any Other Software</h4>
+          <p>With adjustable gain bands</p>
+        </div>
+      </div>
+
+      <p style="margin-top: 2rem; font-size: 0.78rem; color: var(--gray-500); max-width: 700px; margin-left: auto; margin-right: auto;">
+        All product names mentioned are trademarks of their respective owners. Novaural is not affiliated with, endorsed by, or sponsored by any hearing aid manufacturer. ReFittingLab is an independent verification system.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- WHY THIS MATTERS                              -->
+  <!-- ============================================= -->
+  <section class="how-it-works" id="why-matters">
+    <div class="container">
+      <span class="section-label">Clinical Impact</span>
+      <h2 class="section-title">Why Objective Fine-Tuning Data Matters</h2>
+
+      <div class="why-partner-grid" style="margin-top: 2.5rem;">
+
+        <div class="why-card fade-in">
+          <div class="card-icon">📊</div>
+          <h3>From Subjective to Objective</h3>
+          <p>Instead of <em>"How does it sound?"</em>, you get <em>"/s/ vs /θ/ discrimination: 68% → needs +3 dB at 4 kHz"</em>. Every adjustment has a reason. Every reason has data.</p>
+        </div>
+
+        <div class="why-card fade-in">
+          <div class="card-icon">🎯</div>
+          <h3>Targeted, Not Global</h3>
+          <p>ReFittingLab doesn't suggest "boost highs." It identifies <em>which</em> frequency band is causing <em>which</em> phoneme confusion, and calculates the minimum effective adjustment — typically 1–3 dB.</p>
+        </div>
+
+        <div class="why-card fade-in">
+          <div class="card-icon">🔄</div>
+          <h3>Immediate Verification Loop</h3>
+          <p>Adjust → Re-test → Confirm. In the same session. No more "come back in two weeks and tell me how it went." Statistically significant improvement is verified on the spot.</p>
+        </div>
+
+        <div class="why-card fade-in">
+          <div class="card-icon">📋</div>
+          <h3>Clinical Documentation</h3>
+          <p>Every test result, every recommendation, every re-test is recorded. Useful for clinical governance, audits (NHS/CQC), and longitudinal tracking of patient outcomes.</p>
+        </div>
+
+        <div class="why-card fade-in">
+          <div class="card-icon">⏱️</div>
+          <h3>More Done in Fewer Visits</h3>
+          <p>Data-driven adjustments resolve more issues in the first fitting session. The traditional 3–5 visit cycle compresses — better outcomes, happier patients, more efficient clinics.</p>
+        </div>
+
+        <div class="why-card fade-in">
+          <div class="card-icon">🌍</div>
+          <h3>Language-Independent Architecture</h3>
+          <p>The system uses interchangeable language packs with language-specific phoneme inventories and minimal pairs. Currently calibrated for Peninsular Spanish, with English in preparation.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- CTA                                           -->
+  <!-- ============================================= -->
+  <section class="stage" id="hiw-cta">
+    <div class="container" style="text-align: center;">
+      <h2 class="section-title" style="margin-bottom: 1rem;">Ready to See It in Action?</h2>
+      <p class="section-subtitle" style="max-width: 600px; margin: 0 auto 2rem;">
+        We're seeking clinical partners to validate ReFittingLab in real-world settings. If you're an audiologist, hearing aid dispenser, or clinic manager, we'd love to hear from you.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="collaborate.html" class="btn-primary" style="font-size: 1.05rem; padding: 1rem 2.5rem;">Partner With Us →</a>
+        <a href="index.html#product" class="btn-outline" style="font-size: 1.05rem; padding: 1rem 2.5rem;">Learn About ReFittingLab</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ============================================= -->
+  <!-- FOOTER                                        -->
+  <!-- ============================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="logo/novaural_wave_transparent.png" alt="Novaural" width="40" height="40">
+            <span>N<span class="logo-o">O</span>VAURAL</span>
+          </div>
+          <p class="footer-tagline">Advancing hearing through intelligent technology.</p>
+        </div>
+        <div class="footer-links-group">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#product">ReFittingLab</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="collaborate.html">Partner With Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="beyond-clinical.html">Consumer Audio</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="mailto:enquiries@novaural.com">enquiries@novaural.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Novaural Ltd · UK Company · Patent Pending</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "16296de92a204e909d55c9422b0a4587"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
