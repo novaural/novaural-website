@@ -1,0 +1,426 @@
+/* =============================================
+   HOW-IT-WORKS — ENHANCED SCROLL ANIMATIONS
+   Lightweight CSS-only animation definitions.
+   Triggered by JS adding .visible class via IntersectionObserver.
+   ============================================= */
+
+/* --- Scroll progress indicator (sits below navbar) --- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal-400), var(--cyan-accent));
+  width: 0%;
+  z-index: 1001;
+  transition: width 0.08s linear;
+  pointer-events: none;
+}
+
+/* --- Stagger delays for sequential reveals --- */
+.stagger-1 { transition-delay: 0.1s !important; }
+.stagger-2 { transition-delay: 0.2s !important; }
+.stagger-3 { transition-delay: 0.3s !important; }
+.stagger-4 { transition-delay: 0.4s !important; }
+.stagger-5 { transition-delay: 0.5s !important; }
+.stagger-6 { transition-delay: 0.6s !important; }
+.stagger-7 { transition-delay: 0.7s !important; }
+.stagger-8 { transition-delay: 0.8s !important; }
+
+/* --- Scale-in: for cards, badges, icons --- */
+.scale-in {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* --- Slide-up (subtle): for section headers --- */
+.slide-up {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Slide-left / Slide-right: for before/after columns --- */
+.slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- Draw-border: for callout boxes --- */
+.draw-border {
+  border-color: transparent !important;
+  transition: border-color 1s ease 0.3s;
+}
+.draw-border.visible {
+  border-color: rgba(46, 196, 182, 0.2) !important;
+}
+
+/* --- Glow-in: for highlight steps and important elements --- */
+.glow-in {
+  opacity: 0;
+  transform: translateY(20px);
+  box-shadow: 0 0 0 rgba(46, 196, 182, 0);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.8s ease 0.3s;
+}
+.glow-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 0 25px rgba(46, 196, 182, 0.15), 0 0 60px rgba(46, 196, 182, 0.05);
+}
+
+/* --- Workflow timeline: line that draws itself --- */
+.workflow-timeline {
+  position: relative;
+}
+.workflow-timeline::before {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: 0;
+  width: 3px;
+  height: var(--tl-progress, 0%);
+  background: linear-gradient(to bottom, var(--teal-400), var(--cyan-accent));
+  border-radius: 2px;
+  transition: height 0.15s linear;
+  box-shadow: 0 0 8px rgba(46, 196, 182, 0.3);
+  z-index: 1;
+}
+
+/* --- Workflow marker glow when visible --- */
+.wf-step .wf-marker {
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease, color 0.4s ease;
+}
+.wf-step.visible .wf-marker {
+  border-color: var(--teal-400);
+  box-shadow: 0 0 12px rgba(46, 196, 182, 0.4);
+}
+.wf-step.highlight.visible .wf-marker {
+  background: linear-gradient(135deg, var(--teal-400), var(--cyan-accent));
+  color: var(--navy-900);
+  border-color: var(--cyan-accent);
+  box-shadow: 0 0 24px rgba(46, 196, 182, 0.6);
+}
+
+/* --- Pipeline nodes: sequential reveal --- */
+.pipe-node {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.pipe-node:not(.visible) {
+  opacity: 0;
+  transform: translateY(15px) scale(0.9);
+}
+.pipe-node.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* --- Pipeline arrows: flowing dash animation --- */
+.pipe-arrow.visible {
+  animation: arrowFlow 1.5s ease-in-out infinite;
+}
+@keyframes arrowFlow {
+  0%, 100% { opacity: 0.4; transform: translateX(0); }
+  50% { opacity: 1; transform: translateX(3px); }
+}
+
+.pipe-arrow {
+  transition: opacity 0.4s ease;
+}
+.pipe-arrow:not(.visible) {
+  opacity: 0;
+}
+.pipe-arrow.visible {
+  opacity: 1;
+}
+
+/* --- Safety cards: sequential amber → green --- */
+.safety-card {
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              border-color 0.5s ease, box-shadow 0.5s ease;
+}
+.safety-card:not(.visible) {
+  opacity: 0;
+  transform: translateY(30px) scale(0.92);
+}
+.safety-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.safety-card.visible .safety-icon {
+  animation: safetyPulse 0.6s ease-out;
+}
+@keyframes safetyPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* --- Counter animation: for numbers --- */
+.counter-animate {
+  display: inline-block;
+}
+
+/* --- Algo feature cards: subtle hover lift --- */
+.algo-feature {
+  transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.algo-feature:not(.visible) {
+  opacity: 0;
+  transform: translateY(18px);
+}
+.algo-feature.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.algo-feature:hover {
+  border-color: rgba(46, 196, 182, 0.25) !important;
+  box-shadow: 0 4px 20px rgba(46, 196, 182, 0.08);
+  transform: translateY(-3px);
+}
+
+/* --- Compat cards: flip-style entrance --- */
+.compat-card {
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.compat-card:not(.visible) {
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+}
+.compat-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.compat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 24px rgba(46, 196, 182, 0.1);
+}
+
+/* --- Equipment cards: bounce entrance --- */
+.about-card {
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.about-card:not(.visible) {
+  opacity: 0;
+  transform: translateY(35px) scale(0.9);
+}
+.about-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.about-card:hover {
+  border-color: rgba(46, 196, 182, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(46, 196, 182, 0.1);
+}
+
+/* --- Outcome columns: slide from sides --- */
+.outcome-col.nhs {
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.outcome-col.nhs:not(.visible) {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+.outcome-col.nhs.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.outcome-col.private {
+  transition: opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s;
+}
+.outcome-col.private:not(.visible) {
+  opacity: 0;
+  transform: translateX(40px);
+}
+.outcome-col.private.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- Check marks in outcome lists: draw-in --- */
+.outcome-col .check-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+}
+.outcome-col:not(.visible) .check-mark {
+  opacity: 0;
+  transform: scale(0);
+}
+.outcome-col.visible .check-mark {
+  opacity: 1;
+  transform: scale(1);
+}
+.outcome-col.visible li:nth-child(1) .check-mark { transition-delay: 0.3s; }
+.outcome-col.visible li:nth-child(2) .check-mark { transition-delay: 0.45s; }
+.outcome-col.visible li:nth-child(3) .check-mark { transition-delay: 0.6s; }
+.outcome-col.visible li:nth-child(4) .check-mark { transition-delay: 0.75s; }
+
+/* --- Why-cards: staggered entrance --- */
+.why-card {
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+}
+.why-card:not(.visible) {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.why-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.why-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Detail steps: fast stagger --- */
+.detail-step {
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.detail-step:not(.visible) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.detail-step.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Compare-grid: before/after slide-in --- */
+.compare-col.before {
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.compare-col.before:not(.visible) {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+.compare-col.before.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.compare-col.after {
+  transition: opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s;
+}
+.compare-col.after:not(.visible) {
+  opacity: 0;
+  transform: translateX(40px);
+}
+.compare-col.after.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- Section labels: the —— line is always visible (defined in style.css) --- */
+.section-label {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* --- Detail step time tags: glow on appear --- */
+.ds-tag {
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+.detail-step.visible .ds-tag {
+  animation: tagGlow 1s ease-out;
+}
+@keyframes tagGlow {
+  0% { box-shadow: 0 0 0 rgba(46, 196, 182, 0); }
+  50% { box-shadow: 0 0 10px rgba(46, 196, 182, 0.3); }
+  100% { box-shadow: 0 0 0 rgba(46, 196, 182, 0); }
+}
+
+/* --- Safety detail formulas: typewriter-like reveal --- */
+.safety-detail {
+  transition: opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s;
+}
+.safety-card:not(.visible) .safety-detail {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.safety-card.visible .safety-detail {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Cost summary box: border glow on appear --- */
+#what-you-need .gap-callout,
+[id='what-you-need'] > .container > div[style*='border-radius: 14px'] {
+  transition: opacity 0.7s ease, transform 0.7s ease, box-shadow 0.8s ease 0.5s;
+}
+.visible[style*='border-radius: 14px'] {
+  box-shadow: 0 0 30px rgba(46, 196, 182, 0.08);
+}
+
+/* --- Card 3D tilt on hover (desktop only) --- */
+@media (min-width: 769px) {
+  .algo-feature,
+  .why-card,
+  .compat-card,
+  .about-card {
+    transform-style: preserve-3d;
+    perspective: 800px;
+  }
+}
+
+/* --- Gap callout: draw-border effect --- */
+.gap-callout {
+  transition: opacity 0.7s ease, transform 0.7s ease, border-color 0.8s ease 0.3s;
+}
+.gap-callout:not(.visible) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.gap-callout.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- CTA section pulse --- */
+#hiw-cta .btn-primary {
+  animation: ctaPulse 3s ease-in-out infinite;
+}
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.3); }
+  50% { box-shadow: 0 0 20px 6px rgba(46, 196, 182, 0.15); }
+}
+
+/* --- Mobile: reduce complexity --- */
+@media (max-width: 768px) {
+  .slide-left, .slide-right,
+  .compare-col.before, .compare-col.after,
+  .outcome-col.nhs, .outcome-col.private {
+    transform: translateY(30px) !important;
+  }
+  .slide-left.visible, .slide-right.visible,
+  .compare-col.before.visible, .compare-col.after.visible,
+  .outcome-col.nhs.visible, .outcome-col.private.visible {
+    transform: translateY(0) !important;
+  }
+}

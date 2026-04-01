@@ -58,23 +58,30 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ─── Scroll-triggered animations ──────────────
-  const animatedElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
+  // All animatable selectors — covers both original and HiW-enhanced classes
+  const animSelectors = [
+    '.fade-in', '.fade-in-left', '.fade-in-right',
+    '.slide-up', '.slide-left', '.slide-right', '.scale-in', '.glow-in', '.draw-border',
+    '.compare-col', '.pipe-node', '.pipe-arrow',
+    '.safety-card', '.algo-feature', '.compat-card', '.about-card',
+    '.outcome-col', '.why-card', '.detail-step', '.wf-step', '.gap-callout'
+  ].join(', ');
+
+  const animatedElements = document.querySelectorAll(animSelectors);
 
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -80px 0px',
-    threshold: 0.15
+    rootMargin: '0px 0px -60px 0px',
+    threshold: 0.12
   };
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Stagger animation for siblings
         const delay = entry.target.dataset.delay || 0;
         setTimeout(() => {
           entry.target.classList.add('visible');
         }, delay);
-
         observer.unobserve(entry.target);
       }
     });
@@ -83,8 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Add staggered delays to grouped elements
   const addStaggerDelays = (selector, baseDelay = 100) => {
     document.querySelectorAll(selector).forEach((group) => {
-      const children = group.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
-      children.forEach((child, i) => {
+      const animChildren = group.querySelectorAll(animSelectors);
+      animChildren.forEach((child, i) => {
         child.dataset.delay = i * baseDelay;
       });
     });
@@ -94,7 +101,33 @@ document.addEventListener('DOMContentLoaded', () => {
   addStaggerDelays('.steps', 120);
   addStaggerDelays('.product-features', 100);
 
+  // HiW-specific stagger groups
+  addStaggerDelays('.pipeline', 150);       // Pipeline nodes appear sequentially
+  addStaggerDelays('.safety-grid', 120);    // Safety cards one by one
+  addStaggerDelays('.algo-features', 60);   // Algorithm feature cards
+  addStaggerDelays('.compat-grid', 80);     // Compatibility cards
+  addStaggerDelays('.detail-steps', 60);    // Session detail steps
+  addStaggerDelays('.why-partner-grid', 100);  // Why-it-matters cards
+  addStaggerDelays('.outcomes-grid', 0);    // Outcome cols (delay built into CSS)
+
   animatedElements.forEach(el => observer.observe(el));
+
+  // ─── Workflow timeline: line draws on scroll ──
+  const wfTimeline = document.querySelector('.workflow-timeline');
+  if (wfTimeline) {
+    const updateTimeline = () => {
+      const rect = wfTimeline.getBoundingClientRect();
+      const wh = window.innerHeight;
+      const tlH = wfTimeline.offsetHeight;
+      if (rect.top < wh && rect.bottom > 0) {
+        const scrolled = Math.max(0, wh - rect.top);
+        const pct = Math.min(100, (scrolled / (tlH + wh * 0.2)) * 100);
+        wfTimeline.style.setProperty('--tl-progress', pct + '%');
+      }
+    };
+    window.addEventListener('scroll', updateTimeline, { passive: true });
+    updateTimeline();
+  }
 
   // ─── Active nav link on scroll ────────────────
   const sections = document.querySelectorAll('section[id]');
@@ -134,11 +167,65 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // ─── Copyright year ───────────────────────────
-  const yearEl = document.querySelector('.footer-text');
-  if (yearEl) {
-    const currentYear = new Date().getFullYear();
-    yearEl.innerHTML = yearEl.innerHTML.replace('2026', currentYear);
+  // ─── Scroll progress bar (below navbar) ────────
+  const progressBar = document.getElementById('scrollProgress');
+  if (progressBar) {
+    const updateProgress = () => {
+      const st = window.scrollY;
+      const dh = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (st / dh * 100) + '%';
+      // Position at bottom of navbar
+      const navH = navbar ? navbar.offsetHeight : 0;
+      progressBar.style.top = navH + 'px';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress, { passive: true });
+    updateProgress();
+  }
+
+  // ─── Counter animation (for numbers on page) ──
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const text = el.textContent.trim();
+        // Extract number, prefix and suffix
+        const match = text.match(/([^0-9]*)(\d+)([^0-9]*)/);
+        if (match) {
+          const prefix = match[1];
+          const target = parseInt(match[2]);
+          const suffix = match[3];
+          const duration = 1200;
+          const start = performance.now();
+          const update = (now) => {
+            const p = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = prefix + Math.round(target * eased) + suffix;
+            if (p < 1) requestAnimationFrame(update);
+          };
+          requestAnimationFrame(update);
+        }
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  // Mark elements for counter animation
+  document.querySelectorAll('[data-counter]').forEach(el => counterObserver.observe(el));
+
+  // ─── Subtle 3D tilt on card hover (desktop) ───
+  if (window.matchMedia('(min-width: 769px)').matches) {
+    document.querySelectorAll('.algo-feature, .why-card, .compat-card, .about-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `translateY(-3px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
   }
 
 });

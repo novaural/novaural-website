@@ -56,6 +56,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
   <style>
     /* Page-specific styles */
     .workflow-timeline {
@@ -577,6 +578,7 @@
     </div>
   </nav>
 
+  <div class="scroll-progress" id="scrollProgress"></div>
   <main>
 
   <!-- ============================================= -->
@@ -615,7 +617,7 @@
             <li><strong>Trial and error</strong> — Adjust gains, send patient home, wait for next appointment</li>
             <li><strong>3–5 return visits</strong> — Each one essentially repeating the same subjective loop</li>
             <li><strong>No phoneme-level data</strong> — If the patient says "I can't understand speech," the clinician doesn't know <em>which</em> frequencies are causing the issue</li>
-            <li><strong>Patient frustration</strong> — 30% of hearing aid users abandon their devices within 12 months</li>
+            <li><strong>Patient frustration</strong> — <span data-counter>30%</span> of hearing aid users abandon their devices within 12 months</li>
           </ul>
         </div>
 
@@ -1082,7 +1084,7 @@
       <!-- Cost summary -->
       <div style="text-align: center; margin-top: 2.5rem; padding: 1.8rem 2rem; background: rgba(46, 196, 182, 0.04); border: 1px solid rgba(46, 196, 182, 0.15); border-radius: 14px;">
         <p style="font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem;">
-          Total hardware investment: <span style="color: var(--teal-400);">under £250</span>
+          Total hardware investment: <span style="color: var(--teal-400);" data-counter>under £250</span>
         </p>
         <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; max-width: 600px; margin: 0 auto;">
           Less than the cost of a single hearing aid return. Equipment lasts thousands of sessions with no consumables. If you already own a suitable speaker and sound level meter, your cost is zero.
