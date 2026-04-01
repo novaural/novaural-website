@@ -4,26 +4,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ─── Logo subtitle alignment ──────────────────
-  // Dynamically compute letter-spacing so MEDICAL·DEEP-TECH
-  // fills the exact width of NOVAURAL above it
-  const alignLogoSubtitle = () => {
-    const brand = document.querySelector('.nav-logo-brand');
-    const sub = document.querySelector('.nav-logo-sub');
-    if (!brand || !sub) return;
-    const brandW = brand.offsetWidth;
-    // Measure natural width with no extra spacing
-    sub.style.letterSpacing = '0px';
-    const subW = sub.scrollWidth;
-    // Count visual characters (text + dot span treated as 1 char)
-    const charCount = sub.textContent.length + 1; // +1 for the dot span
-    if (charCount > 1 && brandW > subW) {
-      sub.style.letterSpacing = ((brandW - subW) / charCount) + 'px';
-    }
-  };
-  alignLogoSubtitle();
-  window.addEventListener('resize', alignLogoSubtitle);
-
   // ─── Navbar scroll effect ─────────────────────
   const navbar = document.getElementById('navbar');
 
