@@ -338,43 +338,43 @@
           <h3 style="text-align: center; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem;" data-i18n="hiw_chart_title">Per-Band Gain Adjustment Example</h3>
           <p style="text-align: center; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 2rem;" data-i18n="hiw_chart_subtitle">Only frequency bands where the patient shows a measured speech discrimination deficit are modified. Healthy bands remain untouched.</p>
 
-          <div style="display: flex; align-items: flex-end; justify-content: center; gap: 0.75rem; padding-bottom: 1.5rem; position: relative;">
+          <div class="freq-bars fade-in" style="display: flex; align-items: flex-end; justify-content: center; gap: 0.75rem; padding-bottom: 1.5rem; position: relative;">
             <!-- Baseline reference line -->
             <div style="position: absolute; bottom: 1.5rem; left: 10%; right: 10%; height: 1px; border-top: 1px dashed var(--gray-600);"></div>
             <div style="position: absolute; bottom: 1.8rem; left: 10%; font-size: 0.65rem; color: var(--gray-500);">0 dB (baseline)</div>
 
             <!-- 250 Hz -->
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem;">
+            <div class="freq-bar" style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem;">
               <span style="font-size: 0.7rem; color: var(--gray-500); font-weight: 600;">0 dB</span>
               <div style="width: 48px; height: 50px; background: rgba(46, 196, 182, 0.2); border-radius: 6px 6px 0 0; border: 1px solid rgba(46, 196, 182, 0.15);"></div>
               <span style="font-size: 0.7rem; color: var(--gray-400);">250 Hz</span>
             </div>
             <!-- 500 Hz -->
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem;">
+            <div class="freq-bar" style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem;">
               <span style="font-size: 0.7rem; color: var(--gray-500); font-weight: 600;">0 dB</span>
               <div style="width: 48px; height: 50px; background: rgba(46, 196, 182, 0.2); border-radius: 6px 6px 0 0; border: 1px solid rgba(46, 196, 182, 0.15);"></div>
               <span style="font-size: 0.7rem; color: var(--gray-400);">500 Hz</span>
             </div>
             <!-- 1000 Hz -->
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem;">
+            <div class="freq-bar" style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem;">
               <span style="font-size: 0.7rem; color: var(--gray-500); font-weight: 600;">0 dB</span>
               <div style="width: 48px; height: 50px; background: rgba(46, 196, 182, 0.2); border-radius: 6px 6px 0 0; border: 1px solid rgba(46, 196, 182, 0.15);"></div>
               <span style="font-size: 0.7rem; color: var(--gray-400);">1 kHz</span>
             </div>
             <!-- 2000 Hz -->
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem;">
+            <div class="freq-bar" style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem;">
               <span style="font-size: 0.7rem; color: var(--teal-400); font-weight: 700;">+1.2 dB</span>
               <div style="width: 48px; height: 62px; background: linear-gradient(180deg, rgba(46, 196, 182, 0.6), rgba(0, 212, 255, 0.3)); border-radius: 6px 6px 0 0; border: 1px solid rgba(46, 196, 182, 0.4); box-shadow: 0 0 10px rgba(46, 196, 182, 0.2);"></div>
               <span style="font-size: 0.7rem; color: var(--teal-400); font-weight: 600;">2 kHz</span>
             </div>
             <!-- 4000 Hz - biggest deficit -->
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem;">
+            <div class="freq-bar" style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem;">
               <span style="font-size: 0.7rem; color: var(--teal-400); font-weight: 700;">+3.0 dB</span>
               <div style="width: 48px; height: 90px; background: linear-gradient(180deg, var(--teal-500), var(--cyan-accent)); border-radius: 6px 6px 0 0; box-shadow: 0 0 20px rgba(46, 196, 182, 0.45);"></div>
               <span style="font-size: 0.7rem; color: var(--teal-400); font-weight: 600;">4 kHz</span>
             </div>
             <!-- 8000 Hz -->
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem;">
+            <div class="freq-bar" style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem;">
               <span style="font-size: 0.7rem; color: var(--teal-400); font-weight: 700;">+1.0 dB</span>
               <div style="width: 48px; height: 60px; background: linear-gradient(180deg, rgba(46, 196, 182, 0.6), rgba(0, 212, 255, 0.3)); border-radius: 6px 6px 0 0; border: 1px solid rgba(46, 196, 182, 0.4); box-shadow: 0 0 10px rgba(46, 196, 182, 0.2);"></div>
               <span style="font-size: 0.7rem; color: var(--teal-400); font-weight: 600;">8 kHz</span>

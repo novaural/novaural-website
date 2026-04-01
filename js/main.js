@@ -110,6 +110,13 @@ document.addEventListener('DOMContentLoaded', () => {
   addStaggerDelays('.why-partner-grid', 100);  // Why-it-matters cards
   addStaggerDelays('.outcomes-grid', 0);    // Outcome cols (delay built into CSS)
 
+  // Freq bar chart: stagger each bar's grow animation
+  document.querySelectorAll('.freq-bars').forEach(group => {
+    group.querySelectorAll('.freq-bar').forEach((bar, i) => {
+      bar.style.setProperty('--bar-delay', (i * 0.1) + 's');
+    });
+  });
+
   animatedElements.forEach(el => observer.observe(el));
 
   // ─── Workflow timeline: line draws on scroll ──
