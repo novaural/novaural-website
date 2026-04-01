@@ -167,19 +167,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // ─── Scroll progress bar (below navbar) ────────
+  // ─── Scroll progress bar (inside navbar) ───────
   const progressBar = document.getElementById('scrollProgress');
   if (progressBar) {
     const updateProgress = () => {
       const st = window.scrollY;
       const dh = document.documentElement.scrollHeight - window.innerHeight;
       progressBar.style.width = (st / dh * 100) + '%';
-      // Position at bottom of navbar
-      const navH = navbar ? navbar.offsetHeight : 0;
-      progressBar.style.top = navH + 'px';
     };
     window.addEventListener('scroll', updateProgress, { passive: true });
-    window.addEventListener('resize', updateProgress, { passive: true });
     updateProgress();
   }
 

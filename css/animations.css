@@ -4,16 +4,15 @@
    Triggered by JS adding .visible class via IntersectionObserver.
    ============================================= */
 
-/* --- Scroll progress indicator (sits below navbar) --- */
+/* --- Scroll progress indicator (child of navbar, sticks to its bottom) --- */
 .scroll-progress {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 100%;
   left: 0;
   height: 3px;
   background: linear-gradient(90deg, var(--teal-400), var(--cyan-accent));
   width: 0%;
-  z-index: 1001;
-  transition: width 0.08s linear;
+  z-index: 1;
   pointer-events: none;
 }
 
