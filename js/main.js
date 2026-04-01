@@ -224,4 +224,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ─── Scroll-to-top button ─────────────────────
+  const scrollBtn = document.createElement('button');
+  scrollBtn.className = 'scroll-top';
+  scrollBtn.id = 'scrollTopBtn';
+  scrollBtn.setAttribute('aria-label', 'Scroll to top');
+  scrollBtn.setAttribute('style', 'position:fixed;bottom:2rem;right:2rem;left:auto;');
+  scrollBtn.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>';
+  document.body.appendChild(scrollBtn);
+
+  const toggleScrollBtn = () => {
+    scrollBtn.classList.toggle('visible', window.scrollY > 400);
+  };
+  window.addEventListener('scroll', toggleScrollBtn, { passive: true });
+  toggleScrollBtn();
+
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
 });
