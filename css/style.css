@@ -178,7 +178,7 @@
   --accent-safety: #D97706;
 
   /* Decorative */
-  --dot-grid-color: rgba(15, 118, 110, 0.07);
+  --dot-grid-color: rgba(15, 118, 110, 0.06);
   --orb-teal: rgba(15, 118, 110, 0.05);
   --orb-cyan: rgba(0, 180, 216, 0.04);
   --orb-navy: rgba(203, 213, 225, 0.5);
@@ -197,6 +197,16 @@
   --teal-300: #5CB8B2;
   --teal-200: #A3DDD8;
   --cyan-accent: #0891B2;
+}
+
+/* Light mode background — subtle cross-hatch grid (medical/scientific feel).
+   Replaces the dark mode dot-grid with fine intersecting lines that read as
+   'graph paper' at a glance. Non-distracting but adds visual texture. */
+[data-theme="light"] body::before {
+  background-image:
+    linear-gradient(rgba(15, 118, 110, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 118, 110, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
 /* Theme transition — smooth switch between light / dark.
