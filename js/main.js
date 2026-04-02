@@ -61,6 +61,28 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('novaural-theme', next);
   });
 
+  // ─── Inline SVG logo for theme-aware coloring ──
+  // The main wave uses fill="currentColor", which only works when SVG is inline.
+  // This replaces each <img> pointing to the SVG with the actual <svg> element.
+  document.querySelectorAll('.nav-logo img[src*="novaural_wave_icon"]').forEach(img => {
+    fetch(img.src)
+      .then(r => r.text())
+      .then(svgText => {
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = svgText.trim();
+        const svg = wrapper.querySelector('svg');
+        if (!svg) return;
+        // Transfer relevant img attributes
+        svg.setAttribute('width', img.getAttribute('width') || '40');
+        svg.setAttribute('height', img.getAttribute('height') || '40');
+        svg.setAttribute('aria-label', img.getAttribute('alt') || '');
+        svg.setAttribute('role', 'img');
+        svg.classList.add('nav-logo-svg');
+        img.replaceWith(svg);
+      })
+      .catch(() => {}); // Graceful fallback: keep <img> if fetch fails
+  });
+
   // ─── Mobile navigation toggle ─────────────────
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');

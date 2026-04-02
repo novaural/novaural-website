@@ -383,6 +383,19 @@ body::after {
   filter: drop-shadow(0 0 6px var(--glow-teal400));
 }
 
+/* Inline SVG logo — inherits color for theme-aware main wave */
+.nav-logo-svg {
+  height: 74px;
+  width: auto;
+  color: var(--text-logo);
+  transition: transform 0.4s ease, filter 0.4s ease, color 0.3s ease;
+}
+
+.nav-logo:hover .nav-logo-svg {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 6px var(--glow-teal400));
+}
+
 .nav-logo-text {
   display: flex;
   flex-direction: column;
