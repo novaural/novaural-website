@@ -192,7 +192,8 @@ document.addEventListener('DOMContentLoaded', () => {
     '.slide-up', '.slide-left', '.slide-right', '.scale-in', '.glow-in', '.draw-border',
     '.compare-col', '.pipe-node', '.pipe-arrow',
     '.safety-card', '.algo-feature', '.compat-card', '.about-card',
-    '.outcome-col', '.why-card', '.detail-step', '.wf-step', '.gap-callout'
+    '.outcome-col', '.why-card', '.detail-step', '.wf-step', '.gap-callout',
+    '.freq-bars'
   ].join(', ');
 
   const animatedElements = document.querySelectorAll(animSelectors);
