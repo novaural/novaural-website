@@ -6,9 +6,3 @@ Allow: /
 
 # Sitemap
 Sitemap: https://novaural.com/sitemap.xml
-
-# Disallow temporary/dev files
-Disallow: /seo_fix.py
-Disallow: /audit_i18n.py
-Disallow: /fix_json.py
-Disallow: /tag_beyond.py
