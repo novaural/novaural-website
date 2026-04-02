@@ -84,6 +84,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // ─── Page-level nav highlighting ───────────────
+  // For links pointing to separate pages (not #anchors): highlight based on current URL
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  if (currentPage !== 'index.html') {
+    navbar.querySelectorAll('.nav-links a').forEach(a => {
+      const href = a.getAttribute('href');
+      if (href && !href.startsWith('#') && href === currentPage) {
+        a.classList.add('active');
+      }
+    });
+  }
+
   // ─── Theme toggle button ──────────────────────
   const themeToggle = document.createElement('button');
   themeToggle.className = 'theme-toggle';
