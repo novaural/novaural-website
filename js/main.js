@@ -33,6 +33,57 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll(); // initial check
 
+  // ─── Active nav link scroll-spy ────────────────
+  // Highlights the nav link corresponding to the currently visible section
+  const navAnchors = navbar.querySelectorAll('.nav-links a[href^="#"]');
+  const sectionIds = [];
+  navAnchors.forEach(a => {
+    const id = a.getAttribute('href').slice(1);
+    if (id && document.getElementById(id)) sectionIds.push(id);
+  });
+
+  if (sectionIds.length) {
+    const setActiveNav = (activeId) => {
+      navAnchors.forEach(a => {
+        const linkId = a.getAttribute('href').slice(1);
+        if (linkId === activeId) {
+          a.classList.add('active');
+        } else {
+          a.classList.remove('active');
+        }
+      });
+    };
+
+    // Use IntersectionObserver to detect which section is most visible
+    const spyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveNav(entry.target.id);
+        }
+      });
+    }, {
+      root: null,
+      // Top offset = navbar height (~70px), trigger when section enters top 40% of viewport
+      rootMargin: '-80px 0px -60% 0px',
+      threshold: 0
+    });
+
+    sectionIds.forEach(id => {
+      spyObserver.observe(document.getElementById(id));
+    });
+
+    // Clear active state when at the very top (hero area)
+    const heroSection = document.getElementById('hero');
+    if (heroSection) {
+      const heroObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          setActiveNav(''); // no section active in hero
+        }
+      }, { root: null, rootMargin: '0px', threshold: 0.5 });
+      heroObserver.observe(heroSection);
+    }
+  }
+
   // ─── Theme toggle button ──────────────────────
   const themeToggle = document.createElement('button');
   themeToggle.className = 'theme-toggle';

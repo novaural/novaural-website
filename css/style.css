@@ -485,6 +485,8 @@ body::after {
 
 .nav-links a.active {
   color: var(--teal-400);
+  transform: scale(1.12);
+  text-shadow: 0 0 12px var(--glow-teal400), 0 0 24px var(--glow-teal400-faint);
 }
 
 .nav-links a.active::after {
