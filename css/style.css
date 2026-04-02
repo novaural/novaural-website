@@ -34,6 +34,7 @@
   --text-primary: #E2E8F0;
   --text-secondary: #94A3B8;
   --text-accent: var(--teal-400);
+  --text-on-teal: var(--navy-900);  /* text/icons sitting ON teal/cyan gradient backgrounds */
   --text-muted: var(--gray-600);
   --text-logo: var(--white);
   --text-logo-sub: var(--gray-400);
@@ -119,6 +120,7 @@
   --text-primary: #1E293B;
   --text-secondary: #475569;
   --text-accent: #0F766E;
+  --text-on-teal: #FFFFFF;  /* white text on dark teal/cyan gradients for readability */
   --text-muted: #94A3B8;
   --text-logo: #1E293B;
   --text-logo-sub: #64748B;
@@ -585,7 +587,7 @@ body::after {
 
 .nav-cta {
   background: linear-gradient(135deg, var(--teal-500), var(--cyan-accent));
-  color: var(--navy-900) !important;
+  color: var(--text-on-teal) !important;
   padding: 0.6rem 1.5rem;
   border-radius: 8px;
   font-weight: 600 !important;
@@ -600,7 +602,7 @@ body::after {
 .nav-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 20px var(--glow-teal);
-  color: var(--navy-900) !important;
+  color: var(--text-on-teal) !important;
 }
 
 /* Mobile menu */
@@ -857,7 +859,7 @@ body::after {
   align-items: center;
   gap: 0.5rem;
   background: linear-gradient(135deg, var(--teal-500), var(--cyan-accent));
-  color: var(--navy-900);
+  color: var(--text-on-teal);
   padding: 0.9rem 2rem;
   border-radius: 10px;
   text-decoration: none;
@@ -1261,7 +1263,7 @@ section {
   justify-content: center;
   font-size: 1.3rem;
   font-weight: 800;
-  color: var(--navy-900);
+  color: var(--text-on-teal);
   margin: 0 auto 1.25rem;
   box-shadow: 0 4px 20px var(--glow-teal-med);
 }
@@ -1537,7 +1539,7 @@ section {
 
 .timeline-item.completed .timeline-marker {
   background: linear-gradient(135deg, var(--teal-500), var(--cyan-accent));
-  color: var(--navy-900);
+  color: var(--text-on-teal);
   box-shadow: 0 0 12px var(--glow-teal);
 }
 
@@ -1997,7 +1999,7 @@ section {
   justify-content: center;
   font-size: 1.8rem;
   font-weight: 800;
-  color: var(--navy-900);
+  color: var(--text-on-teal);
   margin: 0 auto 1.5rem;
   box-shadow: 0 4px 24px var(--glow-teal);
 }
@@ -2522,7 +2524,7 @@ section {
   left: 50%;
   transform: translateX(-50%);
   font-size: 0.7rem;
-  color: var(--navy-900);
+  color: var(--text-on-teal);
   font-weight: 700;
 }
 
