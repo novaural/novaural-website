@@ -75,7 +75,7 @@
   transition: border-color 1s ease 0.3s;
 }
 .draw-border.visible {
-  border-color: rgba(46, 196, 182, 0.2) !important;
+  border-color: var(--border-teal-med) !important;
 }
 
 /* --- Glow-in: for highlight steps and important elements --- */
@@ -88,7 +88,7 @@
 .glow-in.visible {
   opacity: 1;
   transform: translateY(0);
-  box-shadow: 0 0 25px rgba(46, 196, 182, 0.15), 0 0 60px rgba(46, 196, 182, 0.05);
+  box-shadow: 0 0 25px var(--glow-teal-subtle), 0 0 60px var(--glow-teal-nano);
 }
 
 /* --- Workflow timeline: line that draws itself --- */
@@ -105,7 +105,7 @@
   background: linear-gradient(to bottom, var(--teal-400), var(--cyan-accent));
   border-radius: 2px;
   transition: height 0.15s linear;
-  box-shadow: 0 0 8px rgba(46, 196, 182, 0.3);
+  box-shadow: 0 0 8px var(--glow-teal-med);
   z-index: 1;
 }
 
@@ -115,13 +115,13 @@
 }
 .wf-step.visible .wf-marker {
   border-color: var(--teal-400);
-  box-shadow: 0 0 12px rgba(46, 196, 182, 0.4);
+  box-shadow: 0 0 12px var(--glow-teal);
 }
 .wf-step.highlight.visible .wf-marker {
   background: linear-gradient(135deg, var(--teal-400), var(--cyan-accent));
   color: var(--navy-900);
   border-color: var(--cyan-accent);
-  box-shadow: 0 0 24px rgba(46, 196, 182, 0.6);
+  box-shadow: 0 0 24px var(--glow-teal-strong);
 }
 
 /* --- Pipeline nodes: sequential reveal --- */
@@ -196,8 +196,8 @@
   transform: translateY(0);
 }
 .algo-feature:hover {
-  border-color: rgba(46, 196, 182, 0.25) !important;
-  box-shadow: 0 4px 20px rgba(46, 196, 182, 0.08);
+  border-color: var(--border-teal-strong) !important;
+  box-shadow: 0 4px 20px var(--glow-teal-faint);
   transform: translateY(-3px);
 }
 
@@ -215,7 +215,7 @@
 }
 .compat-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 24px rgba(46, 196, 182, 0.1);
+  box-shadow: 0 6px 24px var(--border-teal-soft);
 }
 
 /* --- Equipment cards: bounce entrance --- */
@@ -232,9 +232,9 @@
   transform: translateY(0) scale(1);
 }
 .about-card:hover {
-  border-color: rgba(46, 196, 182, 0.3);
+  border-color: var(--glow-teal-med);
   transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(46, 196, 182, 0.1);
+  box-shadow: 0 8px 32px var(--border-teal-soft);
 }
 
 /* --- Outcome columns: slide from sides --- */
@@ -296,7 +296,7 @@
 }
 .why-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 24px var(--shadow-card-light);
 }
 
 /* --- Detail steps: fast stagger --- */
@@ -351,7 +351,7 @@
 }
 @keyframes tagGlow {
   0% { box-shadow: 0 0 0 rgba(46, 196, 182, 0); }
-  50% { box-shadow: 0 0 10px rgba(46, 196, 182, 0.3); }
+  50% { box-shadow: 0 0 10px var(--glow-teal-med); }
   100% { box-shadow: 0 0 0 rgba(46, 196, 182, 0); }
 }
 
@@ -374,7 +374,7 @@
   transition: opacity 0.7s ease, transform 0.7s ease, box-shadow 0.8s ease 0.5s;
 }
 .visible[style*='border-radius: 14px'] {
-  box-shadow: 0 0 30px rgba(46, 196, 182, 0.08);
+  box-shadow: 0 0 30px var(--glow-teal-faint);
 }
 
 /* --- Card 3D tilt on hover (desktop only) --- */
@@ -406,8 +406,8 @@
   animation: ctaPulse 3s ease-in-out infinite;
 }
 @keyframes ctaPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.3); }
-  50% { box-shadow: 0 0 20px 6px rgba(46, 196, 182, 0.15); }
+  0%, 100% { box-shadow: 0 0 0 0 var(--glow-teal-med); }
+  50% { box-shadow: 0 0 20px 6px var(--glow-teal-subtle); }
 }
 
 /* --- Mobile: reduce complexity --- */

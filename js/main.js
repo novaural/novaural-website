@@ -2,6 +2,21 @@
    NOVAURAL — Main JavaScript
    ============================================= */
 
+/* ─── Theme: FOUC prevention (runs before DOM paint) ─── */
+(function() {
+  const saved = localStorage.getItem('novaural-theme');
+  const theme = saved || 'dark'; // default dark
+  document.documentElement.setAttribute('data-theme', theme);
+  document.documentElement.classList.add('no-transitions');
+  window.addEventListener('DOMContentLoaded', () => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document.documentElement.classList.remove('no-transitions');
+      });
+    });
+  });
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ─── Navbar scroll effect ─────────────────────
@@ -17,6 +32,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll(); // initial check
+
+  // ─── Theme toggle button ──────────────────────
+  const themeToggle = document.createElement('button');
+  themeToggle.className = 'theme-toggle';
+  themeToggle.id = 'themeToggle';
+  themeToggle.setAttribute('aria-label', 'Toggle dark/light theme');
+  themeToggle.innerHTML = `
+    <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  `;
+
+  // Insert toggle beside the lang selector (or before nav toggle)
+  const langContainer = navbar.querySelector('.lang-selector-container');
+  const navToggleBtn = document.getElementById('navToggle');
+  if (langContainer) {
+    langContainer.parentNode.insertBefore(themeToggle, langContainer.nextSibling);
+  } else if (navToggleBtn) {
+    navToggleBtn.parentNode.insertBefore(themeToggle, navToggleBtn);
+  } else {
+    navbar.querySelector('.nav-content').appendChild(themeToggle);
+  }
+
+  themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('novaural-theme', next);
+  });
 
   // ─── Mobile navigation toggle ─────────────────
   const navToggle = document.getElementById('navToggle');
@@ -150,9 +193,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (scrollPos >= top && scrollPos < top + height) {
         navLinksAll.forEach(link => {
-          link.style.color = '';
+          link.classList.remove('nav-active');
           if (link.getAttribute('href') === `#${id}`) {
-            link.style.color = 'var(--teal-400)';
+            link.classList.add('nav-active');
           }
         });
       }
