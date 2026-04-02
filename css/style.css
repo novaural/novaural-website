@@ -389,11 +389,12 @@ body::after {
   width: auto;
   color: var(--text-logo);
   transition: transform 0.4s ease, filter 0.4s ease, color 0.3s ease;
+  will-change: transform, filter; /* GPU-composite as single layer like <img> */
 }
 
 .nav-logo:hover .nav-logo-svg {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 6px var(--glow-teal400));
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 4px var(--glow-teal400));
 }
 
 .nav-logo-text {
