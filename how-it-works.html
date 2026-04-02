@@ -105,6 +105,15 @@
       color: var(--text-on-teal);
       box-shadow: 0 0 20px rgba(46, 196, 182, 0.4);
     }
+    /* Light mode: force the ★ (U+2605) to render as TEXT, not emoji.
+       Emoji rendering ignores CSS color — this selector ensures it
+       falls back to a text glyph and picks up the white color. */
+    [data-theme="light"] .wf-step.highlight .wf-marker {
+      color: #FFFFFF;
+      -webkit-text-fill-color: #FFFFFF;
+      font-family: 'Inter', Arial, sans-serif;
+      text-shadow: 0 0 0 #FFFFFF;
+    }
     .wf-step h4 {
       font-size: 1.05rem;
       font-weight: 700;
