@@ -51,7 +51,7 @@
       if (!res.ok) throw new Error(res.status);
       return await res.json();
     } catch (e) {
-      console.warn('[i18n] Could not load ' + lang + '.json, falling back to en');
+      // Silently fall back to default language
       if (lang !== DEFAULT_LANG) {
         return loadTranslation(DEFAULT_LANG);
       }

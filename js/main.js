@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ─── Navbar scroll effect ─────────────────────
   const navbar = document.getElementById('navbar');
+  if (!navbar) return; // Guard: page has no navbar — skip all navbar-dependent logic
 
   const handleScroll = () => {
     if (window.scrollY > 60) {

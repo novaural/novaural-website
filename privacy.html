@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
   <style>
     .privacy-content {
       max-width: 780px;
@@ -108,9 +109,9 @@
         </div>
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#challenge">The Challenge</a></li>
-        <li><a href="index.html#product">ReFittingLab</a></li>
+        <li><a href="index.html#about" data-i18n="nav_about">About</a></li>
+        <li><a href="index.html#challenge" data-i18n="nav_challenge">The Challenge</a></li>
+        <li><a href="index.html#product" data-i18n="nav_refittinglab">ReFittingLab</a></li>
         <li><a href="how-it-works.html" data-i18n="nav_how_it_works">How It Works</a></li>
         <li><a href="index.html#stage" data-i18n="nav_our_stage">Our Stage</a></li>
         <li><a href="beyond-clinical.html" data-i18n="nav_consumer">Consumer</a></li>
@@ -123,6 +124,7 @@
         <span></span>
       </button>
     </div>
+    <div class="scroll-progress" id="scrollProgress"></div>
   </nav>
 
   <!-- ============================================= -->
@@ -267,8 +269,8 @@
     </div>
   </footer>
 
-  <script src="js/i18n.js"></script>
-  <script src="js/main.js"></script>
+  <script defer src="js/i18n.js"></script>
+  <script defer src="js/main.js"></script>
   <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "16296de92a204e909d55c9422b0a4587"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
