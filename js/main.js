@@ -250,20 +250,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ─── Workflow timeline: line draws on scroll ──
   const wfTimeline = document.querySelector('.workflow-timeline');
-  if (wfTimeline) {
-    const updateTimeline = () => {
-      const rect = wfTimeline.getBoundingClientRect();
-      const wh = window.innerHeight;
-      const tlH = wfTimeline.offsetHeight;
-      if (rect.top < wh && rect.bottom > 0) {
-        const scrolled = Math.max(0, wh - rect.top);
-        const pct = Math.min(100, (scrolled / (tlH + wh * 0.2)) * 100);
-        wfTimeline.style.setProperty('--tl-progress', pct + '%');
-      }
-    };
-    // updateTimeline is called from the unified scroll handler below
-    updateTimeline();
-  }
+
+  const updateTimeline = wfTimeline ? () => {
+    const rect = wfTimeline.getBoundingClientRect();
+    const wh = window.innerHeight;
+    const tlH = wfTimeline.offsetHeight;
+    if (rect.top < wh && rect.bottom > 0) {
+      const scrolled = Math.max(0, wh - rect.top);
+      const pct = Math.min(100, (scrolled / (tlH + wh * 0.2)) * 100);
+      wfTimeline.style.setProperty('--tl-progress', pct + '%');
+    }
+  } : null;
 
   // ─── Subtle parallax on hero ──────────────────
   const heroContent = document.querySelector('.hero-content');
@@ -350,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Single listener instead of 6 separate ones — better performance
   const onScroll = () => {
     handleScroll();         // navbar scroll effect
-    if (wfTimeline) updateTimeline();  // workflow timeline
+    if (updateTimeline) updateTimeline();  // workflow timeline
     if (updateProgress) updateProgress();  // progress bar
     if (updateHeroParallax) updateHeroParallax(); // hero parallax
     toggleScrollBtn();      // scroll-to-top visibility
