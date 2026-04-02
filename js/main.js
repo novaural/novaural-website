@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
+  // handleScroll is called from the unified scroll handler below
   handleScroll(); // initial check
 
   // ─── Active nav link scroll-spy ────────────────
@@ -261,59 +261,29 @@ document.addEventListener('DOMContentLoaded', () => {
         wfTimeline.style.setProperty('--tl-progress', pct + '%');
       }
     };
-    window.addEventListener('scroll', updateTimeline, { passive: true });
+    // updateTimeline is called from the unified scroll handler below
     updateTimeline();
   }
-
-  // ─── Active nav link on scroll ────────────────
-  const sections = document.querySelectorAll('section[id]');
-  const navLinksAll = document.querySelectorAll('.nav-links a:not(.nav-cta)');
-
-  const highlightNav = () => {
-    const scrollPos = window.scrollY + navbar.offsetHeight + 100;
-
-    sections.forEach(section => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      const id = section.getAttribute('id');
-
-      if (scrollPos >= top && scrollPos < top + height) {
-        navLinksAll.forEach(link => {
-          link.classList.remove('nav-active');
-          if (link.getAttribute('href') === `#${id}`) {
-            link.classList.add('nav-active');
-          }
-        });
-      }
-    });
-  };
-
-  window.addEventListener('scroll', highlightNav, { passive: true });
 
   // ─── Subtle parallax on hero ──────────────────
   const heroContent = document.querySelector('.hero-content');
 
-  if (heroContent) {
-    window.addEventListener('scroll', () => {
-      const scrolled = window.scrollY;
-      if (scrolled < window.innerHeight) {
-        heroContent.style.transform = `translateY(${scrolled * 0.15}px)`;
-        heroContent.style.opacity = 1 - (scrolled / (window.innerHeight * 0.8));
-      }
-    }, { passive: true });
-  }
+  const updateHeroParallax = heroContent ? () => {
+    const scrolled = window.scrollY;
+    if (scrolled < window.innerHeight) {
+      heroContent.style.transform = `translateY(${scrolled * 0.15}px)`;
+      heroContent.style.opacity = 1 - (scrolled / (window.innerHeight * 0.8));
+    }
+  } : null;
 
   // ─── Scroll progress bar (inside navbar) ───────
   const progressBar = document.getElementById('scrollProgress');
-  if (progressBar) {
-    const updateProgress = () => {
-      const st = window.scrollY;
-      const dh = document.documentElement.scrollHeight - window.innerHeight;
-      progressBar.style.width = (st / dh * 100) + '%';
-    };
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    updateProgress();
-  }
+
+  const updateProgress = progressBar ? () => {
+    const st = window.scrollY;
+    const dh = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = (st / dh * 100) + '%';
+  } : null;
 
   // ─── Counter animation (for numbers on page) ──
   const counterObserver = new IntersectionObserver((entries) => {
@@ -365,18 +335,27 @@ document.addEventListener('DOMContentLoaded', () => {
   scrollBtn.className = 'scroll-top';
   scrollBtn.id = 'scrollTopBtn';
   scrollBtn.setAttribute('aria-label', 'Scroll to top');
-  scrollBtn.setAttribute('style', 'position:fixed;bottom:2rem;right:2rem;left:auto;');
   scrollBtn.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>';
   document.body.appendChild(scrollBtn);
 
   const toggleScrollBtn = () => {
     scrollBtn.classList.toggle('visible', window.scrollY > 400);
   };
-  window.addEventListener('scroll', toggleScrollBtn, { passive: true });
-  toggleScrollBtn();
 
   scrollBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+
+  // ─── Unified scroll handler ───────────────────
+  // Single listener instead of 6 separate ones — better performance
+  const onScroll = () => {
+    handleScroll();         // navbar scroll effect
+    if (wfTimeline) updateTimeline();  // workflow timeline
+    if (updateProgress) updateProgress();  // progress bar
+    if (updateHeroParallax) updateHeroParallax(); // hero parallax
+    toggleScrollBtn();      // scroll-to-top visibility
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // initial state
 
 });
