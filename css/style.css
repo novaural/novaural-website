@@ -199,13 +199,13 @@
   --cyan-accent: #0891B2;
 }
 
-/* Theme transition (prevents FOUC while enabling smooth switch) */
-/* NOTE: Uses body * but excludes scroll-animated elements whose
-   transition property would be overridden (specificity 011 > 010).
-   Elements with their own transition in animations.css / style.css
-   are excluded so their transform/opacity transitions survive.      */
+/* Theme transition (smooth switch between light/dark).
+   Specificity 011 — intentionally low so element-level transitions
+   (specificity ≥ 010) can coexist. Only theme-related properties
+   are listed; transform/opacity are omitted so scroll animations
+   are not affected.                                                 */
 [data-theme] body,
-[data-theme] body *:not(.fade-in):not(.fade-in-left):not(.fade-in-right):not(.freq-bar):not(.scale-in):not(.slide-up):not(.slide-left):not(.slide-right):not(.glow-in):not(.draw-border):not(.pipe-node):not(.pipe-arrow):not(.safety-card):not(.algo-feature):not(.compat-card):not(.about-card):not(.outcome-col):not(.why-card):not(.detail-step):not(.wf-step):not(.gap-callout):not(.compare-col) {
+[data-theme] body * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 /* Disable transitions on initial load to prevent FOUC */
@@ -1951,7 +1951,7 @@ section {
 .fade-in {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease !important;
 }
 
 .fade-in.visible {
@@ -1962,7 +1962,7 @@ section {
 .fade-in-left {
   opacity: 0;
   transform: translateX(-40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease !important;
 }
 
 .fade-in-left.visible {
@@ -1973,7 +1973,7 @@ section {
 .fade-in-right {
   opacity: 0;
   transform: translateX(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease !important;
 }
 
 .fade-in-right.visible {

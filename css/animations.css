@@ -30,7 +30,7 @@
 .scale-in {
   opacity: 0;
   transform: scale(0.85);
-  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
 .scale-in.visible {
   opacity: 1;
@@ -41,7 +41,7 @@
 .slide-up {
   opacity: 0;
   transform: translateY(25px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease !important;
 }
 .slide-up.visible {
   opacity: 1;
@@ -52,7 +52,7 @@
 .slide-left {
   opacity: 0;
   transform: translateX(-50px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease !important;
 }
 .slide-left.visible {
   opacity: 1;
@@ -62,7 +62,7 @@
 .slide-right {
   opacity: 0;
   transform: translateX(50px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease !important;
 }
 .slide-right.visible {
   opacity: 1;
@@ -72,7 +72,7 @@
 /* --- Draw-border: for callout boxes --- */
 .draw-border {
   border-color: transparent !important;
-  transition: border-color 1s ease 0.3s;
+  transition: border-color 1s ease 0.3s !important;
 }
 .draw-border.visible {
   border-color: var(--border-teal-med) !important;
@@ -83,7 +83,7 @@
   opacity: 0;
   transform: translateY(20px);
   box-shadow: 0 0 0 rgba(46, 196, 182, 0);
-  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.8s ease 0.3s;
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.8s ease 0.3s !important;
 }
 .glow-in.visible {
   opacity: 1;
@@ -126,7 +126,7 @@
 
 /* --- Pipeline nodes: sequential reveal --- */
 .pipe-node {
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease !important;
 }
 .pipe-node:not(.visible) {
   opacity: 0;
@@ -147,7 +147,7 @@
 }
 
 .pipe-arrow {
-  transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease !important;
 }
 .pipe-arrow:not(.visible) {
   opacity: 0;
@@ -159,7 +159,7 @@
 /* --- Safety cards: sequential amber → green --- */
 .safety-card {
   transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-              border-color 0.5s ease, box-shadow 0.5s ease;
+              border-color 0.5s ease, box-shadow 0.5s ease !important;
 }
 .safety-card:not(.visible) {
   opacity: 0;
@@ -185,7 +185,7 @@
 
 /* --- Algo feature cards: subtle hover lift --- */
 .algo-feature {
-  transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
 }
 .algo-feature:not(.visible) {
   opacity: 0;
@@ -203,7 +203,7 @@
 
 /* --- Compat cards: flip-style entrance --- */
 .compat-card {
-  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
 .compat-card:not(.visible) {
   opacity: 0;
@@ -221,7 +221,7 @@
 /* --- Equipment cards: bounce entrance --- */
 .about-card {
   transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-              border-color 0.3s ease, box-shadow 0.3s ease;
+              border-color 0.3s ease, box-shadow 0.3s ease !important;
 }
 .about-card:not(.visible) {
   opacity: 0;
@@ -239,7 +239,7 @@
 
 /* --- Outcome columns: slide from sides --- */
 .outcome-col.nhs {
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease !important;
 }
 .outcome-col.nhs:not(.visible) {
   opacity: 0;
@@ -251,7 +251,7 @@
 }
 
 .outcome-col.private {
-  transition: opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s;
+  transition: opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s !important;
 }
 .outcome-col.private:not(.visible) {
   opacity: 0;
@@ -284,7 +284,7 @@
 
 /* --- Why-cards: staggered entrance --- */
 .why-card {
-  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease !important;
 }
 .why-card:not(.visible) {
   opacity: 0;
@@ -301,7 +301,7 @@
 
 /* --- Detail steps: fast stagger --- */
 .detail-step {
-  transition: opacity 0.45s ease, transform 0.45s ease;
+  transition: opacity 0.45s ease, transform 0.45s ease !important;
 }
 .detail-step:not(.visible) {
   opacity: 0;
@@ -314,7 +314,7 @@
 
 /* --- Compare-grid: before/after slide-in --- */
 .compare-col.before {
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease !important;
 }
 .compare-col.before:not(.visible) {
   opacity: 0;
@@ -326,7 +326,7 @@
 }
 
 .compare-col.after {
-  transition: opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s;
+  transition: opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s !important;
 }
 .compare-col.after:not(.visible) {
   opacity: 0;
@@ -339,7 +339,7 @@
 
 /* --- Section labels: the —— line is always visible (defined in style.css) --- */
 .section-label {
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease !important;
 }
 
 /* --- Detail step time tags: glow on appear --- */
@@ -390,7 +390,7 @@
 
 /* --- Gap callout: draw-border effect --- */
 .gap-callout {
-  transition: opacity 0.7s ease, transform 0.7s ease, border-color 0.8s ease 0.3s;
+  transition: opacity 0.7s ease, transform 0.7s ease, border-color 0.8s ease 0.3s !important;
 }
 .gap-callout:not(.visible) {
   opacity: 0;
@@ -429,8 +429,8 @@
   transform: scaleY(0);
   transform-origin: bottom center;
   opacity: 0;
-  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
-  transition-delay: var(--bar-delay, 0s);
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease !important;
+  transition-delay: var(--bar-delay, 0s) !important;
 }
 
 .freq-bars.visible .freq-bar {
