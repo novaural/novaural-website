@@ -422,3 +422,44 @@
   transform: scaleY(1);
   opacity: 1;
 }
+
+/* =============================================
+   REDUCED MOTION — WCAG 2.3.3 compliance
+   Respects user's OS-level "reduce motion" setting.
+   Disables all scroll-triggered transitions and
+   continuous animations (parallax, arrow flow, etc.).
+   Elements appear instantly without animation.
+   ============================================= */
+@media (prefers-reduced-motion: reduce) {
+  /* Kill all transitions and animations globally */
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Ensure scroll-triggered elements are immediately visible */
+  .fade-in, .fade-in-left, .fade-in-right,
+  .slide-up, .slide-left, .slide-right,
+  .scale-in, .glow-in, .draw-border,
+  .pipe-node, .pipe-arrow,
+  .safety-card, .algo-feature, .compat-card, .about-card,
+  .outcome-col, .why-card, .detail-step, .wf-step,
+  .compare-col, .gap-callout, .freq-bars, .freq-bar {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Disable hero parallax (JS-set transform) */
+  .hero-content {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  /* Static timeline (no scroll-driven draw) */
+  .workflow-timeline::before {
+    height: 100% !important;
+  }
+}
+
