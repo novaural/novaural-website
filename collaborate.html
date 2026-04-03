@@ -385,6 +385,17 @@
     const submitBtn = document.getElementById('submitBtn');
 
     if (form) {
+      const mailtoFallback = () => {
+        const data = new FormData(form);
+        const subject = encodeURIComponent('Partnership Enquiry — ' + data.get('organisation'));
+        const body = encodeURIComponent(
+          `Name: ${data.get('name')}\nOrganisation: ${data.get('organisation')}\nRole: ${data.get('role')}\nPartnership Type: ${data.get('partnership_type')}\n\n${data.get('message')}`
+        );
+        window.location.href = `mailto:enquiries@novaural.com?subject=${subject}&body=${body}`;
+        submitBtn.textContent = window.novauralI18n ? window.novauralI18n.t('collab_form_submit', 'Submit Partnership Enquiry →') : 'Submit Partnership Enquiry →';
+        submitBtn.disabled = false;
+      };
+
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         submitBtn.textContent = window.novauralI18n ? window.novauralI18n.t('collab_form_sending', 'Sending...') : 'Sending...';
@@ -401,26 +412,10 @@
             form.style.display = 'none';
             successMsg.style.display = 'block';
           } else {
-            // Fallback: open mailto
-            const data = new FormData(form);
-            const subject = encodeURIComponent('Partnership Enquiry — ' + data.get('organisation'));
-            const body = encodeURIComponent(
-              `Name: ${data.get('name')}\nOrganisation: ${data.get('organisation')}\nRole: ${data.get('role')}\nPartnership Type: ${data.get('partnership_type')}\n\n${data.get('message')}`
-            );
-            window.location.href = `mailto:enquiries@novaural.com?subject=${subject}&body=${body}`;
-            submitBtn.textContent = window.novauralI18n ? window.novauralI18n.t('collab_form_submit', 'Submit Partnership Enquiry →') : 'Submit Partnership Enquiry →';
-            submitBtn.disabled = false;
+            mailtoFallback();
           }
         } catch (err) {
-          // Fallback: open mailto
-          const data = new FormData(form);
-          const subject = encodeURIComponent('Partnership Enquiry — ' + data.get('organisation'));
-          const body = encodeURIComponent(
-            `Name: ${data.get('name')}\nOrganisation: ${data.get('organisation')}\nRole: ${data.get('role')}\nPartnership Type: ${data.get('partnership_type')}\n\n${data.get('message')}`
-          );
-          window.location.href = `mailto:enquiries@novaural.com?subject=${subject}&body=${body}`;
-          submitBtn.textContent = window.novauralI18n ? window.novauralI18n.t('collab_form_submit', 'Submit Partnership Enquiry →') : 'Submit Partnership Enquiry →';
-          submitBtn.disabled = false;
+          mailtoFallback();
         }
       });
     }
