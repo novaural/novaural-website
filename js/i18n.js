@@ -87,6 +87,18 @@
       if (dict[key] !== undefined) el.textContent = dict[key];
     });
 
+    // data-i18n-meta → meta content attribute (title, description, og tags)
+    document.querySelectorAll('[data-i18n-meta]').forEach(el => {
+      const key = el.getAttribute('data-i18n-meta');
+      if (dict[key] !== undefined) {
+        if (el.tagName === 'TITLE') {
+          el.textContent = dict[key];
+        } else {
+          el.setAttribute('content', dict[key]);
+        }
+      }
+    });
+
     // Update html lang attribute
     document.documentElement.lang = currentLang;
 
