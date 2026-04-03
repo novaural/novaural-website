@@ -109,6 +109,108 @@
   /* ── Theme config ── */
   --default-theme: dark;
 }
+
+/* =============================================
+   UTILITY CLASSES
+   Reusable helpers to eliminate inline styles.
+   ============================================= */
+
+/* Text alignment */
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+
+/* Subtitle centered pattern (label+title left, subtitle centered) */
+.subtitle-centered {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Max-width constraints */
+.max-w-600 { max-width: 600px; }
+.max-w-680 { max-width: 680px; }
+.max-w-700 { max-width: 700px; }
+.max-w-720 { max-width: 720px; }
+.max-w-740 { max-width: 740px; }
+.max-w-760 { max-width: 760px; }
+
+/* Spacing — margin top */
+.mt-4  { margin-top: 1rem; }
+.mt-6  { margin-top: 1.5rem; }
+.mt-8  { margin-top: 2rem; }
+.mt-10 { margin-top: 2.5rem; }
+.mt-14 { margin-top: 3.5rem; }
+
+/* Spacing — margin bottom */
+.mb-4  { margin-bottom: 1rem; }
+.mb-10 { margin-bottom: 2.5rem; }
+.mb-12 { margin-bottom: 3rem; }
+
+/* Typography helpers */
+.text-teal      { color: var(--teal-400); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted     { color: var(--gray-500); }
+
+.body-text {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.body-text-lg {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.small-note {
+  font-size: 0.82rem;
+  color: var(--gray-500);
+  line-height: 1.7;
+}
+
+.disclaimer {
+  font-size: 0.78rem;
+  color: var(--gray-500);
+}
+
+/* Card helpers */
+.card-centered {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.icon-lg {
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.card-title-sm {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+/* Layout helpers */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* CTA button size variants */
+.btn-lg {
+  font-size: 1.05rem;
+  padding: 1rem 2.5rem;
+}
+
 /* =============================================
    LIGHT THEME OVERRIDES
    Cool-gray palette for medical/tech professional feel.

@@ -58,504 +58,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animations.css">
-  <style>
-    /* Page-specific styles */
-    .workflow-timeline {
-      position: relative;
-      max-width: 900px;
-      margin: 3rem auto 0;
-    }
-    .workflow-timeline::before {
-      content: '';
-      position: absolute;
-      left: 32px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(180deg, var(--border-subtle), var(--teal-500), var(--border-subtle));
-    }
-    .wf-step {
-      position: relative;
-      padding-left: 80px;
-      margin-bottom: 2.5rem;
-    }
-    .wf-step:last-child { margin-bottom: 0; }
-    .wf-step .wf-marker {
-      position: absolute;
-      left: 16px;
-      top: 4px;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      font-weight: 700;
-      z-index: 1;
-    }
-    .wf-step.standard .wf-marker {
-      background: var(--navy-800);
-      border: 2px solid var(--gray-600);
-      color: var(--gray-400);
-    }
-    .wf-step.highlight .wf-marker {
-      background: linear-gradient(135deg, var(--teal-500), var(--cyan-accent));
-      border: none;
-      color: var(--text-on-teal);
-      box-shadow: 0 0 20px rgba(46, 196, 182, 0.4);
-    }
-    /* Light mode: force the ★ (U+2605) to render as TEXT, not emoji.
-       Emoji rendering ignores CSS color — this selector ensures it
-       falls back to a text glyph and picks up the white color. */
-    [data-theme="light"] .wf-step.highlight .wf-marker {
-      color: #FFFFFF;
-      -webkit-text-fill-color: #FFFFFF;
-      font-family: 'Inter', Arial, sans-serif;
-      text-shadow: 0 0 0 #FFFFFF;
-    }
-    .wf-step h4 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-    }
-    .wf-step.standard h4 { color: var(--gray-300); }
-    .wf-step.highlight h4 { color: var(--teal-400); }
-    .wf-step p {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-    .wf-step.highlight {
-      background: rgba(46, 196, 182, 0.04);
-      border: 1px solid rgba(46, 196, 182, 0.15);
-      border-radius: 12px;
-      padding: 1.5rem 1.5rem 1.5rem 80px;
-      margin-left: -12px;
-      margin-right: -12px;
-    }
-
-    /* Gap callout */
-    .gap-callout {
-      background: linear-gradient(135deg, rgba(255, 82, 82, 0.06), rgba(255, 82, 82, 0.02));
-      border: 1px solid rgba(255, 82, 82, 0.2);
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 2.5rem 0;
-      position: relative;
-    }
-    .gap-callout::before {
-      content: '⚠';
-      position: absolute;
-      top: -14px;
-      left: 24px;
-      font-size: 1.4rem;
-      background: var(--bg-primary);
-      padding: 0 0.5rem;
-    }
-    .gap-callout h4 {
-      color: #ff7043;
-      font-size: 1.1rem;
-      margin-bottom: 0.8rem;
-    }
-
-    /* Comparison table */
-    .compare-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-top: 2.5rem;
-    }
-    @media (max-width: 768px) { .compare-grid { grid-template-columns: 1fr; } }
-    .compare-col {
-      background: var(--navy-800);
-      border-radius: 16px;
-      padding: 2rem;
-      border: 1px solid var(--border-subtle);
-    }
-    .compare-col.before {
-      border-color: rgba(255, 82, 82, 0.2);
-    }
-    .compare-col.after {
-      border-color: rgba(46, 196, 182, 0.3);
-      background: linear-gradient(135deg, rgba(46, 196, 182, 0.05), transparent);
-    }
-    .compare-col h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .compare-col.before h4 { color: #ff7043; }
-    .compare-col.after h4 { color: var(--teal-400); }
-    .compare-col ul {
-      list-style: none;
-      padding: 0;
-    }
-    .compare-col ul li {
-      padding: 0.6rem 0;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      border-bottom: 1px solid var(--border-subtle);
-      line-height: 1.5;
-    }
-    .compare-col ul li:last-child { border-bottom: none; }
-
-    /* Detailed steps */
-    .detail-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-    .detail-step {
-      background: var(--navy-800);
-      border: 1px solid var(--border-subtle);
-      border-radius: 16px;
-      padding: 2rem;
-      position: relative;
-      transition: border-color 0.3s, transform 0.3s;
-    }
-    .detail-step:hover {
-      border-color: rgba(46, 196, 182, 0.3);
-      transform: translateY(-4px);
-    }
-    .detail-step .ds-num {
-      position: absolute;
-      top: -14px;
-      left: 20px;
-      background: linear-gradient(135deg, var(--teal-500), var(--cyan-accent));
-      color: var(--text-on-teal);
-      font-weight: 800;
-      font-size: 0.8rem;
-      padding: 4px 14px;
-      border-radius: 20px;
-      letter-spacing: 0.05em;
-    }
-    .detail-step h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--white);
-      margin: 0.5rem 0 0.6rem;
-    }
-    .detail-step p {
-      font-size: 0.88rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-    .detail-step .ds-meta {
-      margin-top: 1rem;
-      padding-top: 0.8rem;
-      border-top: 1px solid var(--border-subtle);
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .detail-step .ds-tag {
-      font-size: 0.75rem;
-      color: var(--teal-400);
-      background: rgba(46, 196, 182, 0.08);
-      padding: 3px 10px;
-      border-radius: 12px;
-      border: 1px solid rgba(46, 196, 182, 0.15);
-    }
-
-    /* Compatibility cards */
-    .compat-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 2.5rem;
-    }
-    .compat-card {
-      background: var(--navy-800);
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      padding: 1.5rem;
-      text-align: center;
-      transition: border-color 0.3s, transform 0.3s;
-    }
-    .compat-card:hover {
-      border-color: rgba(46, 196, 182, 0.3);
-      transform: translateY(-3px);
-    }
-    .compat-card .cc-icon {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    .compat-card h4 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.3rem;
-    }
-    .compat-card p {
-      font-size: 0.8rem;
-      color: var(--gray-400);
-    }
-
-    /* Pipeline diagram */
-    .pipeline {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 2.5rem auto;
-      max-width: 850px;
-    }
-    .pipe-node {
-      background: var(--navy-800);
-      border: 1px solid var(--border-subtle);
-      border-radius: 10px;
-      padding: 0.8rem 1.2rem;
-      text-align: center;
-      min-width: 120px;
-    }
-    .pipe-node.active {
-      border-color: rgba(46, 196, 182, 0.4);
-      background: rgba(46, 196, 182, 0.06);
-    }
-    .pipe-node h5 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.2rem;
-    }
-    .pipe-node.active h5 { color: var(--teal-400); }
-    .pipe-node p {
-      font-size: 0.7rem;
-      color: var(--gray-400);
-      margin: 0;
-    }
-    .pipe-arrow {
-      color: var(--gray-500);
-      font-size: 1.2rem;
-      font-weight: 700;
-    }
-    @media (max-width: 600px) {
-      .pipeline { flex-direction: column; }
-      .pipe-arrow { transform: rotate(90deg); }
-    }
-
-    /* Safety layers — new section */
-    .safety-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-    .safety-card {
-      background: var(--navy-800);
-      border: 1px solid var(--border-subtle);
-      border-radius: 16px;
-      padding: 2rem;
-      position: relative;
-      overflow: hidden;
-      transition: border-color 0.3s, transform 0.3s;
-    }
-    .safety-card:hover {
-      border-color: rgba(46, 196, 182, 0.3);
-      transform: translateY(-4px);
-    }
-    .safety-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--teal-500), var(--cyan-accent));
-      opacity: 0.6;
-    }
-    .safety-card .safety-icon {
-      font-size: 1.8rem;
-      margin-bottom: 0.8rem;
-      display: block;
-    }
-    .safety-card h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-    }
-    .safety-card p {
-      font-size: 0.88rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-    .safety-card .safety-detail {
-      margin-top: 0.8rem;
-      padding: 0.6rem 0.8rem;
-      background: rgba(46, 196, 182, 0.04);
-      border: 1px solid rgba(46, 196, 182, 0.1);
-      border-radius: 8px;
-      font-size: 0.8rem;
-      color: var(--teal-400);
-      font-family: 'Inter', monospace;
-    }
-
-    /* Algorithm depth cards */
-    .algo-features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-    .algo-feature {
-      background: var(--navy-800);
-      border: 1px solid var(--border-subtle);
-      border-radius: 14px;
-      padding: 1.8rem;
-      transition: border-color 0.3s, transform 0.3s;
-    }
-    .algo-feature:hover {
-      border-color: rgba(46, 196, 182, 0.3);
-      transform: translateY(-3px);
-    }
-    .algo-feature .af-icon {
-      font-size: 1.5rem;
-      margin-bottom: 0.6rem;
-    }
-    .algo-feature h4 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.4rem;
-    }
-    .algo-feature p {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* Enhanced pipeline — multi-row */
-    .pipeline-extended {
-      max-width: 900px;
-      margin: 2.5rem auto 0;
-    }
-    .pipeline-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-bottom: 0.4rem;
-    }
-    .pipe-node-ext {
-      background: var(--navy-800);
-      border: 1px solid var(--border-subtle);
-      border-radius: 10px;
-      padding: 0.7rem 1rem;
-      text-align: center;
-      min-width: 100px;
-      flex: 1;
-      max-width: 180px;
-    }
-    .pipe-node-ext.active {
-      border-color: rgba(46, 196, 182, 0.4);
-      background: rgba(46, 196, 182, 0.06);
-    }
-    .pipe-node-ext.safety-node {
-      border-color: rgba(255, 171, 64, 0.3);
-      background: rgba(255, 171, 64, 0.04);
-    }
-    .pipe-node-ext h5 {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.15rem;
-    }
-    .pipe-node-ext.active h5 { color: var(--teal-400); }
-    .pipe-node-ext.safety-node h5 { color: var(--accent-safety); }
-    .pipe-node-ext p {
-      font-size: 0.65rem;
-      color: var(--gray-400);
-      margin: 0;
-    }
-    .pipe-connector {
-      color: var(--gray-500);
-      font-size: 1rem;
-      font-weight: 700;
-    }
-    @media (max-width: 700px) {
-      .pipeline-row { flex-direction: column; }
-      .pipe-connector { transform: rotate(90deg); }
-      .pipe-node-ext { max-width: 100%; }
-    }
-
-    /* Better outcomes section — dual columns */
-    .outcomes-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-top: 2.5rem;
-    }
-    @media (max-width: 768px) { .outcomes-grid { grid-template-columns: 1fr; } }
-    .outcome-col {
-      background: var(--navy-800);
-      border-radius: 16px;
-      padding: 2rem;
-      border: 1px solid var(--border-subtle);
-      position: relative;
-      overflow: hidden;
-    }
-    .outcome-col::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-    }
-    .outcome-col.nhs::before {
-      background: linear-gradient(90deg, #42a5f5, #66bb6a);
-    }
-    .outcome-col.private::before {
-      background: linear-gradient(90deg, var(--teal-500), var(--cyan-accent));
-    }
-    .outcome-col .oc-header {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 1.5rem;
-    }
-    .outcome-col .oc-icon {
-      font-size: 2rem;
-    }
-    .outcome-col .oc-header h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--white);
-    }
-    .outcome-col .oc-header p {
-      font-size: 0.85rem;
-      color: var(--gray-400);
-    }
-    .outcome-col ul {
-      list-style: none;
-      padding: 0;
-    }
-    .outcome-col ul li {
-      padding: 0.5rem 0;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      border-bottom: 1px solid var(--border-subtle);
-      line-height: 1.5;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-    }
-    .outcome-col ul li:last-child { border-bottom: none; }
-    .outcome-col ul li .check-mark {
-      color: var(--teal-400);
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-  </style>
+  <link rel="stylesheet" href="css/how-it-works.css">
 </head>
 <body>
 
@@ -615,7 +118,7 @@
     <div class="container">
       <span class="section-label">The Problem</span>
       <h2 class="section-title">The Fine-Tuning Gap</h2>
-      <p class="section-subtitle" style="max-width: 760px; text-align: center; margin: 0 auto 1rem;">
+      <p class="section-subtitle subtitle-centered max-w-760 mb-4">
         After applying a prescriptive formula and verifying with REM, the clinician enters the fine-tuning phase — and suddenly loses access to objective data.
       </p>
 
@@ -663,11 +166,11 @@
     <div class="container">
       <span class="section-label">Clinical Context</span>
       <h2 class="section-title">Where ReFittingLab Fits in Your Workflow</h2>
-      <p class="section-subtitle" style="max-width: 700px; text-align: center; margin: 0 auto;">
+      <p class="section-subtitle subtitle-centered max-w-700">
         ReFittingLab does not replace your fitting software or prescriptive formula. It enters the workflow <strong>after</strong> the initial fitting, exactly where objective data disappears.
       </p>
 
-      <div class="compare-grid" style="margin-bottom: 2.5rem;">
+      <div class="compare-grid mb-10">
         <div class="compare-col before">
           <h4>❌ Without ReFittingLab</h4>
           <ul>
@@ -744,7 +247,7 @@
     <div class="container">
       <span class="section-label">The Process — In Detail</span>
       <h2 class="section-title">What Happens During a ReFittingLab Session</h2>
-      <p class="section-subtitle" style="max-width: 700px; text-align: center; margin: 0 auto;">
+      <p class="section-subtitle subtitle-centered max-w-700">
         A complete verification session takes 20–30 minutes and produces actionable, per-band gain adjustment recommendations — each validated against 5 safety layers.
       </p>
 
@@ -844,7 +347,7 @@
     <div class="container">
       <span class="section-label">Under the Hood</span>
       <h2 class="section-title">From Phoneme Error to Safe Gain Adjustment</h2>
-      <p class="section-subtitle" style="max-width: 720px; text-align: center; margin: 0 auto;">
+      <p class="section-subtitle subtitle-centered max-w-720">
         The core algorithm translates a perceptual error into a precise, band-specific gain change through a multi-stage pipeline. Each adjustment is bounded, safe, and grounded in the patient's individual audiometric profile.
       </p>
 
@@ -900,7 +403,7 @@
           <h4>Dynamic Range Awareness</h4>
           <p>The gain delta is bounded by each band's available dynamic range (UCL − threshold). Patients with narrow dynamic range (< 30 dB) receive proportionally smaller adjustments to preserve comfort headroom.</p>
         </div>
-        <div class="algo-feature fade-in" style="border-color: var(--border-teal-strong); background: linear-gradient(135deg, var(--bg-teal-subtle), transparent);">
+        <div class="algo-feature algo-feature--featured fade-in">
           <div class="af-icon">🔧</div>
           <h4>NFM — Nearest Frequency Matching</h4>
           <p>The core technology that makes ReFittingLab universally compatible: NFM automatically maps each speech-relevant frequency to the closest adjustable band of <em>any</em> hearing device — whether it has 4 bands (basic aid), 10 bands (mid-range), or 20 bands (premium clinical device). The system consolidates multiple speech frequency regions that fall within the resolution of a single band, weighting each by the magnitude of the discrimination deficit and spectral proximity. <strong>One evaluation &#8594; any device &#8594; optimal result regardless of band count.</strong></p>
@@ -921,7 +424,7 @@
     <div class="container">
       <span class="section-label">Built-In Protection</span>
       <h2 class="section-title">5-Layer Clinical Safety Validation</h2>
-      <p class="section-subtitle" style="max-width: 740px; text-align: center; margin: 0 auto;">
+      <p class="section-subtitle subtitle-centered max-w-740">
         Every adjustment recommendation passes through 5 independent safety checks before being presented to the clinician. This isn't just gain boosting — it's a validated, bounded computation with multiple protective mechanisms.
       </p>
 
@@ -987,7 +490,7 @@
     <div class="container">
       <span class="section-label">Universal Compatibility</span>
       <h2 class="section-title">Works With Your Existing Fitting Software</h2>
-      <p class="section-subtitle" style="max-width: 700px; text-align: center; margin: 0 auto;">
+      <p class="section-subtitle subtitle-centered max-w-700">
         ReFittingLab is manufacturer-agnostic. It generates per-band gain adjustment recommendations that you apply in whichever fitting software you already use. The NFM mechanism automatically adapts to any device’s band configuration — from basic hearing aids with 4 bands to premium devices with 20 or more.
       </p>
 
@@ -1037,37 +540,37 @@
     <div class="container">
       <span class="section-label">Getting Started</span>
       <h2 class="section-title">What You Need</h2>
-      <p class="section-subtitle" style="max-width: 740px; text-align: center; margin: 0 auto;">
+      <p class="section-subtitle subtitle-centered max-w-740">
         ReFittingLab requires no booth modifications and no proprietary hardware. The entire setup fits on your existing clinic desk — a laptop, a speaker, and a sound level meter. That's it.
       </p>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2.5rem;">
+      <div class="equipment-grid">
 
         <!-- Speaker -->
-        <div class="about-card fade-in" style="text-align: center; padding: 2rem 1.5rem;">
-          <div style="font-size: 2.2rem; margin-bottom: 0.8rem;">🔊</div>
-          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem;">Active Studio Monitor</h3>
-          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem;">
+        <div class="about-card fade-in card-centered">
+          <div class="icon-lg">🔊</div>
+          <h3 class="card-title-sm">Active Studio Monitor</h3>
+          <p class="body-text mb-4">
             A powered near-field monitor with flat frequency response across the speech range (200 Hz – 8 kHz). Studio reference monitors designed for accurate audio reproduction are ideal — widely available and affordable.
           </p>
           <span class="equipment-tag">~£100 · Lasts years</span>
         </div>
 
         <!-- SLM -->
-        <div class="about-card fade-in" style="text-align: center; padding: 2rem 1.5rem;">
-          <div style="font-size: 2.2rem; margin-bottom: 0.8rem;">📏</div>
-          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem;">Sound Level Meter (Class 2)</h3>
-          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem;">
+        <div class="about-card fade-in card-centered">
+          <div class="icon-lg">📏</div>
+          <h3 class="card-title-sm">Sound Level Meter (Class 2)</h3>
+          <p class="body-text mb-4">
             An IEC 61672-1 Class 2 compliant sound level meter. Used only during the initial calibration to verify SPL at the patient position. Once calibrated, it stays in the drawer until you change rooms or equipment.
           </p>
           <span class="equipment-tag">~£100 · One-time use per setup</span>
         </div>
 
         <!-- Software -->
-        <div class="about-card fade-in" style="text-align: center; padding: 2rem 1.5rem;">
-          <div style="font-size: 2.2rem; margin-bottom: 0.8rem;">💻</div>
-          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem;">ReFittingLab Software</h3>
-          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem;">
+        <div class="about-card fade-in card-centered">
+          <div class="icon-lg">💻</div>
+          <h3 class="card-title-sm">ReFittingLab Software</h3>
+          <p class="body-text mb-4">
             Runs on any Windows or Mac laptop. Includes a built-in calibration wizard, language packs, and the full multi-factor algorithm with all 5 safety layers. No proprietary dongles, no per-session limits.
           </p>
           <span class="equipment-tag">Early adopter rates available</span>
@@ -1076,7 +579,7 @@
       </div>
 
       <!-- Calibration callout -->
-      <div class="gap-callout" style="margin-top: 2.5rem;">
+      <div class="gap-callout mt-10">
         <h4>One-Time Calibration — 5 Minutes</h4>
         <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
           The software includes a <strong>guided calibration wizard</strong> that takes under 5 minutes:
@@ -1117,7 +620,7 @@
     <div class="container">
       <span class="section-label">Value Proposition</span>
       <h2 class="section-title">Better Outcomes for Everyone</h2>
-      <p class="section-subtitle" style="max-width: 740px; text-align: center; margin: 0 auto;">
+      <p class="section-subtitle subtitle-centered max-w-740">
         ReFittingLab creates measurable value across the entire hearing care ecosystem — from NHS trusts managing thousands of patients to private practices competing on quality.
       </p>
 
@@ -1189,7 +692,7 @@
       <span class="section-label">Clinical Impact</span>
       <h2 class="section-title">Why Objective Fine-Tuning Data Matters</h2>
 
-      <div class="why-partner-grid" style="margin-top: 2.5rem;">
+      <div class="why-partner-grid mt-10">
 
         <div class="why-card fade-in">
           <div class="card-icon">📊</div>
@@ -1235,14 +738,14 @@
   <!-- CTA                                           -->
   <!-- ============================================= -->
   <section class="stage" id="hiw-cta">
-    <div class="container" style="text-align: center;">
-      <h2 class="section-title" style="margin-bottom: 1rem;">Ready to See It in Action?</h2>
-      <p class="section-subtitle" style="max-width: 600px; margin: 0 auto 2rem;">
+    <div class="container text-center">
+      <h2 class="section-title mb-4">Ready to See It in Action?</h2>
+      <p class="section-subtitle subtitle-centered max-w-600 mb-8" style="margin-bottom: 2rem;">
         We're seeking clinical partners to validate ReFittingLab in real-world settings. If you're an audiologist, hearing aid dispenser, or clinic manager, we'd love to hear from you.
       </p>
-      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="collaborate.html" class="btn-primary" style="font-size: 1.05rem; padding: 1rem 2.5rem;">Partner With Us →</a>
-        <a href="index.html#product" class="btn-secondary" style="font-size: 1.05rem; padding: 1rem 2.5rem;">Learn About ReFittingLab</a>
+      <div class="hiw-cta-buttons">
+        <a href="collaborate.html" class="btn-primary btn-lg">Partner With Us →</a>
+        <a href="index.html#product" class="btn-secondary btn-lg">Learn About ReFittingLab</a>
       </div>
     </div>
   </section>
