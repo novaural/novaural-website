@@ -11,18 +11,14 @@
   /* ── Palette (immutable — never change per theme) ── */
   --navy-900: #061224;
   --navy-800: #0B2545;
-  --navy-700: #0F3460;
-  --navy-600: #16498A;
   --teal-500: #2EC4B6;
   --teal-400: #4DD8CC;
-  --teal-300: #7BE5DB;
-  --teal-200: #B3F0EA;
+
   --cyan-accent: #00D4FF;
 
   /* Neutrals */
   --white: #FFFFFF;
-  --gray-100: #F1F5F9;
-  --gray-200: #E2E8F0;
+
   --gray-300: #CBD5E1;
   --gray-400: #94A3B8;
   --gray-500: #64748B;
@@ -41,8 +37,7 @@
 
   /* Backgrounds — solid */
   --bg-primary: var(--navy-900);
-  --bg-card: rgba(11, 37, 69, 0.6);
-  --bg-card-hover: rgba(11, 37, 69, 0.85);
+
   --bg-navbar: rgba(6, 18, 36, 0.92);
   --bg-navbar-mobile: rgba(6, 18, 36, 0.98);
   --bg-input: rgba(6, 18, 36, 0.6);
@@ -66,7 +61,6 @@
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 
   /* Shadows */
-  --shadow-ambient: rgba(0, 0, 0, 0.3);
   --shadow-card: rgba(0, 0, 0, 0.2);
   --shadow-card-light: rgba(0, 0, 0, 0.15);
   --shadow-overlay: rgba(0, 0, 0, 0.4);
@@ -83,7 +77,6 @@
   --glow-teal400-soft: rgba(77, 216, 204, 0.3);
   --glow-teal400-faint: rgba(77, 216, 204, 0.2);
   --glow-teal400-micro: rgba(77, 216, 204, 0.12);
-  --glow-teal400-dot: rgba(77, 216, 204, 0.10);
   --glow-cyan: rgba(0, 212, 255, 0.08);
   --glow-cyan-faint: rgba(0, 212, 255, 0.05);
 
@@ -271,7 +264,6 @@
   --glow-teal400-soft: rgba(15, 118, 110, 0.18);
   --glow-teal400-faint: rgba(15, 118, 110, 0.12);
   --glow-teal400-micro: rgba(15, 118, 110, 0.08);
-  --glow-teal400-dot: rgba(15, 118, 110, 0.06);
   --glow-cyan: rgba(0, 180, 216, 0.06);
   --glow-cyan-faint: rgba(0, 180, 216, 0.04);
 
@@ -342,11 +334,8 @@ section,
 .mission-item,
 .problem-card,
 .step-number,
-.step-card,
-.step-card p,
 .feature-item,
 .feature-icon,
-.product-card,
 .patent-badge,
 .benefit-column,
 .benefit-header,

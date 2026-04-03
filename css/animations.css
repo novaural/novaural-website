@@ -22,9 +22,6 @@
 .stagger-3 { transition-delay: 0.3s; }
 .stagger-4 { transition-delay: 0.4s; }
 .stagger-5 { transition-delay: 0.5s; }
-.stagger-6 { transition-delay: 0.6s; }
-.stagger-7 { transition-delay: 0.7s; }
-.stagger-8 { transition-delay: 0.8s; }
 
 /* --- Scale-in: for cards, badges, icons --- */
 .scale-in {
@@ -178,10 +175,7 @@
   100% { transform: scale(1); }
 }
 
-/* --- Counter animation: for numbers --- */
-.counter-animate {
-  display: inline-block;
-}
+
 
 /* --- Algo feature cards: subtle hover lift --- */
 .algo-feature {

@@ -381,60 +381,6 @@
   background: linear-gradient(135deg, var(--bg-teal-subtle), transparent);
 }
 
-/* Enhanced pipeline — multi-row */
-.pipeline-extended {
-  max-width: 900px;
-  margin: 2.5rem auto 0;
-}
-.pipeline-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 0.4rem;
-}
-.pipe-node-ext {
-  background: var(--navy-800);
-  border: 1px solid var(--border-subtle);
-  border-radius: 10px;
-  padding: 0.7rem 1rem;
-  text-align: center;
-  min-width: 100px;
-  flex: 1;
-  max-width: 180px;
-}
-.pipe-node-ext.active {
-  border-color: rgba(46, 196, 182, 0.4);
-  background: rgba(46, 196, 182, 0.06);
-}
-.pipe-node-ext.safety-node {
-  border-color: rgba(255, 171, 64, 0.3);
-  background: rgba(255, 171, 64, 0.04);
-}
-.pipe-node-ext h5 {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 0.15rem;
-}
-.pipe-node-ext.active h5 { color: var(--teal-400); }
-.pipe-node-ext.safety-node h5 { color: var(--accent-safety); }
-.pipe-node-ext p {
-  font-size: 0.65rem;
-  color: var(--gray-400);
-  margin: 0;
-}
-.pipe-connector {
-  color: var(--gray-500);
-  font-size: 1rem;
-  font-weight: 700;
-}
-@media (max-width: 700px) {
-  .pipeline-row { flex-direction: column; }
-  .pipe-connector { transform: rotate(90deg); }
-  .pipe-node-ext { max-width: 100%; }
-}
 
 /* Better outcomes section — dual columns */
 .outcomes-grid {
@@ -506,15 +452,7 @@
   margin-top: 2px;
 }
 
-/* HiW page — secondary body paragraphs (centered, constrained) */
-.hiw-body-centered {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
+
 
 /* HiW page — equipment grid */
 .equipment-grid {
