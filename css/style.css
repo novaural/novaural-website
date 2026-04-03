@@ -900,6 +900,7 @@ body::after {
 .hero-content {
   max-width: 800px;
   z-index: 1;
+  will-change: transform, opacity; /* GPU-composite for parallax scroll */
 }
 
 .hero-badge {

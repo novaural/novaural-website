@@ -286,6 +286,9 @@ document.addEventListener('DOMContentLoaded', () => {
   } : null;
 
   // ─── Counter animation (for numbers on page) ──
+  // NOTE: Counter elements use [data-counter] and must NOT have data-i18n,
+  // because the animation overwrites textContent with the animated number.
+  // If localisation is needed for counter labels, use a wrapper element.
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -346,16 +349,25 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // ─── Unified scroll handler ───────────────────
-  // Single listener instead of 6 separate ones — better performance
-  const onScroll = () => {
+  // ─── Unified scroll handler (rAF-throttled) ───
+  // Single listener with requestAnimationFrame throttle — prevents
+  // redundant work on high-refresh displays (120 Hz+).
+  let scrollTicking = false;
+  const onScrollWork = () => {
     handleScroll();         // navbar scroll effect
     if (updateTimeline) updateTimeline();  // workflow timeline
     if (updateProgress) updateProgress();  // progress bar
     if (updateHeroParallax) updateHeroParallax(); // hero parallax
     toggleScrollBtn();      // scroll-to-top visibility
+    scrollTicking = false;
+  };
+  const onScroll = () => {
+    if (!scrollTicking) {
+      requestAnimationFrame(onScrollWork);
+      scrollTicking = true;
+    }
   };
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll(); // initial state
+  onScrollWork(); // initial state
 
 });

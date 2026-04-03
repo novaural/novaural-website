@@ -35,19 +35,19 @@
   }
 
   /* ── helpers ─────────────────────────────────────────── */
-  function basePath() {
-    // Detect whether we are at root or in a subdir
+  const _basePath = (() => {
+    // Detect whether we are at root or in a subdir (cached — path won't change).
     const scripts = document.querySelectorAll('script[src*="i18n"]');
     if (scripts.length) {
       const src = scripts[0].getAttribute('src');
       return src.replace('js/i18n.js', '');
     }
     return '';
-  }
+  })();
 
   async function loadTranslation(lang) {
     try {
-      const res = await fetch(basePath() + 'lang/' + lang + '.json?v=' + Date.now());
+      const res = await fetch(_basePath + 'lang/' + lang + '.json?v=' + Date.now());
       if (!res.ok) throw new Error(res.status);
       return await res.json();
     } catch (e) {
@@ -144,12 +144,14 @@
         dropdown.classList.toggle('open');
       });
 
-      // Close on outside click
-      document.addEventListener('click', () => dropdown.classList.remove('open'));
-
       wrapper.appendChild(btn);
       wrapper.appendChild(dropdown);
       container.appendChild(wrapper);
+    });
+
+    // Single document-level handler to close all dropdowns on outside click
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.lang-dropdown.open').forEach(dd => dd.classList.remove('open'));
     });
   }
 
