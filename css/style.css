@@ -702,6 +702,14 @@ body::after {
   display: none;
 }
 
+/* Prevent .active page-highlight from overriding CTA text color.
+   Without this, collaborate.html shows teal text on teal bg = unreadable. */
+.nav-links a.nav-cta.active {
+  color: var(--text-on-teal);
+  text-shadow: none;
+  transform: none;
+}
+
 .nav-links .nav-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 20px var(--glow-teal);
