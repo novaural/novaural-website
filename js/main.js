@@ -270,10 +270,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const updateTimeline = wfTimeline ? () => {
     const rect = wfTimeline.getBoundingClientRect();
     const wh = window.innerHeight;
-    const tlH = wfTimeline.offsetHeight;
+    // Use rect.height instead of offsetHeight to avoid a separate layout read
     if (rect.top < wh && rect.bottom > 0) {
       const scrolled = Math.max(0, wh - rect.top);
-      const pct = Math.min(100, (scrolled / (tlH + wh * 0.2)) * 100);
+      const pct = Math.min(100, (scrolled / (rect.height + wh * 0.2)) * 100);
       wfTimeline.style.setProperty('--tl-progress', pct + '%');
     }
   } : null;
