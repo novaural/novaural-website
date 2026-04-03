@@ -4,8 +4,8 @@
 
 /* ─── Theme: FOUC prevention (runs before DOM paint) ─── */
 (function() {
-  const saved = localStorage.getItem('novaural-theme');
-  const theme = saved || 'dark'; // default dark
+  let theme = 'dark';
+  try { theme = localStorage.getItem('novaural-theme') || 'dark'; } catch (e) { /* private browsing */ }
   document.documentElement.setAttribute('data-theme', theme);
   document.documentElement.classList.add('no-transitions');
   window.addEventListener('DOMContentLoaded', () => {
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const current = document.documentElement.getAttribute('data-theme');
     const next = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('novaural-theme', next);
+    try { localStorage.setItem('novaural-theme', next); } catch (e) { /* private browsing */ }
   });
 
   // ─── Inline SVG logo for theme-aware coloring ──
@@ -152,19 +152,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('navLinks');
 
   if (navToggle && navLinks) {
+    const closeMenu = () => {
+      navLinks.classList.remove('active');
+      navToggle.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
       navToggle.classList.toggle('active');
       const expanded = navLinks.classList.contains('active');
       navToggle.setAttribute('aria-expanded', String(expanded));
+      document.body.style.overflow = expanded ? 'hidden' : '';
     });
 
     // Close menu on link click
     navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        navToggle.classList.remove('active');
-      });
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Close menu on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        closeMenu();
+        navToggle.focus(); // return focus to toggle for a11y
+      }
     });
   }
 
@@ -280,9 +293,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const progressBar = document.getElementById('scrollProgress');
 
   const updateProgress = progressBar ? () => {
-    const st = window.scrollY;
+    const st = Math.max(0, window.scrollY); // clamp for Safari bounce
     const dh = document.documentElement.scrollHeight - window.innerHeight;
-    progressBar.style.width = (st / dh * 100) + '%';
+    progressBar.style.width = dh > 0 ? (st / dh * 100) + '%' : '0%';
   } : null;
 
   // ─── Counter animation (for numbers on page) ──

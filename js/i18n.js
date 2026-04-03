@@ -24,9 +24,10 @@
   };
   const LANG_FLAGS = { en: '🇬🇧', es: '🇪🇸', de: '🇩🇪', fr: '🇫🇷', it: '🇮🇹', nl: '🇳🇱' };
 
-  let currentLang = SHOW_SELECTOR
-    ? (localStorage.getItem('novaural_lang') || detectBrowserLang())
-    : DEFAULT_LANG;
+  let currentLang = DEFAULT_LANG;
+  if (SHOW_SELECTOR) {
+    try { currentLang = localStorage.getItem('novaural_lang') || detectBrowserLang(); } catch (e) { currentLang = detectBrowserLang(); }
+  }
   let translations = {};
 
   function detectBrowserLang() {
@@ -168,7 +169,7 @@
   async function switchLang(lang) {
     if (!SUPPORTED_LANGS.includes(lang)) lang = DEFAULT_LANG;
     currentLang = lang;
-    localStorage.setItem('novaural_lang', lang);
+    try { localStorage.setItem('novaural_lang', lang); } catch (e) { /* private browsing */ }
     const dict = await loadTranslation(lang);
     apply(dict);
   }
