@@ -16,12 +16,6 @@
   pointer-events: none;
 }
 
-/* --- Stagger delays for sequential reveals --- */
-.stagger-1 { transition-delay: 0.1s; }
-.stagger-2 { transition-delay: 0.2s; }
-.stagger-3 { transition-delay: 0.3s; }
-.stagger-4 { transition-delay: 0.4s; }
-.stagger-5 { transition-delay: 0.5s; }
 
 /* --- Scale-in: for cards, badges, icons --- */
 .scale-in {
@@ -135,14 +129,6 @@
 }
 
 /* --- Pipeline arrows: flowing dash animation --- */
-.pipe-arrow.visible {
-  animation: arrowFlow 1.5s ease-in-out infinite;
-}
-@keyframes arrowFlow {
-  0%, 100% { opacity: 0.4; transform: translateX(0); }
-  50% { opacity: 1; transform: translateX(3px); }
-}
-
 .pipe-arrow {
   transition: opacity 0.4s ease;
 }
@@ -151,6 +137,11 @@
 }
 .pipe-arrow.visible {
   opacity: 1;
+  animation: arrowFlow 1.5s ease-in-out infinite;
+}
+@keyframes arrowFlow {
+  0%, 100% { opacity: 0.4; transform: translateX(0); }
+  50% { opacity: 1; transform: translateX(3px); }
 }
 
 /* --- Safety cards: sequential amber → green --- */
