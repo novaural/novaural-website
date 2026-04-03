@@ -31,8 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // handleScroll is called from the unified scroll handler below
-  handleScroll(); // initial check
+  // handleScroll is called from the unified scroll handler (onScrollWork) below
 
   // ─── Active nav link scroll-spy ────────────────
   // Highlights the nav link corresponding to the currently visible section
@@ -381,6 +380,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScrollWork(); // initial state
+  requestAnimationFrame(onScrollWork); // initial state — deferred to avoid forced reflow
 
 });
