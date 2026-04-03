@@ -18,6 +18,8 @@
   <meta property="og:description" content="Objective hearing aid verification software using phoneme discrimination testing. Evidence-based fitting optimisation for audiologists and hearing clinics.">
   <meta property="og:url" content="https://novaural.com/">
   <meta property="og:image" content="https://novaural.com/assets/images/og_social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="Novaural">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -28,54 +30,262 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "name": "Novaural Ltd",
-    "url": "https://novaural.com",
-    "logo": "https://novaural.com/logo/novaural_logo_dark.png",
-    "description": "Medical deep-tech company developing patent-protected hearing aid fitting verification software using phonemic discrimination testing for audiologists and hearing clinics.",
-    "medicalSpecialty": "Audiology",
-    "knowsAbout": [
-      "hearing aid fitting",
-      "hearing aid verification",
-      "speech audiometry",
-      "phoneme discrimination testing",
-      "real ear measurement",
-      "NAL-NL2",
-      "DSLv5"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "71-75 Shelton Street, Covent Garden",
-      "addressLocality": "London",
-      "postalCode": "WC2H 9JQ",
-      "addressCountry": "GB"
-    },
-    "email": "enquiries@novaural.com",
-    "foundingLocation": "London, United Kingdom",
-    "sameAs": [],
-    "makesOffer": {
-      "@type": "Offer",
-      "itemOffered": {
+    "@graph": [
+      {
+        "@type": "MedicalBusiness",
+        "@id": "https://novaural.com/#organization",
+        "name": "Novaural Ltd",
+        "url": "https://novaural.com",
+        "logo": "https://novaural.com/logo/novaural_logo_dark.png",
+        "image": "https://novaural.com/assets/images/og_social_preview.png",
+        "description": "UK-registered medical deep-tech company developing patent-protected hearing aid fitting verification software. Novaural uses phonemic discrimination testing and quantitative gain adjustment algorithms to help audiologists objectively verify and optimise hearing aid fittings.",
+        "medicalSpecialty": {
+          "@type": "MedicalSpecialty",
+          "name": "Otolaryngologic",
+          "alternateName": "Audiology"
+        },
+        "knowsAbout": [
+          "hearing aid fitting",
+          "hearing aid verification",
+          "speech audiometry",
+          "phoneme discrimination testing",
+          "phonemic discrimination",
+          "real ear measurement",
+          "speech-in-noise testing",
+          "NAL-NL2 prescriptive formula",
+          "DSLv5 prescriptive formula",
+          "audiogram interpretation",
+          "hearing aid gain adjustment",
+          "sensorineural hearing loss",
+          "frequency-specific amplification",
+          "minimal pairs testing",
+          "clinical audiology protocols"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "71-75 Shelton Street, Covent Garden",
+          "addressLocality": "London",
+          "postalCode": "WC2H 9JQ",
+          "addressCountry": "GB"
+        },
+        "email": "enquiries@novaural.com",
+        "foundingLocation": "London, United Kingdom",
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": "51.5074",
+            "longitude": "-0.1278"
+          },
+          "description": "United Kingdom and international"
+        },
+        "sameAs": [],
+        "makesOffer": {
+          "@type": "Offer",
+          "itemOffered": { "@id": "https://novaural.com/#refittinglab" }
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Audiology Verification Solutions",
+          "itemListElement": [
+            {
+              "@type": "OfferCatalog",
+              "name": "Clinical Software",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": { "@id": "https://novaural.com/#refittinglab" }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
         "@type": "SoftwareApplication",
+        "@id": "https://novaural.com/#refittinglab",
         "name": "ReFittingLab",
         "applicationCategory": "MedicalApplication",
+        "applicationSubCategory": "Audiology Verification Software",
         "operatingSystem": "Windows, macOS",
-        "description": "Clinical hearing aid verification software using objective phonemic discrimination testing with 5-layer safety validation and per-band gain adjustment.",
-        "featureList": "Phoneme discrimination testing, Per-band gain adjustment, 5-layer clinical safety validation, Speech-in-noise verification, Multi-level testing (50/65/80 dB SPL), NAL-NL2 and DSLv5 compatibility, Clinical documentation and audit trail",
-        "creator": {
-          "@type": "Organization",
-          "name": "Novaural Ltd",
-          "url": "https://novaural.com"
+        "description": "Clinical hearing aid verification software using objective phonemic discrimination testing with 5-layer safety validation, per-band gain adjustment, and multi-level testing at 50/65/80 dB SPL. Designed for audiologists to quantitatively verify and optimise hearing aid fittings.",
+        "featureList": "Phoneme discrimination testing, Per-band gain adjustment, 5-layer clinical safety validation, Speech-in-noise verification, Multi-level testing (50/65/80 dB SPL), NAL-NL2 and DSLv5 compatibility, Clinical documentation and audit trail, Bilingual support (EN/ES), Audiogram integration, Patient management",
+        "releaseNotes": "Patent pending — 47 claims filed at UKIPO, EU and US filing in progress",
+        "creator": { "@id": "https://novaural.com/#organization" },
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/PreOrder",
+          "description": "Seeking clinical validation partners — early access available"
+        }
+      },
+      {
+        "@type": "MedicalCondition",
+        "@id": "https://novaural.com/#hearing-loss",
+        "name": "Hearing Loss",
+        "alternateName": ["Sensorineural Hearing Loss", "Hearing Impairment", "Presbycusis"],
+        "description": "A reduction in the ability to perceive sounds, often affecting specific frequency ranges. Sensorineural hearing loss is the most common type, typically caused by damage to the inner ear or auditory nerve, and is the primary condition addressed by hearing aid fitting and verification.",
+        "associatedAnatomy": {
+          "@type": "AnatomicalStructure",
+          "name": "Inner ear (cochlea)"
+        },
+        "relevantSpecialty": {
+          "@type": "MedicalSpecialty",
+          "name": "Otolaryngologic"
+        },
+        "possibleTreatment": [
+          {
+            "@type": "MedicalTherapy",
+            "name": "Hearing Aid Fitting",
+            "description": "The clinical process of selecting, programming, and verifying hearing aids to compensate for measured hearing loss using prescriptive formulas such as NAL-NL2 or DSLv5."
+          }
+        ],
+        "signOrSymptom": [
+          {
+            "@type": "MedicalSignOrSymptom",
+            "name": "Difficulty understanding speech",
+            "description": "Reduced ability to discriminate speech sounds, particularly in noisy environments or at specific frequencies."
+          },
+          {
+            "@type": "MedicalSignOrSymptom",
+            "name": "Listening fatigue",
+            "description": "Increased cognitive effort required to process speech due to frequency-specific hearing deficits."
+          }
+        ]
+      },
+      {
+        "@type": "DiagnosticProcedure",
+        "@id": "https://novaural.com/#phonemic-discrimination-test",
+        "name": "Phonemic Discrimination Testing",
+        "alternateName": ["Minimal Pairs Testing", "Speech Discrimination Test", "Phoneme Discrimination Assessment"],
+        "description": "A scientifically validated audiological test procedure that evaluates a patient's ability to discriminate between similar speech sounds (minimal pairs such as /s/ vs /θ/, /p/ vs /b/) at multiple presentation levels (50, 65, and 80 dB SPL). Results are mapped to specific frequency bands to identify where hearing aid gain adjustments are needed.",
+        "procedureType": "https://schema.org/DiagnosticProcedure",
+        "howPerformed": "The patient listens to pairs of speech sounds presented at calibrated levels through speakers or headphones. Their discrimination accuracy is measured per phoneme contrast, and errors are mapped to frequency bands using acoustic-phonetic feature analysis.",
+        "relevantSpecialty": {
+          "@type": "MedicalSpecialty",
+          "name": "Otolaryngologic"
+        },
+        "usedToDiagnose": { "@id": "https://novaural.com/#hearing-loss" },
+        "usesDevice": {
+          "@type": "MedicalDevice",
+          "name": "Hearing Aid",
+          "description": "An electroacoustic medical device worn in or behind the ear to amplify and process sound for individuals with hearing loss.",
+          "relevantSpecialty": {
+            "@type": "MedicalSpecialty",
+            "name": "Otolaryngologic"
+          }
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://novaural.com/#hearing-aid-verification-service",
+        "name": "Hearing Aid Fitting Verification for Audiologists",
+        "alternateName": ["Audiology Verification Service", "Hearing Aid Optimisation Service"],
+        "description": "Professional hearing aid fitting verification service using objective phoneme discrimination testing. Designed for audiologists, hearing aid dispensers, and audiology clinics to quantitatively verify and optimise hearing aid fittings — reducing follow-up visits and improving patient outcomes.",
+        "provider": { "@id": "https://novaural.com/#organization" },
+        "serviceType": "Audiology Software",
+        "category": "Hearing Aid Technology",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Audiologists and hearing care professionals",
+          "name": "Audiologists",
+          "description": "Audiologists, hearing aid dispensers, ENT specialists, NHS audiology departments, private hearing clinics, and audiology researchers"
+        },
+        "areaServed": "United Kingdom and international",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Audiology Software Solutions",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": { "@id": "https://novaural.com/#refittinglab" }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Product",
+        "@id": "https://novaural.com/#refittinglab-product",
+        "name": "ReFittingLab — Audiology Verification Software",
+        "description": "Audiology software for hearing aid fitting verification. ReFittingLab uses phoneme discrimination testing to give audiologists objective, quantitative data on how patients perceive speech sounds — enabling evidence-based hearing aid adjustments instead of trial and error.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Novaural"
+        },
+        "category": "Audiology Software",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Audiologists",
+          "name": "Hearing care professionals"
+        },
+        "isRelatedTo": [
+          {
+            "@type": "Thing",
+            "name": "Hearing Aids",
+            "description": "All hearing aid brands and models with adjustable per-frequency gain channels"
+          },
+          {
+            "@type": "Thing",
+            "name": "Audiology",
+            "description": "The branch of science and medicine concerned with hearing, balance, and related disorders"
+          },
+          {
+            "@type": "Thing",
+            "name": "Speech Audiometry",
+            "description": "Clinical measurement of a person's ability to recognise and discriminate speech sounds"
+          }
+        ]
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Audiology",
+        "description": "The branch of science and medicine concerned with the study of hearing, balance, and related disorders. Audiologists diagnose, manage, and treat hearing loss using hearing aids, cochlear implants, and other assistive devices.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Medical Specialties"
+        }
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Audiologist",
+        "description": "A healthcare professional specialising in identifying, diagnosing, and treating hearing and balance disorders. Audiologists prescribe and fit hearing aids, perform hearing tests, and provide aural rehabilitation.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Healthcare Professions"
+        }
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Hearing Aid",
+        "alternateName": ["Hearing Aids", "Hearing Instrument"],
+        "description": "An electronic device worn in or behind the ear that amplifies sound for people with hearing loss. Modern hearing aids use digital signal processing with multiple frequency channels to selectively amplify specific frequency bands based on the individual's audiogram.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Audiology Devices"
+        }
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Hearing Test",
+        "alternateName": ["Hearing Assessment", "Audiometric Test", "Pure Tone Audiometry"],
+        "description": "A clinical evaluation of a person's ability to hear sounds at different frequencies and volumes. Hearing tests are performed by audiologists to diagnose hearing loss and determine the appropriate hearing aid prescription.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Audiology Procedures"
         }
       }
-    }
+    ]
   }
   </script>
-  <!-- Google Fonts: preconnect + load (moved from CSS @import for speed) -->
+  <!-- Google Fonts: async load (non-render-blocking for LCP) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap">
+  </noscript>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animations.css">
   <!-- No-JS fallback: make all animated elements visible when JS is disabled -->

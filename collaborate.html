@@ -18,6 +18,8 @@
   <meta property="og:description" content="Clinical validation partnerships for hearing aid verification. Join NHS trusts, audiologists, and research institutions working with Novaural.">
   <meta property="og:url" content="https://novaural.com/collaborate.html">
   <meta property="og:image" content="https://novaural.com/assets/images/og_social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="Novaural">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -28,22 +30,119 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Partner With Novaural",
-    "description": "Explore clinical validation, research collaboration, and strategic partnership opportunities.",
-    "url": "https://novaural.com/collaborate.html",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "Novaural Ltd",
-      "url": "https://novaural.com"
-    }
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "name": "Partner With Novaural — Audiology Clinical Validation",
+        "description": "Explore clinical validation partnerships, research collaboration, and strategic partnership opportunities with Novaural for hearing aid verification technology.",
+        "url": "https://novaural.com/collaborate.html",
+        "mainEntity": { "@id": "https://novaural.com/collaborate.html#organization" },
+        "publisher": { "@id": "https://novaural.com/collaborate.html#organization" }
+      },
+      {
+        "@type": ["MedicalOrganization", "MedicalBusiness"],
+        "@id": "https://novaural.com/collaborate.html#organization",
+        "name": "Novaural Ltd",
+        "url": "https://novaural.com",
+        "logo": "https://novaural.com/logo/novaural_logo_dark.png",
+        "description": "UK-registered medical deep-tech company seeking clinical validation partners, research collaborators, and strategic allies for hearing aid fitting verification technology.",
+        "email": "enquiries@novaural.com",
+        "medicalSpecialty": {
+          "@type": "MedicalSpecialty",
+          "name": "Otolaryngologic",
+          "alternateName": "Audiology"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "71-75 Shelton Street, Covent Garden",
+          "addressLocality": "London",
+          "postalCode": "WC2H 9JQ",
+          "addressCountry": "GB"
+        },
+        "availableService": [
+          {
+            "@type": "MedicalProcedure",
+            "name": "Clinical Validation Pilot Programme",
+            "description": "Co-designed pilot programmes for NHS trusts and private clinics to validate the impact of phonemic discrimination-based hearing aid verification on fitting efficiency, follow-up rates, and patient outcomes.",
+            "procedureType": "https://schema.org/DiagnosticProcedure",
+            "relevantSpecialty": {
+              "@type": "MedicalSpecialty",
+              "name": "Otolaryngologic"
+            }
+          },
+          {
+            "@type": "MedicalTherapy",
+            "name": "Hearing Aid Fitting Verification",
+            "description": "Objective verification of hearing aid fittings using phoneme discrimination testing and per-band gain adjustment algorithms, designed to reduce follow-up visits and improve patient outcomes.",
+            "relevantSpecialty": {
+              "@type": "MedicalSpecialty",
+              "name": "Otolaryngologic"
+            }
+          }
+        ],
+        "knowsAbout": [
+          "clinical validation in audiology",
+          "hearing aid fitting verification",
+          "NHS audiology services",
+          "speech audiometry research",
+          "phoneme discrimination protocols",
+          "audiology partnership models"
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Audiology Research and Clinical Partnership Programme",
+        "alternateName": ["Hearing Aid Verification Partnership", "Audiology Pilot Programme"],
+        "description": "Partnership opportunities for audiologists, hearing aid dispensers, audiology clinics, NHS trusts, and university audiology departments to collaborate on clinical validation of hearing aid fitting verification technology using phoneme discrimination testing.",
+        "provider": { "@id": "https://novaural.com/collaborate.html#organization" },
+        "serviceType": "Audiology Clinical Validation",
+        "category": "Audiology Research",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Audiologists and hearing care professionals",
+          "name": "Audiologists",
+          "description": "Audiologists, hearing aid dispensers, ENT specialists, NHS audiology departments, university audiology programmes, private hearing clinics, and hearing aid manufacturers"
+        },
+        "areaServed": "United Kingdom and international",
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://novaural.com/collaborate.html",
+          "name": "Partnership enquiry form"
+        }
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Audiology Clinic",
+        "alternateName": ["Hearing Clinic", "Hearing Centre", "Audiology Department"],
+        "description": "A healthcare facility staffed by audiologists that provides hearing assessments, hearing aid fittings, tinnitus management, and aural rehabilitation services. Audiology clinics operate within NHS trusts, private practices, and university hospitals.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Healthcare Facilities"
+        }
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Hearing Aid Dispenser",
+        "alternateName": ["Hearing Instrument Specialist", "Hearing Care Professional"],
+        "description": "A qualified professional who selects, fits, and adjusts hearing aids for patients with hearing loss. Hearing aid dispensers work alongside audiologists in hearing clinics and retail settings.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Healthcare Professions"
+        }
+      }
+    ]
   }
   </script>
-  <!-- Google Fonts: preconnect + load (moved from CSS @import for speed) -->
+  <!-- Google Fonts: async load (non-render-blocking for LCP) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap">
+  </noscript>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animations.css">
   <!-- No-JS fallback: make all animated elements visible when JS is disabled -->
@@ -252,11 +351,11 @@
           <div class="form-row">
             <div class="form-group">
               <label for="fullName" data-i18n-html="collab_form_name">Full Name <span class="required">*</span></label>
-              <input type="text" id="fullName" name="name" required placeholder="Dr. Jane Smith" data-i18n-placeholder="collab_ph_name">
+              <input type="text" id="fullName" name="name" required placeholder="Dr. Jane Smith" data-i18n-placeholder="collab_ph_name" autocomplete="name">
             </div>
             <div class="form-group">
               <label for="email" data-i18n-html="collab_form_email">Email Address <span class="required">*</span></label>
-              <input type="email" id="email" name="email" required placeholder="jane.smith@nhs.net" data-i18n-placeholder="collab_ph_email">
+              <input type="email" id="email" name="email" required placeholder="jane.smith@nhs.net" data-i18n-placeholder="collab_ph_email" autocomplete="email">
             </div>
           </div>
 

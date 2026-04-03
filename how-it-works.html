@@ -18,6 +18,8 @@
   <meta property="og:description" content="ReFittingLab: clinical hearing aid verification software. Phoneme discrimination testing with 5-layer safety and per-band gain adjustment for audiologists.">
   <meta property="og:url" content="https://novaural.com/how-it-works.html">
   <meta property="og:image" content="https://novaural.com/assets/images/og_social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="Novaural">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -28,34 +30,212 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MedicalWebPage",
-    "name": "How ReFittingLab Works",
-    "description": "Objective phoneme discrimination testing that fills the verification gap in hearing aid fine-tuning. Full clinical workflow, 5-layer safety validation, and evidence-based algorithm.",
-    "url": "https://novaural.com/how-it-works.html",
-    "about": {
-      "@type": "SoftwareApplication",
-      "name": "ReFittingLab",
-      "applicationCategory": "MedicalApplication",
-      "operatingSystem": "Windows, macOS",
-      "description": "Evidence-based hearing aid verification and fine-tuning system with 5-layer safety validation, multi-factor computation engine, and universal device compatibility.",
-      "creator": {
+    "@graph": [
+      {
+        "@type": "MedicalWebPage",
+        "name": "How ReFittingLab Works — Clinical Workflow & Algorithm",
+        "description": "Detailed technical overview of ReFittingLab's objective phoneme discrimination testing methodology, 5-layer safety validation system, and evidence-based gain adjustment algorithm for hearing aid verification.",
+        "url": "https://novaural.com/how-it-works.html",
+        "medicalAudience": {
+          "@type": "MedicalAudience",
+          "audienceType": "Clinician",
+          "healthCondition": {
+            "@type": "MedicalCondition",
+            "name": "Hearing Loss"
+          },
+          "suggestedMinAge": 0,
+          "description": "Audiologists, hearing aid dispensers, ENT specialists, and clinical researchers in audiology"
+        },
+        "specialty": {
+          "@type": "MedicalSpecialty",
+          "name": "Otolaryngologic",
+          "alternateName": "Audiology"
+        },
+        "about": { "@id": "https://novaural.com/#refittinglab" },
+        "publisher": { "@id": "https://novaural.com/#organization" },
+        "mainEntity": { "@id": "https://novaural.com/how-it-works.html#workflow" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://novaural.com/#refittinglab",
+        "name": "ReFittingLab",
+        "applicationCategory": "MedicalApplication",
+        "applicationSubCategory": "Audiology Verification Software",
+        "operatingSystem": "Windows, macOS",
+        "description": "Evidence-based hearing aid verification and fine-tuning system with 5-layer safety validation, multi-factor computation engine, per-band gain adjustment, and universal hearing aid compatibility.",
+        "creator": { "@id": "https://novaural.com/#organization" }
+      },
+      {
         "@type": "Organization",
+        "@id": "https://novaural.com/#organization",
         "name": "Novaural Ltd",
         "url": "https://novaural.com"
+      },
+      {
+        "@type": "DiagnosticProcedure",
+        "@id": "https://novaural.com/how-it-works.html#workflow",
+        "name": "ReFittingLab Clinical Verification Workflow",
+        "alternateName": "Phonemic Discrimination Verification Protocol",
+        "description": "A four-step clinical workflow: (1) Input patient audiogram and current gains, (2) Administer guided phoneme discrimination testing at 50/65/80 dB SPL with speech-in-noise conditions, (3) Algorithm maps phonemic errors to frequency bands and calculates per-channel gain adjustments, (4) Apply recommendations and re-test to confirm measurable improvement.",
+        "howPerformed": "The clinician enters the patient's audiogram and current hearing aid gains. The system guides a structured phoneme discrimination test using minimal pairs at three presentation levels. A patented algorithm analyses error patterns per frequency band and generates specific dB gain adjustments. After applying changes, a verification re-test confirms improvement in speech discrimination.",
+        "preparation": "Patient audiogram and current hearing aid gain settings are required. The hearing aid must be set to the initial prescriptive target (NAL-NL2 or DSLv5).",
+        "procedureType": "https://schema.org/DiagnosticProcedure",
+        "relevantSpecialty": {
+          "@type": "MedicalSpecialty",
+          "name": "Otolaryngologic"
+        },
+        "usedToDiagnose": {
+          "@type": "MedicalCondition",
+          "name": "Suboptimal Hearing Aid Fitting",
+          "description": "A condition where the hearing aid gain configuration does not fully compensate for the patient's frequency-specific hearing loss, resulting in reduced speech discrimination."
+        },
+        "usesDevice": {
+          "@type": "MedicalDevice",
+          "name": "Hearing Aid",
+          "description": "Any hearing aid device with adjustable per-frequency gain channels, compatible with NAL-NL2 or DSLv5 prescriptive formulas."
+        }
+      },
+      {
+        "@type": "MedicalTest",
+        "name": "Phoneme Discrimination Test",
+        "alternateName": ["Minimal Pairs Test", "Speech Discrimination Assessment"],
+        "description": "A psychophysically validated test using minimal pairs (e.g., /s/ vs /θ/, /p/ vs /b/, /f/ vs /v/) to evaluate a patient's ability to discriminate speech sounds at frequency-specific levels. Tests are administered at 50, 65, and 80 dB SPL to verify audibility, intelligibility, and loudness comfort.",
+        "usedToDiagnose": {
+          "@type": "MedicalCondition",
+          "name": "Hearing Loss",
+          "description": "Sensorineural hearing loss affecting speech sound discrimination at specific frequencies."
+        },
+        "relevantSpecialty": {
+          "@type": "MedicalSpecialty",
+          "name": "Otolaryngologic"
+        },
+        "usesDevice": {
+          "@type": "MedicalDevice",
+          "name": "Calibrated Audio System",
+          "description": "Speakers or headphones calibrated to deliver speech stimuli at precise sound pressure levels (50, 65, 80 dB SPL)."
+        }
+      },
+      {
+        "@type": "HowTo",
+        "name": "How Audiologists Verify Hearing Aid Fittings with ReFittingLab",
+        "description": "Step-by-step guide showing how audiologists use phoneme discrimination testing to objectively verify and optimise hearing aid fittings — replacing subjective feedback with quantitative data.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Enter Audiogram and Current Hearing Aid Settings",
+            "text": "The audiologist inputs the patient's audiogram and the current hearing aid gain settings into ReFittingLab. The system supports all major hearing aid brands and prescriptive formulas (NAL-NL2, DSLv5)."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Administer Phoneme Discrimination Hearing Test",
+            "text": "The audiologist runs a guided hearing test using minimal pairs at 50, 65, and 80 dB SPL. The patient identifies speech sounds while the system records discrimination accuracy per frequency band."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Review Hearing Aid Gain Adjustment Recommendations",
+            "text": "The algorithm maps phonemic errors to specific frequency bands and calculates per-channel hearing aid gain adjustments. A 5-layer safety validation system ensures all recommendations stay within safe acoustic limits."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Apply Adjustments and Re-Test",
+            "text": "The audiologist applies the recommended gain adjustments to the hearing aid and re-runs the phoneme discrimination test to verify measurable improvement in speech clarity."
+          }
+        ],
+        "tool": {
+          "@type": "SoftwareApplication",
+          "name": "ReFittingLab",
+          "description": "Audiology verification software for hearing aid fitting"
+        },
+        "totalTime": "PT15M",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Audiologists",
+          "name": "Hearing care professionals"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "name": "Key Features of ReFittingLab for Audiologists",
+        "description": "Core features of ReFittingLab audiology software that help audiologists and hearing aid dispensers verify and optimise hearing aid fittings.",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Phoneme Discrimination Hearing Test",
+            "description": "Objective hearing test using minimal pairs to measure how well patients discriminate speech sounds with their hearing aids."
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Per-Band Hearing Aid Gain Adjustment",
+            "description": "Frequency-specific gain recommendations that tell audiologists exactly which hearing aid channels to adjust and by how many dB."
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "5-Layer Clinical Safety Validation",
+            "description": "Built-in safety system that ensures all hearing aid adjustments stay within safe acoustic limits, protecting patients from over-amplification."
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Multi-Level Audiology Testing (50/65/80 dB SPL)",
+            "description": "Tests at three presentation levels to verify hearing aid performance across soft, conversational, and loud speech conditions."
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "NAL-NL2 and DSLv5 Compatibility",
+            "description": "Full compatibility with the two most widely used hearing aid prescriptive formulas used by audiologists worldwide."
+          }
+        ]
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Hearing Aid Fitting",
+        "description": "The clinical process performed by an audiologist to select, program, and verify hearing aids for a patient. Includes audiometric testing, hearing aid programming based on prescriptive formulas, real-ear measurement, and speech-in-noise verification.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Audiology Procedures"
+        }
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Speech Audiometry",
+        "alternateName": ["Speech Recognition Testing", "Word Recognition Score"],
+        "description": "A category of hearing tests that measure a patient's ability to hear and understand speech. Used by audiologists to assess hearing aid benefit, determine candidacy for amplification, and verify hearing aid fitting accuracy.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Audiology Procedures"
+        }
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Real Ear Measurement",
+        "alternateName": ["REM", "Probe Microphone Measurement"],
+        "description": "A verification technique used by audiologists to measure the actual sound pressure level produced by a hearing aid inside the patient's ear canal. Considered the gold standard for hearing aid fitting verification alongside speech-based measures.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Audiology Procedures"
+        }
       }
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Novaural Ltd",
-      "url": "https://novaural.com"
-    }
+    ]
   }
   </script>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap">
+  </noscript>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/how-it-works.css">

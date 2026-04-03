@@ -18,6 +18,8 @@
   <meta property="og:description" content="Patent-protected hearing enhancement for earbuds and headphones. Frequency-specific speech clarity without raising volume. Discover Novaural technology.">
   <meta property="og:url" content="https://novaural.com/beyond-clinical.html">
   <meta property="og:image" content="https://novaural.com/assets/images/og_social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="Novaural">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -27,27 +29,178 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Beyond Clinical — Consumer Audio Intelligence",
-    "description": "Novaural's patent-protected technology brings speech clarity to consumer audio devices.",
-    "url": "https://novaural.com/beyond-clinical.html",
-    "about": {
-      "@type": "Thing",
-      "name": "Novaural Consumer Audio Technology",
-      "description": "Frequency-specific audio enhancement for earbuds, headphones, and AR/VR headsets that improves speech clarity without raising volume."
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Novaural Ltd",
-      "url": "https://novaural.com"
-    }
+    "@graph": [
+      {
+        "@type": "MedicalWebPage",
+        "name": "Consumer Hearing Enhancement — Speech Clarity Without Raising Volume",
+        "description": "Novaural's patent-protected technology brings frequency-specific speech clarity to consumer audio devices including earbuds, headphones, and AR/VR headsets. Based on clinical audiology science, it identifies individual speech frequency deficits and adjusts only those bands.",
+        "url": "https://novaural.com/beyond-clinical.html",
+        "specialty": {
+          "@type": "MedicalSpecialty",
+          "name": "Otolaryngologic",
+          "alternateName": "Audiology"
+        },
+        "medicalAudience": [
+          {
+            "@type": "MedicalAudience",
+            "audienceType": "Patient",
+            "description": "Adults 30+ experiencing subtle frequency-specific hearing changes, remote workers, students, music enthusiasts, gamers, and frequent travellers who use consumer audio devices"
+          },
+          {
+            "@type": "MedicalAudience",
+            "audienceType": "Clinician",
+            "description": "Consumer audio manufacturers, platform developers, and technology partners interested in integrating clinically-inspired audio personalisation"
+          }
+        ],
+        "about": { "@id": "https://novaural.com/beyond-clinical.html#hearing-enhancement" },
+        "publisher": { "@id": "https://novaural.com/beyond-clinical.html#organization" },
+        "mainEntity": { "@id": "https://novaural.com/beyond-clinical.html#hearing-enhancement" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://novaural.com/beyond-clinical.html#organization",
+        "name": "Novaural Ltd",
+        "url": "https://novaural.com"
+      },
+      {
+        "@type": "MedicalDevice",
+        "@id": "https://novaural.com/beyond-clinical.html#hearing-enhancement",
+        "name": "Novaural Consumer Hearing Enhancement Technology",
+        "alternateName": "Frequency-Specific Speech Clarity System",
+        "description": "Patent-protected technology that evaluates individual speech sound discrimination across frequency bands and generates precise per-frequency EQ adjustments for consumer audio devices. Only deficit frequencies are modified (typically 1–3 dB), leaving healthy frequencies untouched to prevent noise-induced damage from over-amplification.",
+        "relevantSpecialty": {
+          "@type": "MedicalSpecialty",
+          "name": "Otolaryngologic"
+        },
+        "seriousAdverseOutcome": {
+          "@type": "MedicalEntity",
+          "name": "None — the system bounds all adjustments within acoustic safety limits"
+        },
+        "purpose": "Improve speech clarity in consumer audio devices without increasing overall volume, reducing listening fatigue and preventing noise-induced hearing damage from habitual over-amplification.",
+        "manufacturer": { "@id": "https://novaural.com/beyond-clinical.html#organization" }
+      },
+      {
+        "@type": "MedicalCondition",
+        "name": "Age-Related Hearing Change",
+        "alternateName": ["Presbycusis", "Hidden Hearing Loss", "Subclinical Hearing Deficit"],
+        "description": "Subtle, frequency-specific changes in hearing sensitivity that typically begin in the 30s, affecting high frequencies first. Most individuals are unaware of these changes but unconsciously compensate by increasing volume, which can damage frequencies that still function normally.",
+        "relevantSpecialty": {
+          "@type": "MedicalSpecialty",
+          "name": "Otolaryngologic"
+        },
+        "signOrSymptom": [
+          {
+            "@type": "MedicalSignOrSymptom",
+            "name": "Listening fatigue",
+            "description": "Increased cognitive effort to process speech through earbuds due to frequency-specific perception gaps, causing tiredness during extended calls, podcasts, or meetings."
+          },
+          {
+            "@type": "MedicalSignOrSymptom",
+            "name": "Habitual volume increase",
+            "description": "The tendency to raise overall volume to compensate for unclear speech, exposing healthy frequencies to potentially damaging sound pressure levels."
+          },
+          {
+            "@type": "MedicalSignOrSymptom",
+            "name": "Reduced speech clarity",
+            "description": "Difficulty distinguishing similar speech sounds (e.g., /s/ vs /f/, /p/ vs /b/) through consumer audio devices, particularly in noisy environments."
+          }
+        ],
+        "possibleTreatment": {
+          "@type": "MedicalTherapy",
+          "name": "Frequency-Specific Audio Personalisation",
+          "description": "Per-frequency equaliser adjustment based on objectively measured speech discrimination deficits, applied to consumer audio devices such as earbuds, headphones, and AR/VR headsets."
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "Hearing Enhancement Technology for Consumer Audio",
+        "alternateName": ["Personalised Hearing Profile", "Speech Clarity EQ"],
+        "description": "Consumer-facing technology rooted in clinical audiology science that personalises audio output in earbuds, headphones, and AR/VR headsets. Instead of a generic EQ, it uses a quick hearing test to identify which speech frequencies need a subtle boost — improving speech clarity without raising overall volume.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Novaural"
+        },
+        "category": "Hearing Technology",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Consumers",
+          "name": "Audio device users",
+          "description": "Adults 30+ using earbuds or headphones for calls, podcasts, and meetings; gamers; students; remote workers; music enthusiasts; and anyone wanting clearer speech without turning up the volume"
+        },
+        "isRelatedTo": [
+          {
+            "@type": "Thing",
+            "name": "Hearing Health",
+            "description": "The overall condition of a person's hearing ability, including prevention of noise-induced hearing loss and maintenance of speech clarity"
+          },
+          {
+            "@type": "Thing",
+            "name": "Earbuds and Headphones",
+            "description": "Consumer audio devices used daily for music, calls, and media that can be personalised for individual hearing profiles"
+          },
+          {
+            "@type": "Thing",
+            "name": "Audiology",
+            "description": "The clinical science behind hearing assessment and personalisation, adapted for consumer applications"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Personalised Hearing Profile for Earbuds and Headphones",
+        "description": "A quick in-app hearing test based on audiology science that creates a personalised audio profile for consumer earbuds and headphones. Identifies individual speech frequency deficits and applies subtle per-frequency adjustments to improve speech clarity during calls, podcasts, and media playback.",
+        "provider": { "@id": "https://novaural.com/beyond-clinical.html#organization" },
+        "serviceType": "Audio Personalisation",
+        "category": "Hearing Technology",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Consumer audio users",
+          "name": "Earbud and headphone users",
+          "description": "Anyone who uses earbuds or headphones and wants clearer speech without raising volume — especially adults experiencing subtle age-related hearing changes"
+        }
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Hearing Health",
+        "description": "The overall state of a person's auditory system and their ability to hear and process speech sounds. Hearing health includes prevention of noise-induced hearing loss, regular hearing assessments, and use of hearing protection or personalised audio settings.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Audiology Concepts"
+        }
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Noise-Induced Hearing Loss",
+        "alternateName": ["NIHL", "Hearing Damage from Loud Sound"],
+        "description": "Permanent hearing damage caused by exposure to loud sounds, including habitual over-amplification through earbuds and headphones. One of the most preventable forms of hearing loss, addressed by frequency-specific audio personalisation that reduces the need to raise volume.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Hearing Conditions"
+        }
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Personalised Audio",
+        "alternateName": ["Audio Personalisation", "Custom Sound Profile", "Hearing Profile"],
+        "description": "Technology that adapts audio output to an individual's unique hearing abilities, compensating for frequency-specific deficits rather than applying a one-size-fits-all equaliser. Based on audiology principles used in hearing aid fitting.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Audio Technology"
+        }
+      }
+    ]
   }
   </script>
-  <!-- Google Fonts: preconnect + load (moved from CSS @import for speed) -->
+  <!-- Google Fonts: async load (non-render-blocking for LCP) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap">
+  </noscript>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animations.css">
   <!-- No-JS fallback: make all animated elements visible when JS is disabled -->
@@ -137,7 +290,7 @@
         <div class="problem-card fade-in">
           <div class="card-icon">📉</div>
           <h3 data-i18n="beyond_card3_title">A Growing Gap</h3>
-          <p data-i18n-html="beyond_card3_text">Age-related hearing changes begin as early as your 30s, typically affecting high frequencies first. Most people don't notice — they unknowingly compensate with volume, gradually damaging the frequencies that still work well.</p>
+          <p data-i18n="beyond_card3_text">Age-related hearing changes begin as early as your 30s, typically affecting high frequencies first. Most people don't notice — they unknowingly compensate with volume, gradually damaging the frequencies that still work well.</p>
         </div>
 
       </div>
@@ -217,8 +370,8 @@
             <span class="shield">🛡️</span>
             Patent Pending — Filed at UKIPO · 47 Claims · EU & US filing in progress
           </div>
-          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1.5rem;" data-i18n-html="beyond_clinical_link">
-            This technology was originally developed for <a href="how-it-works.html" style="color: var(--teal-400);">clinical hearing aid verification</a> — and is now being adapted for the consumer audio market.
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1.5rem;">
+            <span data-i18n="beyond_clinical_link_pre">This technology was originally developed for</span> <a href="how-it-works.html" style="color: var(--teal-400);" data-i18n="beyond_clinical_link_anchor">clinical hearing aid verification</a> <span data-i18n="beyond_clinical_link_post">— and is now being adapted for the consumer audio market.</span>
           </p>
         </div>
 
@@ -248,11 +401,11 @@
             </div>
           </div>
           <ul class="benefit-list">
-            <li data-i18n-html="beyond_safe_1"><span class="check">✓</span> No need to increase overall volume to understand speech</li>
-            <li data-i18n-html="beyond_safe_2"><span class="check">✓</span> Healthy frequencies remain at their natural, safe levels</li>
-            <li data-i18n-html="beyond_safe_3"><span class="check">✓</span> Prevents gradual noise-induced damage from daily over-amplification</li>
-            <li data-i18n-html="beyond_safe_4"><span class="check">✓</span> Adjustments are bounded by acoustic safety limits built into the algorithm</li>
-            <li data-i18n-html="beyond_safe_5"><span class="check">✓</span> Especially critical for users who listen for extended periods (commuters, remote workers, students)</li>
+            <li><span class="check">✓</span> <span data-i18n="beyond_safe_1">No need to increase overall volume to understand speech</span></li>
+            <li><span class="check">✓</span> <span data-i18n="beyond_safe_2">Healthy frequencies remain at their natural, safe levels</span></li>
+            <li><span class="check">✓</span> <span data-i18n="beyond_safe_3">Prevents gradual noise-induced damage from daily over-amplification</span></li>
+            <li><span class="check">✓</span> <span data-i18n="beyond_safe_4">Adjustments are bounded by acoustic safety limits built into the algorithm</span></li>
+            <li><span class="check">✓</span> <span data-i18n="beyond_safe_5">Especially critical for users who listen for extended periods (commuters, remote workers, students)</span></li>
           </ul>
         </div>
 
@@ -265,11 +418,11 @@
             </div>
           </div>
           <ul class="benefit-list">
-            <li data-i18n-html="beyond_fatigue_1"><span class="check">✓</span> When speech frequencies are at the correct level, your brain processes audio with less effort</li>
-            <li data-i18n-html="beyond_fatigue_2"><span class="check">✓</span> Reduces the unconscious strain of "filling in the gaps" for weak frequencies</li>
-            <li data-i18n-html="beyond_fatigue_3"><span class="check">✓</span> Calls, meetings, and podcasts feel less tiring over long sessions</li>
-            <li data-i18n-html="beyond_fatigue_4"><span class="check">✓</span> Improved comfort during all-day earbud use</li>
-            <li data-i18n-html="beyond_fatigue_5"><span class="check">✓</span> Benefit compounds over weeks and months of daily use</li>
+            <li><span class="check">✓</span> <span data-i18n="beyond_fatigue_1">When speech frequencies are at the correct level, your brain processes audio with less effort</span></li>
+            <li><span class="check">✓</span> <span data-i18n="beyond_fatigue_2">Reduces the unconscious strain of "filling in the gaps" for weak frequencies</span></li>
+            <li><span class="check">✓</span> <span data-i18n="beyond_fatigue_3">Calls, meetings, and podcasts feel less tiring over long sessions</span></li>
+            <li><span class="check">✓</span> <span data-i18n="beyond_fatigue_4">Improved comfort during all-day earbud use</span></li>
+            <li><span class="check">✓</span> <span data-i18n="beyond_fatigue_5">Benefit compounds over weeks and months of daily use</span></li>
           </ul>
         </div>
 
