@@ -62,10 +62,12 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- ============================================= -->
   <!-- NAVIGATION                                    -->
   <!-- ============================================= -->
-  <nav class="navbar scrolled" id="navbar">
+  <nav class="navbar scrolled" id="navbar" aria-label="Main navigation">
     <div class="nav-content">
       <a href="index.html" class="nav-logo">
         <img src="logo/novaural_wave_icon.svg" alt="Novaural hearing aid verification technology" width="40" height="40">
@@ -84,7 +86,7 @@
         <li><a href="collaborate.html" class="nav-cta" data-i18n="nav_partner">Partner With Us</a></li>
       </ul>
       <div class="lang-selector-container"></div>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -93,7 +95,7 @@
     <div class="scroll-progress" id="scrollProgress"></div>
   </nav>
 
-  <main>
+  <main id="main-content">
 
   <!-- ============================================= -->
   <!-- HERO                                          -->
@@ -125,7 +127,7 @@
       <div class="compare-grid">
         <!-- Before fitting: lots of tools -->
         <div class="compare-col before">
-          <h4>❌ What happens today during fine-tuning</h4>
+          <h3>❌ What happens today during fine-tuning</h3>
           <ul>
             <li><strong>"How does it sound?"</strong> — Clinicians ask subjective questions with no quantifiable answers</li>
             <li><strong>Trial and error</strong> — Adjust gains, send patient home, wait for next appointment</li>
@@ -137,7 +139,7 @@
 
         <!-- After: with ReFittingLab -->
         <div class="compare-col after">
-          <h4>✅ What changes with ReFittingLab</h4>
+          <h3>✅ What changes with ReFittingLab</h3>
           <ul>
             <li><strong>Objective phoneme discrimination scores</strong> — Per-contrast, per-frequency, quantified across 3 intensity levels</li>
             <li><strong>Targeted adjustments</strong> — The multi-factor algorithm tells you <em>exactly</em> which bands need adjustment, calibrated to the patient's audiometric profile</li>
@@ -149,7 +151,7 @@
       </div>
 
       <div class="gap-callout">
-        <h4>The verification gap in current practice</h4>
+        <h3>The verification gap in current practice</h3>
         <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
           <strong>Pre-fitting</strong> has excellent objective tools: audiogram, REM/REAR, RECD, prescriptive formulas (NAL-NL2, DSLv5.0, manufacturer-based).<br>
           <strong>Post-fitting fine-tuning</strong> has almost none. The clinician adjusts based on subjective patient reports and their own experience — with no objective way to measure whether <em>word understanding</em> actually improved after a gain change. Did the patient's ability to distinguish similar-sounding words get better? Worse? By how much? Nobody knows.<br><br>
@@ -172,7 +174,7 @@
 
       <div class="compare-grid mb-10">
         <div class="compare-col before">
-          <h4>❌ Without ReFittingLab</h4>
+          <h3>❌ Without ReFittingLab</h3>
           <ul>
             <li>Fitting session ends after REM verification — no measurement of actual <em>word understanding</em></li>
             <li>Patient goes home with "come back in a few days and tell me how it sounds"</li>
@@ -182,7 +184,7 @@
           </ul>
         </div>
         <div class="compare-col after">
-          <h4>✅ With ReFittingLab</h4>
+          <h3>✅ With ReFittingLab</h3>
           <ul>
             <li>After REM, run a 20-minute verification session — objective measurement of the patient's <em>actual word discrimination</em></li>
             <li>Algorithm identifies exactly which frequency bands need adjustment and by how much — validated against 5 safety checks</li>
@@ -196,28 +198,28 @@
       <div class="workflow-timeline">
         <div class="wf-step standard">
           <div class="wf-marker">1</div>
-          <h4>Audiogram & Patient History</h4>
+          <h3>Audiogram & Patient History</h3>
           <p>Standard audiometric evaluation: air/bone conduction, UCL, speech recognition threshold. This is your baseline.</p>
         </div>
         <div class="wf-step standard">
           <div class="wf-marker">2</div>
-          <h4>Prescriptive Formula</h4>
+          <h3>Prescriptive Formula</h3>
           <p>Apply your formula of choice — NAL-NL2, DSLv5.0, or a manufacturer-based formula (Phonak APD, Oticon VAC+, etc.) — to generate initial gain targets.</p>
         </div>
         <div class="wf-step standard">
           <div class="wf-marker">3</div>
-          <h4>Initial Fitting in Manufacturer Software</h4>
+          <h3>Initial Fitting in Manufacturer Software</h3>
           <p>Program the hearing aids in Phonak Target, Oticon Genie 2, ReSound Smart Fit, Signia Connexx, Widex Compass GPS, or any other fitting software. Configure coupling, feedback management, features.</p>
         </div>
         <div class="wf-step standard">
           <div class="wf-marker">4</div>
-          <h4>Real-Ear Measurement (REM/REAR)</h4>
+          <h3>Real-Ear Measurement (REM/REAR)</h3>
           <p>Verify that the acoustic output at the eardrum matches prescriptive targets. This confirms the <em>physical delivery</em> of sound — but not the <em>perceptual outcome</em>.</p>
         </div>
 
         <div class="wf-step highlight">
           <div class="wf-marker">★</div>
-          <h4>ReFittingLab — Phoneme Discrimination Verification</h4>
+          <h3>ReFittingLab — Phoneme Discrimination Verification</h3>
           <p>
             <strong>This is where ReFittingLab enters.</strong> Using extremely select minimal pairs — curated through rigorous phonological, phonetic, and psychometric criteria — the system evaluates the patient's ability to discriminate speech sounds across frequency bands at multiple intensity levels (50, 65, 80 dB SPL), and outputs <strong>specific, per-band gain adjustments</strong> (ΔG50, ΔG65, ΔG80) validated through 5 independent safety checks.
           </p>
@@ -228,12 +230,12 @@
 
         <div class="wf-step standard">
           <div class="wf-marker">6</div>
-          <h4>Fine-Tuning with Data</h4>
+          <h3>Fine-Tuning with Data</h3>
           <p>Apply ReFittingLab's recommendations in your fitting software. Adjust G65 for conversational speech, G50 for soft sounds, G80 for loud environments — each adjustment mapped to a specific phoneme discrimination deficit and validated against the patient's dynamic range.</p>
         </div>
         <div class="wf-step standard">
           <div class="wf-marker">7</div>
-          <h4>Verified Outcome & Discharge</h4>
+          <h3>Verified Outcome & Discharge</h3>
           <p>Re-test with ReFittingLab to confirm improvement. Document results with statistical significance verification (Thornton-Raffin critical difference). Discharge with confidence — or schedule follow-up only if objective data warrants it.</p>
         </div>
       </div>
@@ -255,7 +257,7 @@
 
         <div class="detail-step fade-in">
           <span class="ds-num">STEP 1</span>
-          <h4>Input Patient Profile</h4>
+          <h3>Input Patient Profile</h3>
           <p>Enter the audiogram (air/bone conduction, UCL), current gain tables (G50/G65/G80/CR/MPO from your fitting software), and clinical context: experience level, tinnitus, hyperacusis, coupling type, bilateral status.</p>
           <div class="ds-meta">
             <span class="ds-tag">~2 min</span>
@@ -265,7 +267,7 @@
 
         <div class="detail-step fade-in">
           <span class="ds-num">STEP 2</span>
-          <h4>Automatic Test Selection</h4>
+          <h3>Automatic Test Selection</h3>
           <p>Based on the audiometric profile, the system selects which phoneme contrasts to prioritise. Steep high-frequency loss? Prioritise fricatives (/s/ vs /θ/). Flat moderate loss? Include stops and nasals. Severe HF loss? Flag for frequency lowering verification.</p>
           <div class="ds-meta">
             <span class="ds-tag">Automatic</span>
@@ -275,7 +277,7 @@
 
         <div class="detail-step fade-in">
           <span class="ds-num">STEP 3</span>
-          <h4>Phoneme Discrimination Testing</h4>
+          <h3>Phoneme Discrimination Testing</h3>
           <p>Calibrated minimal pair stimuli — each pair differing in exactly one phonemic segment — are presented via a forced-choice paradigm. The patient selects what they hear: each error maps to a specific frequency band through the distinctive feature → frequency correspondence table.</p>
           <div class="ds-meta">
             <span class="ds-tag">~12 min</span>
@@ -286,7 +288,7 @@
 
         <div class="detail-step fade-in">
           <span class="ds-num">STEP 4</span>
-          <h4>Multi-Level Testing</h4>
+          <h3>Multi-Level Testing</h3>
           <p>Extend to <strong>50 dB</strong> (audibility of soft sounds) and <strong>80 dB</strong> (comfort and tolerance). This maps to G50, G65, and G80 adjustments across the full dynamic range — not just conversational level.</p>
           <div class="ds-meta">
             <span class="ds-tag">~8 min</span>
@@ -296,7 +298,7 @@
 
         <div class="detail-step fade-in">
           <span class="ds-num">STEP 5</span>
-          <h4>Speech-in-Noise Verification</h4>
+          <h3>Speech-in-Noise Verification</h3>
           <p>Sentences are presented with calibrated noise (ICRA/ISTS) at multiple signal-to-noise ratios (+5, 0, −5 dB). Calculates the patient's SNR loss — how many extra dB of signal they need compared to a normal listener.</p>
           <div class="ds-meta">
             <span class="ds-tag">~6 min</span>
@@ -306,7 +308,7 @@
 
         <div class="detail-step fade-in">
           <span class="ds-num">STEP 6</span>
-          <h4>Multi-Factor Analysis & Safety Validation</h4>
+          <h3>Multi-Factor Analysis & Safety Validation</h3>
           <p>The algorithm maps each phoneme error to its acoustic correlate (distinctive feature → frequency band → NFM band matching), then computes the gain delta using a multi-factor formula that considers hearing threshold, dynamic range, session history, and effective audibility. Every recommendation passes through 5 independent safety checks before presentation.</p>
           <div class="ds-meta">
             <span class="ds-tag">Instant</span>
@@ -317,7 +319,7 @@
 
         <div class="detail-step fade-in">
           <span class="ds-num">STEP 7</span>
-          <h4>Apply in Your Fitting Software</h4>
+          <h3>Apply in Your Fitting Software</h3>
           <p>Take the recommendations and apply them directly in Phonak Target, Oticon Genie 2, ReSound Smart Fit, or whichever fitting software you use. ReFittingLab tells you <em>what</em> to change, <em>why</em>, and <em>how much is safe</em> — you stay in control.</p>
           <div class="ds-meta">
             <span class="ds-tag">~3 min</span>
@@ -327,7 +329,7 @@
 
         <div class="detail-step fade-in">
           <span class="ds-num">STEP 8</span>
-          <h4>Re-Test & Verify</h4>
+          <h3>Re-Test & Verify</h3>
           <p>Re-administer the tests that showed deficits. If the adjustment was correct, discrimination scores improve measurably. Statistical significance is verified using Thornton-Raffin critical difference tables, with full longitudinal tracking across sessions.</p>
           <div class="ds-meta">
             <span class="ds-tag">~5 min</span>
@@ -353,27 +355,27 @@
 
       <div class="pipeline">
         <div class="pipe-node">
-          <h5>Speech Error</h5>
+          <h3>Speech Error</h3>
           <p>"thin" heard as "sin"</p>
         </div>
         <span class="pipe-arrow">→</span>
         <div class="pipe-node">
-          <h5>Distinctive Feature</h5>
+          <h3>Distinctive Feature</h3>
           <p>[+strident] vs [−strident]</p>
         </div>
         <span class="pipe-arrow">→</span>
         <div class="pipe-node active">
-          <h5>NFM Band Mapping</h5>
+          <h3>NFM Band Mapping</h3>
           <p>→ 4 kHz band</p>
         </div>
         <span class="pipe-arrow">→</span>
         <div class="pipe-node active">
-          <h5>Multi-Factor ΔdB</h5>
+          <h3>Multi-Factor ΔdB</h3>
           <p>base × EA × DR × session</p>
         </div>
         <span class="pipe-arrow">→</span>
         <div class="pipe-node pipe-node--safety">
-          <h5 class="text-color--safety">5 Safety Checks</h5>
+          <h3 class="text-color--safety">5 Safety Checks</h3>
           <p>UCL · MPO · LS · DR · CR</p>
         </div>
       </div>
@@ -385,32 +387,32 @@
       <div class="algo-features">
         <div class="algo-feature fade-in">
           <div class="af-icon">📐</div>
-          <h4>Effective Audibility (EA)</h4>
+          <h3>Effective Audibility (EA)</h3>
           <p>Based on Ching, Dillon et al. (2001, NAL-NL2): as hearing loss increases, the ability to extract speech information diminishes even when sound is audible. The algorithm scales adjustments per-band based on the patient's threshold — not a naive flat boost. At 66 dB HL, contribution drops ~50%.</p>
         </div>
         <div class="algo-feature fade-in">
           <div class="af-icon">📊</div>
-          <h4>SII-Weighted Prioritisation</h4>
+          <h3>SII-Weighted Prioritisation</h3>
           <p>Band importance follows ANSI S3.5-1997 Speech Intelligibility Index weights. The 2–4 kHz region contributes ~54% of speech intelligibility — adjustments in these bands are computed and prioritised proportionally.</p>
         </div>
         <div class="algo-feature fade-in">
           <div class="af-icon">🔄</div>
-          <h4>Session-Aware Graduation</h4>
+          <h3>Session-Aware Graduation</h3>
           <p>First-session adjustments are conservatively bounded. Subsequent sessions can build on previous data, with the algorithm tracking longitudinal improvement per contrast per band — enabling precise, progressive optimisation.</p>
         </div>
         <div class="algo-feature fade-in">
           <div class="af-icon">🎯</div>
-          <h4>Dynamic Range Awareness</h4>
+          <h3>Dynamic Range Awareness</h3>
           <p>The gain delta is bounded by each band's available dynamic range (UCL − threshold). Patients with narrow dynamic range (< 30 dB) receive proportionally smaller adjustments to preserve comfort headroom.</p>
         </div>
         <div class="algo-feature algo-feature--featured fade-in">
           <div class="af-icon">🔧</div>
-          <h4>NFM — Nearest Frequency Matching</h4>
+          <h3>NFM — Nearest Frequency Matching</h3>
           <p>The core technology that makes ReFittingLab universally compatible: NFM automatically maps each speech-relevant frequency to the closest adjustable band of <em>any</em> hearing device — whether it has 4 bands (basic aid), 10 bands (mid-range), or 20 bands (premium clinical device). The system consolidates multiple speech frequency regions that fall within the resolution of a single band, weighting each by the magnitude of the discrimination deficit and spectral proximity. <strong>One evaluation &#8594; any device &#8594; optimal result regardless of band count.</strong></p>
         </div>
         <div class="algo-feature fade-in">
           <div class="af-icon">📋</div>
-          <h4>Cross-Device Portability</h4>
+          <h3>Cross-Device Portability</h3>
           <p>Discrimination data is device-independent — it characterises the patient's perceptual profile, not the hearing device. When the patient changes devices, only steps (b)–(d) are re-executed with the new band configuration. No re-evaluation needed.</p>
         </div>
       </div>
@@ -432,7 +434,7 @@
 
         <div class="safety-card fade-in">
           <span class="safety-icon">🛡️</span>
-          <h4>1. UCL Proximity Check</h4>
+          <h3>1. UCL Proximity Check</h3>
           <p>Estimates the post-adjustment output level and verifies it stays at least 7 dB below the patient's Uncomfortable Loudness Level (ASHA guideline: 5–10 dB margin). If exceeded, the system caps the recommendation and flags the band.</p>
           <div class="safety-detail">
             Output = 65 dB + G65<sub>current</sub> + Δ dB → must not exceed UCL − 7 dB
@@ -441,7 +443,7 @@
 
         <div class="safety-card fade-in">
           <span class="safety-icon">📈</span>
-          <h4>2. Spectral Loudness Summation</h4>
+          <h3>2. Spectral Loudness Summation</h3>
           <p>When 3 or more high-frequency bands receive simultaneous gain increases, perceived loudness exceeds their arithmetic sum (Keidser & Moore). The system applies a 1.5× summation factor and limits total perceived HF increase to 8 dB per session.</p>
           <div class="safety-detail">
             Perceived loudness = Σ(ΔdB<sub>HF</sub>) × 1.5 → max 8 dB/session
@@ -450,7 +452,7 @@
 
         <div class="safety-card fade-in">
           <span class="safety-icon">⚖️</span>
-          <h4>3. Dynamic Range Protection</h4>
+          <h3>3. Dynamic Range Protection</h3>
           <p>For patients with narrow dynamic range (< 30 dB between threshold and UCL), adjustments exceeding 3 dB are flagged with specific warnings. The recommendation is bounded to preserve comfortable headroom.</p>
           <div class="safety-detail">
             DR = UCL − HTL → if DR < 30 dB, Δ dB capped at 2 dB
@@ -459,7 +461,7 @@
 
         <div class="safety-card fade-in">
           <span class="safety-icon">🔊</span>
-          <h4>4. MPO Headroom Verification</h4>
+          <h3>4. MPO Headroom Verification</h3>
           <p>Cross-references the proposed adjustment against the hearing device's Maximum Power Output to ensure the recommendation doesn't push the output level into saturation. Requires the actual gain table from fitting software.</p>
           <div class="safety-detail">
             Headroom = MPO − (65 + G65) → Δ dB must not exceed headroom
@@ -468,7 +470,7 @@
 
         <div class="safety-card fade-in">
           <span class="safety-icon">⏱️</span>
-          <h4>5. Compression Ratio Guard</h4>
+          <h3>5. Compression Ratio Guard</h3>
           <p>For frequency bands involved in temporal contrasts (voiced/voiceless stop consonants: /p/ vs /b/, /t/ vs /d/, /k/ vs /g/), the system detects compression ratios exceeding 3:1 — which degrade Voice Onset Time discrimination (up to 19.4% intelligibility loss).</p>
           <div class="safety-detail">
             CR = 30 / (30 + G80 − G50) → if CR > 3:1, alert generated
@@ -497,32 +499,32 @@
       <div class="compat-grid">
         <div class="compat-card fade-in">
           <div class="cc-icon">🔧</div>
-          <h4>Phonak Target</h4>
+          <h3>Phonak Target</h3>
           <p>Paradise, Lumity, Infinio</p>
         </div>
         <div class="compat-card fade-in">
           <div class="cc-icon">🔧</div>
-          <h4>Oticon Genie 2</h4>
+          <h3>Oticon Genie 2</h3>
           <p>More, Real, Intent</p>
         </div>
         <div class="compat-card fade-in">
           <div class="cc-icon">🔧</div>
-          <h4>ReSound Smart Fit</h4>
+          <h3>ReSound Smart Fit</h3>
           <p>ONE, Nexia, Omnia</p>
         </div>
         <div class="compat-card fade-in">
           <div class="cc-icon">🔧</div>
-          <h4>Signia Connexx</h4>
+          <h3>Signia Connexx</h3>
           <p>IX, AX, Pure</p>
         </div>
         <div class="compat-card fade-in">
           <div class="cc-icon">🔧</div>
-          <h4>Widex Compass GPS</h4>
+          <h3>Widex Compass GPS</h3>
           <p>SmartRIC, Moment, Sheer</p>
         </div>
         <div class="compat-card fade-in">
           <div class="cc-icon">🔧</div>
-          <h4>Any Other Software</h4>
+          <h3>Any Other Software</h3>
           <p>With adjustable gain bands</p>
         </div>
       </div>
@@ -580,7 +582,7 @@
 
       <!-- Calibration callout -->
       <div class="gap-callout mt-10">
-        <h4>One-Time Calibration — 5 Minutes</h4>
+        <h3>One-Time Calibration — 5 Minutes</h3>
         <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
           The software includes a <strong>guided calibration wizard</strong> that takes under 5 minutes:
         </p>

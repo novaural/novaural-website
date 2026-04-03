@@ -21,8 +21,8 @@
 
   --gray-300: #CBD5E1;
   --gray-400: #94A3B8;
-  --gray-500: #64748B;
-  --gray-600: #475569;
+  --gray-500: #6F8598;
+  --gray-600: #6E7F90;
 
   /* ── Semantic (theme-switched) ── */
 
@@ -99,6 +99,46 @@
   /* Typography */
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
+}
+
+/* =============================================
+   ACCESSIBILITY
+   Skip-link and focus-visible indicators.
+   ============================================= */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 10000;
+  padding: 0.8rem 1.5rem;
+  background: var(--teal-400);
+  color: var(--navy-900);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Global focus-visible — keyboard users see a clear ring,
+   mouse users don't. Form inputs already have their own
+   border-color change on focus, so we exclude them. */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--teal-400);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible {
+  outline: none; /* they use border-color + box-shadow instead */
 }
 
 /* =============================================
@@ -260,7 +300,7 @@
   --navy-800: #FFFFFF;
   --gray-400: #64748B;
   --gray-500: #475569;
-  --gray-600: #94A3B8;
+  --gray-600: #5B6B80;
   --white: #1E293B;
   --teal-500: #0F766E;
   --teal-400: #0D9488;
@@ -1123,7 +1163,7 @@ section {
   margin-top: 2px;
 }
 
-.mission-item h4 {
+.mission-item h3 {
   font-size: 0.95rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
@@ -1254,7 +1294,7 @@ section {
   flex-shrink: 0;
 }
 
-.feature-item h4 {
+.feature-item h3 {
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.3rem;
@@ -1640,17 +1680,17 @@ section {
   transform: translateX(4px);
 }
 
-.timeline-content h4 {
+.timeline-content h3 {
   font-size: 1.05rem;
   font-weight: 700;
   margin-bottom: 0.4rem;
 }
 
-.timeline-item.current .timeline-content h4 {
+.timeline-item.current .timeline-content h3 {
   color: var(--teal-400);
 }
 
-.timeline-item.upcoming .timeline-content h4 {
+.timeline-item.upcoming .timeline-content h3 {
   color: var(--gray-400);
 }
 

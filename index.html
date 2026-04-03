@@ -81,10 +81,12 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- ============================================= -->
   <!-- NAVIGATION                                    -->
   <!-- ============================================= -->
-  <nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
     <div class="nav-content">
       <a href="index.html" class="nav-logo">
         <img src="logo/novaural_wave_icon.svg" alt="Novaural hearing aid verification technology" width="40" height="40">
@@ -103,7 +105,7 @@
         <li><a href="collaborate.html" class="nav-cta" data-i18n="nav_partner">Partner With Us</a></li>
       </ul>
       <div class="lang-selector-container"></div>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -112,7 +114,7 @@
     <div class="scroll-progress" id="scrollProgress"></div>
   </nav>
 
-  <main>
+  <main id="main-content">
 
   <!-- ============================================= -->
   <!-- HERO                                          -->
@@ -181,21 +183,21 @@
             <div class="mission-item">
               <span class="mission-icon">🎯</span>
               <div>
-                <h4 data-i18n="about_mission_title">Mission</h4>
+                <h3 data-i18n="about_mission_title">Mission</h3>
                 <p data-i18n="about_mission_text">To make evidence-based hearing aid verification accessible, efficient, and standard practice worldwide.</p>
               </div>
             </div>
             <div class="mission-item">
               <span class="mission-icon">🔬</span>
               <div>
-                <h4 data-i18n="about_approach_title">Approach</h4>
+                <h3 data-i18n="about_approach_title">Approach</h3>
                 <p data-i18n="about_approach_text">Deep-tech rooted in peer-reviewed audiology science — not assumptions, not anecdotes.</p>
               </div>
             </div>
             <div class="mission-item">
               <span class="mission-icon">🇬🇧</span>
               <div>
-                <h4 data-i18n="about_uk_title">Based in the UK</h4>
+                <h3 data-i18n="about_uk_title">Based in the UK</h3>
                 <p data-i18n="about_uk_text">Registered and operating from the United Kingdom, serving clinics globally.</p>
               </div>
             </div>
@@ -290,28 +292,28 @@
           <div class="feature-item">
             <div class="feature-icon">🎤</div>
             <div>
-              <h4 data-i18n="product_feat1_title">Phonemic Discrimination Testing</h4>
+              <h3 data-i18n="product_feat1_title">Phonemic Discrimination Testing</h3>
               <p data-i18n="product_feat1_text">Scientifically validated minimal pairs test how patients perceive individual speech contrasts (e.g., /s/ vs /θ/, /p/ vs /b/) — revealing precisely where the fitting falls short.</p>
             </div>
           </div>
           <div class="feature-item">
             <div class="feature-icon">🧮</div>
             <div>
-              <h4 data-i18n="product_feat2_title">Quantitative Adjustment Engine</h4>
+              <h3 data-i18n="product_feat2_title">Quantitative Adjustment Engine</h3>
               <p data-i18n="product_feat2_text">Our patented algorithm translates phonemic errors into specific, per-frequency gain adjustments — replacing guesswork with evidence-based recommendations.</p>
             </div>
           </div>
           <div class="feature-item">
             <div class="feature-icon">📊</div>
             <div>
-              <h4 data-i18n="product_feat3_title">Multi‑Level Protocol</h4>
+              <h3 data-i18n="product_feat3_title">Multi‑Level Protocol</h3>
               <p data-i18n="product_feat3_text">Tests at 50, 65, and 80 dB SPL verify audibility, intelligibility, and comfort in a single structured session covering real-world listening conditions.</p>
             </div>
           </div>
           <div class="feature-item">
             <div class="feature-icon">🌐</div>
             <div>
-              <h4 data-i18n="product_feat4_title">Multilingual Design</h4>
+              <h3 data-i18n="product_feat4_title">Multilingual Design</h3>
               <p data-i18n="product_feat4_text">Modular language-pack architecture with support for English (UK) and Spanish, with additional languages ready to be added.</p>
             </div>
           </div>
@@ -445,35 +447,35 @@
         <div class="timeline-item completed">
           <div class="timeline-marker">✓</div>
           <div class="timeline-content">
-            <h4 data-i18n="stage_rd_title">Research &amp; Development</h4>
+            <h3 data-i18n="stage_rd_title">Research &amp; Development</h3>
             <p data-i18n="stage_rd_text">Algorithm design based on peer-reviewed audiology literature. Multi-level phonemic discrimination protocol developed and tested.</p>
           </div>
         </div>
         <div class="timeline-item completed">
           <div class="timeline-marker">✓</div>
           <div class="timeline-content">
-            <h4 data-i18n="stage_sw_title">Software Platform Built</h4>
+            <h3 data-i18n="stage_sw_title">Software Platform Built</h3>
             <p data-i18n="stage_sw_text">Working desktop application with full test workflow, quantitative adjustment engine, patient management, and bilingual support (EN/ES).</p>
           </div>
         </div>
         <div class="timeline-item completed">
           <div class="timeline-marker">✓</div>
           <div class="timeline-content">
-            <h4 data-i18n="stage_ip_title">Intellectual Property Protected</h4>
+            <h3 data-i18n="stage_ip_title">Intellectual Property Protected</h3>
             <p data-i18n="stage_ip_text">Patent application filed with UKIPO — 47 claims covering the core algorithm, testing methodology, and adjustment engine.</p>
           </div>
         </div>
         <div class="timeline-item current">
           <div class="timeline-marker">→</div>
           <div class="timeline-content">
-            <h4 data-i18n="stage_cv_title">Clinical Validation &amp; Partnerships</h4>
+            <h3 data-i18n="stage_cv_title">Clinical Validation &amp; Partnerships</h3>
             <p data-i18n="stage_cv_text">Seeking NHS trusts, private clinics, and research institutions to participate in clinical validation pilots. This is our current focus.</p>
           </div>
         </div>
         <div class="timeline-item upcoming">
           <div class="timeline-marker">○</div>
           <div class="timeline-content">
-            <h4 data-i18n="stage_reg_title">Regulatory Pathway &amp; National Deployment</h4>
+            <h3 data-i18n="stage_reg_title">Regulatory Pathway &amp; National Deployment</h3>
             <p data-i18n="stage_reg_text">Regulatory compliance, commercial launch, and wider deployment across audiology services.</p>
           </div>
         </div>

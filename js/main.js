@@ -155,6 +155,8 @@ document.addEventListener('DOMContentLoaded', () => {
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
       navToggle.classList.toggle('active');
+      const expanded = navLinks.classList.contains('active');
+      navToggle.setAttribute('aria-expanded', String(expanded));
     });
 
     // Close menu on link click

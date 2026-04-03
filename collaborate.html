@@ -49,10 +49,12 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- ============================================= -->
   <!-- NAVIGATION                                    -->
   <!-- ============================================= -->
-  <nav class="navbar scrolled" id="navbar">
+  <nav class="navbar scrolled" id="navbar" aria-label="Main navigation">
     <div class="nav-content">
       <a href="index.html" class="nav-logo">
         <img src="logo/novaural_wave_icon.svg" alt="Novaural hearing aid verification technology" width="40" height="40">
@@ -71,7 +73,7 @@
         <li><a href="collaborate.html" class="nav-cta" data-i18n="nav_partner">Partner With Us</a></li>
       </ul>
       <div class="lang-selector-container"></div>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -80,7 +82,7 @@
     <div class="scroll-progress" id="scrollProgress"></div>
   </nav>
 
-  <main>
+  <main id="main-content">
 
   <!-- ============================================= -->
   <!-- COLLABORATE HERO                              -->

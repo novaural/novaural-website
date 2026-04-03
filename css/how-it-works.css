@@ -58,13 +58,13 @@
   font-family: 'Inter', Arial, sans-serif;
   text-shadow: 0 0 0 #FFFFFF;
 }
-.wf-step h4 {
+.wf-step h3 {
   font-size: 1.05rem;
   font-weight: 700;
   margin-bottom: 0.3rem;
 }
-.wf-step.standard h4 { color: var(--gray-300); }
-.wf-step.highlight h4 { color: var(--teal-400); }
+.wf-step.standard h3 { color: var(--gray-300); }
+.wf-step.highlight h3 { color: var(--teal-400); }
 .wf-step p {
   color: var(--text-secondary);
   font-size: 0.9rem;
@@ -97,7 +97,7 @@
   background: var(--bg-primary);
   padding: 0 0.5rem;
 }
-.gap-callout h4 {
+.gap-callout h3 {
   color: #ff7043;
   font-size: 1.1rem;
   margin-bottom: 0.8rem;
@@ -124,7 +124,7 @@
   border-color: rgba(46, 196, 182, 0.3);
   background: linear-gradient(135deg, rgba(46, 196, 182, 0.05), transparent);
 }
-.compare-col h4 {
+.compare-col h3 {
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 1.2rem;
@@ -132,8 +132,8 @@
   align-items: center;
   gap: 0.5rem;
 }
-.compare-col.before h4 { color: #ff7043; }
-.compare-col.after h4 { color: var(--teal-400); }
+.compare-col.before h3 { color: #ff7043; }
+.compare-col.after h3 { color: var(--teal-400); }
 .compare-col ul {
   list-style: none;
   padding: 0;
@@ -178,7 +178,7 @@
   border-radius: 20px;
   letter-spacing: 0.05em;
 }
-.detail-step h4 {
+.detail-step h3 {
   font-size: 1rem;
   font-weight: 700;
   color: var(--white);
@@ -229,7 +229,7 @@
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
-.compat-card h4 {
+.compat-card h3 {
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--white);
@@ -262,13 +262,13 @@
   border-color: rgba(46, 196, 182, 0.4);
   background: rgba(46, 196, 182, 0.06);
 }
-.pipe-node h5 {
+.pipe-node h3 {
   font-size: 0.8rem;
   font-weight: 700;
   color: var(--white);
   margin-bottom: 0.2rem;
 }
-.pipe-node.active h5 { color: var(--teal-400); }
+.pipe-node.active h3 { color: var(--teal-400); }
 .pipe-node p {
   font-size: 0.7rem;
   color: var(--gray-400);
@@ -319,7 +319,7 @@
   margin-bottom: 0.8rem;
   display: block;
 }
-.safety-card h4 {
+.safety-card h3 {
   font-size: 1rem;
   font-weight: 700;
   color: var(--white);
@@ -363,7 +363,7 @@
   font-size: 1.5rem;
   margin-bottom: 0.6rem;
 }
-.algo-feature h4 {
+.algo-feature h3 {
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--white);
