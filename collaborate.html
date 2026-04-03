@@ -92,7 +92,7 @@
       <span class="section-label" data-i18n="collab_label">Partnership Opportunities</span>
       <h1 class="section-title" style="font-size: clamp(2rem, 5vw, 3.2rem);">
         <span data-i18n="collab_hero_title_1">Let's Build the Future of</span><br>
-        <span>Hearing Care </span><span class="gradient-text" data-i18n="collab_hero_gradient">Together</span>
+        <span data-i18n="collab_hero_title_2">Hearing Care </span><span class="gradient-text" data-i18n="collab_hero_gradient">Together</span>
       </h1>
       <p class="section-subtitle" style="max-width: 720px; margin: 0 auto;" data-i18n="collab_hero_subtitle">
         Novaural is actively seeking clinical validation partners, research collaborators, and strategic allies to bring evidence-based hearing aid verification to clinics across the UK and beyond.
@@ -380,7 +380,7 @@
     if (form) {
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        submitBtn.textContent = 'Sending...';
+        submitBtn.textContent = window.novauralI18n ? window.novauralI18n.t('collab_form_sending', 'Sending...') : 'Sending...';
         submitBtn.disabled = true;
 
         try {
@@ -401,7 +401,7 @@
               `Name: ${data.get('name')}\nOrganisation: ${data.get('organisation')}\nRole: ${data.get('role')}\nPartnership Type: ${data.get('partnership_type')}\n\n${data.get('message')}`
             );
             window.location.href = `mailto:enquiries@novaural.com?subject=${subject}&body=${body}`;
-            submitBtn.textContent = 'Submit Partnership Enquiry →';
+            submitBtn.textContent = window.novauralI18n ? window.novauralI18n.t('collab_form_submit', 'Submit Partnership Enquiry →') : 'Submit Partnership Enquiry →';
             submitBtn.disabled = false;
           }
         } catch (err) {
@@ -412,7 +412,7 @@
             `Name: ${data.get('name')}\nOrganisation: ${data.get('organisation')}\nRole: ${data.get('role')}\nPartnership Type: ${data.get('partnership_type')}\n\n${data.get('message')}`
           );
           window.location.href = `mailto:enquiries@novaural.com?subject=${subject}&body=${body}`;
-          submitBtn.textContent = 'Submit Partnership Enquiry →';
+          submitBtn.textContent = window.novauralI18n ? window.novauralI18n.t('collab_form_submit', 'Submit Partnership Enquiry →') : 'Submit Partnership Enquiry →';
           submitBtn.disabled = false;
         }
       });

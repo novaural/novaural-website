@@ -186,5 +186,9 @@
   }
 
   // Expose for external use
-  window.novauralI18n = { switchLang, getCurrentLang: () => currentLang };
+  window.novauralI18n = {
+    switchLang,
+    getCurrentLang: () => currentLang,
+    t: (key, fallback) => (translations[key] !== undefined ? translations[key] : (fallback || key))
+  };
 })();

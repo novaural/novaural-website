@@ -548,5 +548,8 @@
   "collab_ph_org": "Royal London Hospital NHS Trust",
   "collab_ph_role": "Head of Audiology",
   "collab_ph_message": "Briefly describe your interest in partnering with Novaural. What challenges are you facing? How do you see our technology fitting into your work?",
-  "hiw_cta_full_workflow": "See the Full Clinical Workflow, Safety System & Algorithm →"
+  "hiw_cta_full_workflow": "See the Full Clinical Workflow, Safety System & Algorithm →",
+  "product_title_intro": "Introducing ",
+  "collab_form_sending": "Sending...",
+  "collab_form_submit_text": "Submit Partnership Enquiry →"
 }
