@@ -426,7 +426,7 @@
   "hiw_the_core_technology_that": "La tecnología central de ReFittingLab: NFM mapea la frecuencia donde se produce el déficit de inteligibilidad a la banda ajustable más próxima del audífono — independientemente de si el dispositivo tiene 4, 10 o 20+ bandas. La interpolación algorítmica pondera subbandas adyacentes según la magnitud del déficit. <strong>Una única metodología → Cualquier audífono → Discriminación fonémica óptima.</strong>",
   "hiw_finetuning_with_data": "Ajuste Fino con Datos",
   "hiw_5_safety_checks_2": "5 Controles de Seguridad",
-  "hiw_datadriven_adjustments_resolve_more": "Los ajustes basados en datos resuelven más en la primera sesión porque tienes datos, no suposiciones. Se elimina el agotador ciclo de 3 a 5 visitas subjetivas.",
+  "hiw_datadriven_adjustments_resolve_more": "Con datos objetivos se resuelve más en la primera sesión, eliminando el agotador ciclo de 3 a 5 visitas subjetivas.",
   "hiw_clinical_context": "Contexto Clínico",
   "priv_summary_novaural_ltd_respects": "<strong>Resumen:</strong> Novaural Ltd respeta tu privacidad. Solo recogemos datos de contacto B2B a través del formulario de colaboración. No usamos cookies de seguimiento ni analítica.",
   "priv_we_only_collect_personal": "Solo recogemos los datos personales que envías voluntariamente a través del <strong>formulario de contacto</strong> en la sección de <a href=\"collaborate.html\">Colaboración</a>. Estos incluyen:",
