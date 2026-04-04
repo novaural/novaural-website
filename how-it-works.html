@@ -302,10 +302,10 @@
     <div class="hero-content hero-content--left">
       <span class="section-label" data-i18n="hiw_for_audiologists_hearing_professionals">For Audiologists & Hearing Professionals</span>
       <h1 class="section-title--hero">
-        Where Does ReFittingLab Fit<br>
-        in <span class="gradient-text" data-i18n="hiw_your_clinical_workflow">Your Clinical Workflow</span>?
+        <span data-i18n="hiw_hero_title_1">Where Does ReFittingLab Fit</span><br>
+        <span data-i18n="hiw_hero_title_2">in </span><span class="gradient-text" data-i18n="hiw_your_clinical_workflow">Your Clinical Workflow</span><span data-i18n="hiw_hero_title_3">?</span>
       </h1>
-      <p class="hero-intro">
+      <p class="hero-intro" data-i18n-html="hiw_hero_intro">
         Current best practice excels at measuring what <strong>reaches the ear</strong> — REM, REAR, audiogram targets. But it has no standardised way to measure what the patient actually <strong>perceives and discriminates</strong> after fitting. That's the gap ReFittingLab fills — with a patent-backed, evidence-based algorithm that includes 5 independent safety layers and a multi-factor computation engine.
       </p>
     </div>
@@ -318,7 +318,7 @@
     <div class="container">
       <span class="section-label" data-i18n="hiw_the_problem">The Problem</span>
       <h2 class="section-title" data-i18n="hiw_the_finetuning_gap">The Fine-Tuning Gap</h2>
-      <p class="section-subtitle subtitle-centered max-w-760 mb-4">
+      <p class="section-subtitle subtitle-centered max-w-760 mb-4" data-i18n="hiw_gap_subtitle">
         After applying a prescriptive formula and verifying with REM, the clinician enters the fine-tuning phase — and suddenly loses access to objective data.
       </p>
 
@@ -350,7 +350,7 @@
 
       <div class="gap-callout">
         <h3 data-i18n="hiw_the_verification_gap_in">The verification gap in current practice</h3>
-        <p class="callout-body">
+        <p class="callout-body" data-i18n-html="hiw_gap_callout_body">
           <strong>Pre-fitting</strong> has excellent objective tools: audiogram, REM/REAR, RECD, prescriptive formulas (NAL-NL2, DSLv5.0, manufacturer-based).<br>
           <strong>Post-fitting fine-tuning</strong> has almost none. The clinician adjusts based on subjective patient reports and their own experience — with no objective way to measure whether <em>word understanding</em> actually improved after a gain change. Did the patient's ability to distinguish similar-sounding words get better? Worse? By how much? Nobody knows.<br><br>
           <strong>ReFittingLab bridges this gap</strong> with a complete fine-tuning verification system: it evaluates the patient's ability to discriminate and understand speech sounds — using minimal pairs, word lists, and speech-in-noise tests — then maps the results directly to per-band gain adjustments. The entire process is backed by a multi-factor computation engine with 5 independent safety layers, producing targeted, bounded recommendations that improve <em>real-world word understanding</em>, not just acoustic output.
@@ -366,7 +366,7 @@
     <div class="container">
       <span class="section-label" data-i18n="hiw_clinical_context">Clinical Context</span>
       <h2 class="section-title" data-i18n="hiw_where_refittinglab_fits_in">Where ReFittingLab Fits in Your Workflow</h2>
-      <p class="section-subtitle subtitle-centered max-w-700">
+      <p class="section-subtitle subtitle-centered max-w-700" data-i18n-html="hiw_workflow_subtitle">
         ReFittingLab does not replace your fitting software or prescriptive formula. It enters the workflow <strong>after</strong> the initial fitting, exactly where objective data disappears.
       </p>
 
@@ -418,10 +418,10 @@
         <div class="wf-step highlight">
           <div class="wf-marker">★</div>
           <h3 data-i18n="hiw_refittinglab_phoneme_discrimination_ve">ReFittingLab — Phoneme Discrimination Verification</h3>
-          <p>
+          <p data-i18n-html="hiw_highlight_step_text_1">
             <strong>This is where ReFittingLab enters.</strong> Using extremely select minimal pairs — curated through rigorous phonological, phonetic, and psychometric criteria — the system evaluates the patient's ability to discriminate speech sounds across frequency bands at multiple intensity levels (50, 65, 80 dB SPL), and outputs <strong>specific, per-band gain adjustments</strong> (ΔG50, ΔG65, ΔG80) validated through 5 independent safety checks.
           </p>
-          <p class="mt-2">
+          <p class="mt-2" data-i18n-html="hiw_highlight_step_text_2">
             The clinician then applies these adjustments in their fitting software and re-tests to confirm measurable improvement. <strong>No guesswork. No waiting for the next appointment.</strong>
           </p>
         </div>
@@ -447,7 +447,7 @@
     <div class="container">
       <span class="section-label" data-i18n="hiw_the_process_in_detail">The Process — In Detail</span>
       <h2 class="section-title" data-i18n="hiw_what_happens_during_a">What Happens During a ReFittingLab Session</h2>
-      <p class="section-subtitle subtitle-centered max-w-700">
+      <p class="section-subtitle subtitle-centered max-w-700" data-i18n-html="hiw_process_subtitle">
         A complete verification session takes 20–30 minutes and produces actionable, per-band gain adjustment recommendations — each validated against 5 safety layers.
       </p>
 
@@ -547,7 +547,7 @@
     <div class="container">
       <span class="section-label" data-i18n="hiw_under_the_hood">Under the Hood</span>
       <h2 class="section-title" data-i18n="hiw_from_phoneme_error_to">From Phoneme Error to Safe Gain Adjustment</h2>
-      <p class="section-subtitle subtitle-centered max-w-720">
+      <p class="section-subtitle subtitle-centered max-w-720" data-i18n="hiw_algorithm_subtitle">
         The core algorithm translates a perceptual error into a precise, band-specific gain change through a multi-stage pipeline. Each adjustment is bounded, safe, and grounded in the patient's individual audiometric profile.
       </p>
 
@@ -578,7 +578,7 @@
         </div>
       </div>
 
-      <p class="desc-centered desc-centered--lg mt-6">
+      <p class="desc-centered desc-centered--lg mt-6" data-i18n-html="hiw_algorithm_description">
         This is not a generic "boost highs if speech is unclear" approach. Each phoneme contrast maps to a specific set of distinctive features (Jakobson-Halle-Fant framework), which in turn correspond to specific frequency bands via the <strong>Nearest Frequency Matching (NFM)</strong> mechanism — automatically adapting to any hearing device's band configuration (5-band consumer earbud or 20-band clinical aid). The <strong>multi-factor formula</strong> considers:
       </p>
 
@@ -624,7 +624,7 @@
     <div class="container">
       <span class="section-label" data-i18n="hiw_builtin_protection">Built-In Protection</span>
       <h2 class="section-title" data-i18n="hiw_5layer_clinical_safety_validation">5-Layer Clinical Safety Validation</h2>
-      <p class="section-subtitle subtitle-centered max-w-740">
+      <p class="section-subtitle subtitle-centered max-w-740" data-i18n="hiw_safety_subtitle">
         Every adjustment recommendation passes through 5 independent safety checks before being presented to the clinician. This isn't just gain boosting — it's a validated, bounded computation with multiple protective mechanisms.
       </p>
 
@@ -634,7 +634,7 @@
           <span class="safety-icon">🛡️</span>
           <h3 data-i18n="hiw_1_ucl_proximity_check">1. UCL Proximity Check</h3>
           <p data-i18n="hiw_estimates_the_postadjustment_output">Estimates the post-adjustment output level and verifies it stays at least 7 dB below the patient's Uncomfortable Loudness Level (ASHA guideline: 5–10 dB margin). If exceeded, the system caps the recommendation and flags the band.</p>
-          <div class="safety-detail">
+          <div class="safety-detail" data-i18n="hiw_safety_formula_ucl">
             Output = 65 dB + G65<sub>current</sub> + Δ dB → must not exceed UCL − 7 dB
           </div>
         </div>
@@ -643,7 +643,7 @@
           <span class="safety-icon">📈</span>
           <h3 data-i18n="hiw_2_spectral_loudness_summation">2. Spectral Loudness Summation</h3>
           <p data-i18n="hiw_when_3_or_more">When 3 or more high-frequency bands receive simultaneous gain increases, perceived loudness exceeds their arithmetic sum (Keidser & Moore). The system applies a 1.5× summation factor and limits total perceived HF increase to 8 dB per session.</p>
-          <div class="safety-detail">
+          <div class="safety-detail" data-i18n="hiw_safety_formula_ls">
             Perceived loudness = Σ(ΔdB<sub>HF</sub>) × 1.5 → max 8 dB/session
           </div>
         </div>
@@ -652,7 +652,7 @@
           <span class="safety-icon" data-i18n="hiw_text_120">⚖️</span>
           <h3 data-i18n="hiw_3_dynamic_range_protection">3. Dynamic Range Protection</h3>
           <p data-i18n="hiw_for_patients_with_narrow">For patients with narrow dynamic range (< 30 dB between threshold and UCL), adjustments exceeding 3 dB are flagged with specific warnings. The recommendation is bounded to preserve comfortable headroom.</p>
-          <div class="safety-detail">
+          <div class="safety-detail" data-i18n="hiw_safety_formula_dr">
             DR = UCL − HTL → if DR < 30 dB, Δ dB capped at 2 dB
           </div>
         </div>
@@ -661,7 +661,7 @@
           <span class="safety-icon">🔊</span>
           <h3 data-i18n="hiw_4_mpo_headroom_verification">4. MPO Headroom Verification</h3>
           <p data-i18n="hiw_crossreferences_the_proposed_adjustment">Cross-references the proposed adjustment against the hearing device's Maximum Power Output to ensure the recommendation doesn't push the output level into saturation. Requires the actual gain table from fitting software.</p>
-          <div class="safety-detail">
+          <div class="safety-detail" data-i18n="hiw_safety_formula_mpo">
             Headroom = MPO − (65 + G65) → Δ dB must not exceed headroom
           </div>
         </div>
@@ -670,14 +670,14 @@
           <span class="safety-icon" data-i18n="hiw_text_125">⏱️</span>
           <h3 data-i18n="hiw_5_compression_ratio_guard">5. Compression Ratio Guard</h3>
           <p data-i18n="hiw_for_frequency_bands_involved">For frequency bands involved in temporal contrasts (voiced/voiceless stop consonants: /p/ vs /b/, /t/ vs /d/, /k/ vs /g/), the system detects compression ratios exceeding 3:1 — which degrade Voice Onset Time discrimination (up to 19.4% intelligibility loss).</p>
-          <div class="safety-detail">
+          <div class="safety-detail" data-i18n="hiw_safety_formula_cr">
             CR = 30 / (30 + G80 − G50) → if CR > 3:1, alert generated
           </div>
         </div>
 
       </div>
 
-      <p class="desc-centered desc-centered--md mt-8">
+      <p class="desc-centered desc-centered--md mt-8" data-i18n-html="hiw_safety_constants_note">
         All safety constants are derived from published clinical guidelines (ASHA, BSA, NAL-NL2, ANSI S3.5-1997, Keidser & Moore) and are configurable per-deployment. The system generates a <strong>ValidationReport</strong> classifying the overall recommendation as PROCEED, PROCEED WITH CAUTION, or REVIEW REQUIRED.
       </p>
     </div>
@@ -690,7 +690,7 @@
     <div class="container">
       <span class="section-label" data-i18n="hiw_universal_compatibility">Universal Compatibility</span>
       <h2 class="section-title" data-i18n="hiw_works_with_your_existing">Works With Your Existing Fitting Software</h2>
-      <p class="section-subtitle subtitle-centered max-w-700">
+      <p class="section-subtitle subtitle-centered max-w-700" data-i18n="hiw_compat_subtitle">
         ReFittingLab is manufacturer-agnostic. It generates per-band gain adjustment recommendations that you apply in whichever fitting software you already use. The NFM mechanism automatically adapts to any device’s band configuration — from basic hearing aids with 4 bands to premium devices with 20 or more.
       </p>
 
@@ -727,7 +727,7 @@
         </div>
       </div>
 
-      <p class="disclaimer-centered mt-8">
+      <p class="disclaimer-centered mt-8" data-i18n="hiw_trademark_disclaimer">
         All product names mentioned are trademarks of their respective owners. Novaural is not affiliated with, endorsed by, or sponsored by any hearing aid manufacturer. ReFittingLab is an independent verification system.
       </p>
     </div>
@@ -740,7 +740,7 @@
     <div class="container">
       <span class="section-label" data-i18n="hiw_getting_started">Getting Started</span>
       <h2 class="section-title" data-i18n="hiw_what_you_need">What You Need</h2>
-      <p class="section-subtitle subtitle-centered max-w-740">
+      <p class="section-subtitle subtitle-centered max-w-740" data-i18n="hiw_equipment_subtitle">
         ReFittingLab requires no booth modifications and no proprietary hardware. The entire setup fits on your existing clinic desk — a laptop, a speaker, and a sound level meter. That's it.
       </p>
 
@@ -750,7 +750,7 @@
         <div class="about-card fade-in card-centered">
           <div class="icon-lg">🔊</div>
           <h3 class="card-title-sm" data-i18n="hiw_active_studio_monitor">Active Studio Monitor</h3>
-          <p class="body-text mb-4">
+          <p class="body-text mb-4" data-i18n="hiw_speaker_description">
             A powered near-field monitor with flat frequency response across the speech range (200 Hz – 8 kHz). Studio reference monitors designed for accurate audio reproduction are ideal — widely available and affordable.
           </p>
           <span class="equipment-tag" data-i18n="hiw_100_lasts_years">~£100 · Lasts years</span>
@@ -760,7 +760,7 @@
         <div class="about-card fade-in card-centered">
           <div class="icon-lg">📏</div>
           <h3 class="card-title-sm" data-i18n="hiw_sound_level_meter_class">Sound Level Meter (Class 2)</h3>
-          <p class="body-text mb-4">
+          <p class="body-text mb-4" data-i18n="hiw_slm_description">
             An IEC 61672-1 Class 2 compliant sound level meter. Used only during the initial calibration to verify SPL at the patient position. Once calibrated, it stays in the drawer until you change rooms or equipment.
           </p>
           <span class="equipment-tag" data-i18n="hiw_100_onetime_use_per">~£100 · One-time use per setup</span>
@@ -770,7 +770,7 @@
         <div class="about-card fade-in card-centered">
           <div class="icon-lg">💻</div>
           <h3 class="card-title-sm" data-i18n="hiw_refittinglab_software">ReFittingLab Software</h3>
-          <p class="body-text mb-4">
+          <p class="body-text mb-4" data-i18n="hiw_software_description">
             Runs on any Windows or Mac laptop. Includes a built-in calibration wizard, language packs, and the full multi-factor algorithm with all 5 safety layers. No proprietary dongles, no per-session limits.
           </p>
           <span class="equipment-tag" data-i18n="hiw_early_adopter_rates_available">Early adopter rates available</span>
@@ -781,7 +781,7 @@
       <!-- Calibration callout -->
       <div class="gap-callout mt-10">
         <h3 data-i18n="hiw_onetime_calibration_5_minutes">One-Time Calibration — 5 Minutes</h3>
-        <p class="callout-body">
+        <p class="callout-body" data-i18n-html="hiw_calibration_intro">
           The software includes a <strong>guided calibration wizard</strong> that takes under 5 minutes:
         </p>
         <ol class="calibration-steps">
@@ -790,7 +790,7 @@
           <li data-i18n-html="hiw_read_the_spl_from">Read the SPL from the meter and enter it — the software auto-adjusts output to match the target levels <strong>(50, 65, 80 dB SPL)</strong></li>
           <li data-i18n="hiw_calibration_is_stored_only">Calibration is stored — only needs re-doing if you change the room, speaker, or position</li>
         </ol>
-        <p class="calibration-note">
+        <p class="calibration-note" data-i18n-html="hiw_calibration_note">
           The process follows <strong>IEC 60645-1</strong> calibration principles. No specialist technician required — any audiologist can complete it independently.
         </p>
       </div>
@@ -800,13 +800,13 @@
         <p class="cost-heading">
           Total hardware investment: <span class="text-teal" data-counter data-i18n="hiw_under_250">under £250</span>
         </p>
-        <p class="desc-centered desc-centered--sm">
+        <p class="desc-centered desc-centered--sm" data-i18n="hiw_cost_description">
           Less than the cost of a single hearing aid return. Equipment lasts thousands of sessions with no consumables. If you already own a suitable speaker and sound level meter, your cost is zero.
         </p>
       </div>
 
       <!-- Advisory note -->
-      <p class="advisory-note mt-7">
+      <p class="advisory-note mt-7" data-i18n="hiw_advisory_note">
         Not sure which hardware to choose? We're happy to advise on the minimum specification that meets clinical requirements. We are not affiliated with, sponsored by, or receiving commissions from any hardware manufacturer — we only recommend what is sufficient for reliable, standards-compliant sessions.
       </p>
 
@@ -820,7 +820,7 @@
     <div class="container">
       <span class="section-label" data-i18n="hiw_value_proposition">Value Proposition</span>
       <h2 class="section-title" data-i18n="hiw_better_outcomes_for_everyone">Better Outcomes for Everyone</h2>
-      <p class="section-subtitle subtitle-centered max-w-740">
+      <p class="section-subtitle subtitle-centered max-w-740" data-i18n="hiw_outcomes_subtitle">
         ReFittingLab creates measurable value across the entire hearing care ecosystem — from NHS trusts managing thousands of patients to private practices competing on quality.
       </p>
 
@@ -940,7 +940,7 @@
   <section class="stage" id="hiw-cta">
     <div class="container text-center">
       <h2 class="section-title mb-4" data-i18n="hiw_ready_to_see_it">Ready to See It in Action?</h2>
-      <p class="section-subtitle subtitle-centered max-w-600 mb-8">
+      <p class="section-subtitle subtitle-centered max-w-600 mb-8" data-i18n="hiw_cta_subtitle">
         We're seeking clinical partners to validate ReFittingLab in real-world settings. If you're an audiologist, hearing aid dispenser, or clinic manager, we'd love to hear from you.
       </p>
       <div class="hiw-cta-buttons">
