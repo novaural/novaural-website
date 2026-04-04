@@ -3,7 +3,7 @@
    Extracted from inline <style> block.
    ============================================= */
 
-/* Workflow timeline */
+/* ─── Workflow Timeline ────────────────────── */
 .workflow-timeline {
   position: relative;
   max-width: 900px;
@@ -79,7 +79,7 @@
   margin-right: -12px;
 }
 
-/* Gap callout */
+/* ─── Gap Callout ──────────────────────────── */
 .gap-callout {
   background: linear-gradient(135deg, rgba(255, 82, 82, 0.06), rgba(255, 82, 82, 0.02));
   border: 1px solid rgba(255, 82, 82, 0.2);
@@ -103,7 +103,7 @@
   margin-bottom: 0.8rem;
 }
 
-/* Comparison table */
+/* ─── Comparison Table ─────────────────────── */
 .compare-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -147,7 +147,7 @@
 }
 .compare-col ul li:last-child { border-bottom: none; }
 
-/* Detailed steps */
+/* ─── Detailed Steps ──────────────────────── */
 .detail-steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -206,7 +206,7 @@
   border: 1px solid rgba(46, 196, 182, 0.15);
 }
 
-/* Compatibility cards */
+/* ─── Compatibility Cards ──────────────────── */
 .compat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -240,7 +240,7 @@
   color: var(--gray-400);
 }
 
-/* Pipeline diagram */
+/* ─── Pipeline Diagram ─────────────────────── */
 .pipeline {
   display: flex;
   align-items: center;
@@ -284,7 +284,7 @@
   .pipe-arrow { transform: rotate(90deg); }
 }
 
-/* Safety layers */
+/* ─── Safety Layers ────────────────────────── */
 .safety-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -341,7 +341,7 @@
   font-family: 'Inter', monospace;
 }
 
-/* Algorithm depth cards */
+/* ─── Algorithm Depth Cards ────────────────── */
 .algo-features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -382,7 +382,7 @@
 }
 
 
-/* Better outcomes section — dual columns */
+/* ─── Better Outcomes (dual columns) ──────── */
 .outcomes-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -454,7 +454,7 @@
 
 
 
-/* HiW page — equipment grid */
+/* ─── Equipment Grid ───────────────────────── */
 .equipment-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -462,7 +462,7 @@
   margin-top: 2.5rem;
 }
 
-/* HiW page — CTA buttons wrapper */
+/* ─── CTA Buttons Wrapper ──────────────────── */
 .hiw-cta-buttons {
   display: flex;
   gap: 1rem;

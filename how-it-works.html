@@ -252,7 +252,7 @@
     <link rel="stylesheet" href="css/how-it-works.css">
   </noscript>
 <!-- [CRITICAL-CSS-END] -->
-            <noscript><style>
+                <noscript><style>
     .fade-in,.fade-in-left,.fade-in-right,.slide-up,.slide-left,.slide-right,
     .scale-in,.glow-in,.draw-border,.pipe-node,.pipe-arrow,.safety-card,
     .algo-feature,.compat-card,.about-card,.outcome-col,.why-card,.detail-step,
@@ -299,14 +299,14 @@
   <!-- ============================================= -->
   <!-- HERO                                          -->
   <!-- ============================================= -->
-  <section class="hero" id="hiw-hero" style="min-height: auto; padding: 10rem 0 4rem;">
-    <div class="hero-content" style="text-align: left; max-width: var(--container-max); margin: 0 auto; padding: 0 2rem;">
+  <section class="hero hero--hiw" id="hiw-hero">
+    <div class="hero-content hero-content--left">
       <span class="section-label" data-i18n="hiw_for_audiologists_hearing_professionals">For Audiologists & Hearing Professionals</span>
-      <h1 style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 1.5rem;">
+      <h1 class="section-title--hero">
         Where Does ReFittingLab Fit<br>
         in <span class="gradient-text" data-i18n="hiw_your_clinical_workflow">Your Clinical Workflow</span>?
       </h1>
-      <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 720px; line-height: 1.7;">
+      <p class="hero-intro">
         Current best practice excels at measuring what <strong>reaches the ear</strong> — REM, REAR, audiogram targets. But it has no standardised way to measure what the patient actually <strong>perceives and discriminates</strong> after fitting. That's the gap ReFittingLab fills — with a patent-backed, evidence-based algorithm that includes 5 independent safety layers and a multi-factor computation engine.
       </p>
     </div>
@@ -351,7 +351,7 @@
 
       <div class="gap-callout">
         <h3 data-i18n="hiw_the_verification_gap_in">The verification gap in current practice</h3>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+        <p class="callout-body">
           <strong>Pre-fitting</strong> has excellent objective tools: audiogram, REM/REAR, RECD, prescriptive formulas (NAL-NL2, DSLv5.0, manufacturer-based).<br>
           <strong>Post-fitting fine-tuning</strong> has almost none. The clinician adjusts based on subjective patient reports and their own experience — with no objective way to measure whether <em>word understanding</em> actually improved after a gain change. Did the patient's ability to distinguish similar-sounding words get better? Worse? By how much? Nobody knows.<br><br>
           <strong>ReFittingLab bridges this gap</strong> with a complete fine-tuning verification system: it evaluates the patient's ability to discriminate and understand speech sounds — using minimal pairs, word lists, and speech-in-noise tests — then maps the results directly to per-band gain adjustments. The entire process is backed by a multi-factor computation engine with 5 independent safety layers, producing targeted, bounded recommendations that improve <em>real-world word understanding</em>, not just acoustic output.
@@ -422,7 +422,7 @@
           <p>
             <strong>This is where ReFittingLab enters.</strong> Using extremely select minimal pairs — curated through rigorous phonological, phonetic, and psychometric criteria — the system evaluates the patient's ability to discriminate speech sounds across frequency bands at multiple intensity levels (50, 65, 80 dB SPL), and outputs <strong>specific, per-band gain adjustments</strong> (ΔG50, ΔG65, ΔG80) validated through 5 independent safety checks.
           </p>
-          <p style="margin-top: 0.5rem;">
+          <p class="mt-2">
             The clinician then applies these adjustments in their fitting software and re-tests to confirm measurable improvement. <strong>No guesswork. No waiting for the next appointment.</strong>
           </p>
         </div>
@@ -579,7 +579,7 @@
         </div>
       </div>
 
-      <p style="max-width: 740px; margin-top: 1.5rem; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; text-align: center; margin-left: auto; margin-right: auto;">
+      <p class="desc-centered desc-centered--lg mt-6">
         This is not a generic "boost highs if speech is unclear" approach. Each phoneme contrast maps to a specific set of distinctive features (Jakobson-Halle-Fant framework), which in turn correspond to specific frequency bands via the <strong>Nearest Frequency Matching (NFM)</strong> mechanism — automatically adapting to any hearing device's band configuration (5-band consumer earbud or 20-band clinical aid). The <strong>multi-factor formula</strong> considers:
       </p>
 
@@ -678,7 +678,7 @@
 
       </div>
 
-      <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--text-secondary); max-width: 700px; line-height: 1.6; text-align: center; margin-left: auto; margin-right: auto;">
+      <p class="desc-centered desc-centered--md mt-8">
         All safety constants are derived from published clinical guidelines (ASHA, BSA, NAL-NL2, ANSI S3.5-1997, Keidser & Moore) and are configurable per-deployment. The system generates a <strong>ValidationReport</strong> classifying the overall recommendation as PROCEED, PROCEED WITH CAUTION, or REVIEW REQUIRED.
       </p>
     </div>
@@ -728,7 +728,7 @@
         </div>
       </div>
 
-      <p style="margin-top: 2rem; font-size: 0.78rem; color: var(--gray-500); max-width: 700px; text-align: center; margin-left: auto; margin-right: auto;">
+      <p class="disclaimer-centered mt-8">
         All product names mentioned are trademarks of their respective owners. Novaural is not affiliated with, endorsed by, or sponsored by any hearing aid manufacturer. ReFittingLab is an independent verification system.
       </p>
     </div>
@@ -782,32 +782,32 @@
       <!-- Calibration callout -->
       <div class="gap-callout mt-10">
         <h3 data-i18n="hiw_onetime_calibration_5_minutes">One-Time Calibration — 5 Minutes</h3>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+        <p class="callout-body">
           The software includes a <strong>guided calibration wizard</strong> that takes under 5 minutes:
         </p>
-        <ol style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.9; padding-left: 1.2rem; margin-top: 0.5rem;">
+        <ol class="calibration-steps">
           <li data-i18n-html="hiw_place_the_sound_level">Place the sound level meter at the <strong>patient position</strong> (typically 1 metre from the speaker)</li>
           <li data-i18n="hiw_the_software_plays_calibrated">The software plays calibrated reference tones through the loudspeaker</li>
           <li data-i18n-html="hiw_read_the_spl_from">Read the SPL from the meter and enter it — the software auto-adjusts output to match the target levels <strong>(50, 65, 80 dB SPL)</strong></li>
           <li data-i18n="hiw_calibration_is_stored_only">Calibration is stored — only needs re-doing if you change the room, speaker, or position</li>
         </ol>
-        <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.7; margin-top: 0.8rem;">
+        <p class="calibration-note">
           The process follows <strong>IEC 60645-1</strong> calibration principles. No specialist technician required — any audiologist can complete it independently.
         </p>
       </div>
 
       <!-- Cost summary -->
       <div class="cost-summary-box">
-        <p style="font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem;">
-          Total hardware investment: <span style="color: var(--teal-400);" data-counter data-i18n="hiw_under_250">under £250</span>
+        <p class="cost-heading">
+          Total hardware investment: <span class="text-teal" data-counter data-i18n="hiw_under_250">under £250</span>
         </p>
-        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; max-width: 600px; text-align: center; margin-left: auto; margin-right: auto;">
+        <p class="desc-centered desc-centered--sm">
           Less than the cost of a single hearing aid return. Equipment lasts thousands of sessions with no consumables. If you already own a suitable speaker and sound level meter, your cost is zero.
         </p>
       </div>
 
       <!-- Advisory note -->
-      <p style="margin-top: 1.8rem; font-size: 0.82rem; color: var(--gray-500); max-width: 700px; line-height: 1.7; text-align: center; margin-left: auto; margin-right: auto;">
+      <p class="advisory-note mt-7">
         Not sure which hardware to choose? We're happy to advise on the minimum specification that meets clinical requirements. We are not affiliated with, sponsored by, or receiving commissions from any hardware manufacturer — we only recommend what is sufficient for reliable, standards-compliant sessions.
       </p>
 

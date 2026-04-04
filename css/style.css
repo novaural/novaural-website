@@ -228,6 +228,203 @@ button:focus-visible,
   padding: 1rem 2.5rem;
 }
 
+.btn-sm {
+  font-size: 0.95rem;
+  padding: 0.8rem 2rem;
+}
+
+/* HiW hero overrides */
+.hero--hiw {
+  min-height: auto;
+  padding: 10rem 0 4rem;
+}
+
+.hero-content--left {
+  text-align: left;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title--hero {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.hero-intro {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 720px;
+  line-height: 1.7;
+}
+
+/* Section title size variants */
+.section-title--md {
+  font-size: 2rem;
+}
+
+/* Hero subtitle layout — centered with auto margins + animation */
+.hero-subtitle--centered {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.max-w-820 { max-width: 820px; }
+
+/* Spacing — padding top */
+.pt-16 { padding-top: 4rem; }
+
+/* Spacing — margin top small */
+.mt-2  { margin-top: 0.5rem; }
+.mt-3  { margin-top: 0.8rem; }
+.mt-7  { margin-top: 1.8rem; }
+
+/* Spacing — margin bottom small */
+.mb-2  { margin-bottom: 0.4rem; }
+.mb-6  { margin-bottom: 1.5rem; }
+
+/* Gap callout body text */
+.callout-body {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Calibration ordered list */
+.calibration-steps {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.9;
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* Calibration follow-up note */
+.calibration-note {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  margin-top: 0.8rem;
+}
+
+/* Cost summary heading */
+.cost-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.4rem;
+}
+
+/* Descriptive paragraph: centered, capped width */
+.desc-centered {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.desc-centered--sm {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.desc-centered--md {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+.desc-centered--lg {
+  font-size: 0.92rem;
+  max-width: 740px;
+}
+
+/* Advisory / disclaimer notes (full-width centered) */
+.advisory-note {
+  font-size: 0.82rem;
+  color: var(--gray-500);
+  max-width: 700px;
+  line-height: 1.7;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Disclaimer variant for trademark text */
+.disclaimer-centered {
+  font-size: 0.78rem;
+  color: var(--gray-500);
+  max-width: 700px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* beyond-clinical hero animation classes */
+.anim-fade-0  { animation: fadeInUp 0.8s ease both; }
+.anim-fade-01 { animation: fadeInUp 0.8s ease 0.1s both; }
+.anim-fade-02 { animation: fadeInUp 0.8s ease 0.2s both; }
+
+/* beyond-clinical chart visual area */
+.chart-visual {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.chart-bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart-label {
+  font-size: 0.75rem;
+  color: var(--gray-400);
+  margin-top: 1.5rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* beyond-clinical inline link paragraph */
+.clinical-link-note {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+/* Index frequency chart container */
+.chart-bars--index {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.75rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+
+/* Index chart title + subtitle */
+.chart-title {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.chart-subtitle {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
 /* =============================================
    LIGHT THEME OVERRIDES
    Cool-gray palette for medical/tech professional feel.

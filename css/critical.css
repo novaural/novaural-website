@@ -1,12 +1,12 @@
 /* =============================================================
-   NOVAURAL — Critical CSS (above-the-fold)
+   NOVAURAL â€” Critical CSS (above-the-fold)
    Inlined into <head> by scripts/inject-critical-css.py
    Contains ONLY what's needed for first paint: variables, reset,
    body background, navbar, hero, section headers, buttons,
    keyframes, light theme, responsive breakpoints.
    ============================================================= */
 
-/* ─── CSS Variables (dark = default) ─── */
+/* â”€â”€â”€ CSS Variables (dark = default) â”€â”€â”€ */
 :root {
   --navy-900: #061224;
   --navy-800: #0B2545;
@@ -58,7 +58,7 @@
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* ─── Light theme overrides ─── */
+/* â”€â”€â”€ Light theme overrides â”€â”€â”€ */
 [data-theme="light"] {
   --text-primary: #1E293B;
   --text-secondary: #475569;
@@ -106,13 +106,13 @@
   --cyan-accent: #0891B2;
 }
 
-/* ─── FOUC prevention ─── */
+/* â”€â”€â”€ FOUC prevention â”€â”€â”€ */
 .no-transitions,
 .no-transitions * {
   transition: none !important;
 }
 
-/* ─── Reset ─── */
+/* â”€â”€â”€ Reset â”€â”€â”€ */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -133,7 +133,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ─── Body background ─── */
+/* â”€â”€â”€ Body background â”€â”€â”€ */
 body::before {
   content: '';
   position: fixed;
@@ -170,14 +170,14 @@ body::after {
   background-size: 40px 40px;
 }
 
-/* ─── Container ─── */
+/* â”€â”€â”€ Container â”€â”€â”€ */
 .container {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-/* ─── Navigation ─── */
+/* â”€â”€â”€ Navigation â”€â”€â”€ */
 .navbar {
   position: fixed;
   top: 0;
@@ -331,14 +331,14 @@ body::after {
   border-radius: 2px;
 }
 
-/* ─── Language selector container (reserve space) ─── */
+/* â”€â”€â”€ Language selector container (reserve space) â”€â”€â”€ */
 .lang-selector-container {
   display: flex;
   align-items: center;
   margin-left: 0.5rem;
 }
 
-/* ─── Scroll progress bar ─── */
+/* â”€â”€â”€ Scroll progress bar â”€â”€â”€ */
 .scroll-progress {
   position: absolute;
   top: 100%;
@@ -350,7 +350,7 @@ body::after {
   pointer-events: none;
 }
 
-/* ─── Hero ─── */
+/* â”€â”€â”€ Hero â”€â”€â”€ */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -472,7 +472,7 @@ body::after {
   opacity: 0.08;
 }
 
-/* ─── Buttons ─── */
+/* â”€â”€â”€ Buttons â”€â”€â”€ */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -502,7 +502,7 @@ body::after {
   border: 1px solid var(--border-subtle);
 }
 
-/* ─── Section headings ─── */
+/* â”€â”€â”€ Section headings â”€â”€â”€ */
 section {
   padding: var(--section-padding);
 }
@@ -540,14 +540,14 @@ section {
   line-height: 1.7;
 }
 
-/* ─── Collaborate page hero ─── */
+/* â”€â”€â”€ Collaborate page hero â”€â”€â”€ */
 .collab-hero {
   padding-top: 10rem;
   padding-bottom: 4rem;
   text-align: center;
 }
 
-/* ─── Skip link ─── */
+/* â”€â”€â”€ Skip link â”€â”€â”€ */
 .skip-link {
   position: absolute;
   top: -100%;
@@ -564,7 +564,7 @@ section {
 }
 .skip-link:focus { top: 0; }
 
-/* ─── Keyframes ─── */
+/* â”€â”€â”€ Keyframes â”€â”€â”€ */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -591,13 +591,13 @@ section {
   to   { transform: translateY(0); }
 }
 
-/* ─── Scroll-triggered base (hidden before anim) ─── */
+/* â”€â”€â”€ Scroll-triggered base (hidden before anim) â”€â”€â”€ */
 .fade-in {
   opacity: 0;
   transform: translateY(40px);
 }
 
-/* ─── Responsive critical breakpoints ─── */
+/* â”€â”€â”€ Responsive critical breakpoints â”€â”€â”€ */
 @media (max-width: 1200px) {
   .nav-links { gap: 1rem; }
   .nav-links a { font-size: 0.82rem; }
