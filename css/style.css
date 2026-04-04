@@ -947,12 +947,13 @@ body::after {
 /* =============================================
    LANGUAGE SELECTOR
    ============================================= */
-/* Footer language selector */
+/* Footer language selector — sits inline with footer links */
 .lang-selector-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 1rem 0 0.5rem;
+  margin-left: 0.5rem;
+  padding-left: 1rem;
+  border-left: 1px solid var(--border-subtle);
 }
 
 .lang-selector {
