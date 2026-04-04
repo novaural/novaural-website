@@ -383,7 +383,7 @@
   "hiw_retest_verify": "Reevaluación y Verificación",
   "hiw_apply_your_formula_of": "Aplica la fórmula que utilices habitualmente — NAL-NL2, DSLv5.0, o una del fabricante (Phonak APD, Oticon VAC+, etc.) — para generar los objetivos de ganancia iniciales.",
   "priv_organisation_name": "Nombre de la organización",
-  "hiw_based_on_the_audiometric": "Según el perfil audiométrico, el sistema selecciona qué contrastes fonémicos priorizar. ¿Pérdida abrupta en agudos? Prioriza fricativas (/s/ vs /θ/). ¿Pérdida moderada plana? Incluye oclusivas y nasales. ¿Pérdida severa en agudos? Marca para verificación de traslación frecuencial.",
+  "hiw_based_on_the_audiometric": "Según el perfil audiométrico, el sistema selecciona qué contrastes fonémicos priorizar. ¿Pérdida abrupta en agudos? Prioriza fricativas (/s/ vs /θ/). ¿Pérdida moderada plana? Incluye oclusivas y nasales. ¿Pérdida severa en agudos? Marca para verificación de transposición frecuencial.",
   "hiw_35_return_visits_each": "<strong>3–5 visitas de revisión</strong> — Cada una repitiendo esencialmente el mismo ciclo subjetivo",
   "priv_type_of_partnership_interest": "Tipo de interés de colaboración",
   "hiw_speechinnoise_verification": "Verificación de Habla en Ruido",
