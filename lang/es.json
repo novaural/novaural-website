@@ -297,7 +297,7 @@
   "hiw_evidencebased": "Basado en Evidencia",
   "hiw_algorithm_identifies_exactly_which": "El algoritmo identifica exactamente qué bandas necesitan ajuste y cuánto — validado contra 5 controles de seguridad",
   "hiw_calibration_is_stored_only": "La calibración SPL se almacena por usuario — solo necesita actualizarse al cambiar de equipo o condiciones de sala",
-  "hiw_thin_heard_as_sin": "\"thin\" percibido como \"sin\"",
+  "hiw_thin_heard_as_sin": "\"caza\" percibido como \"casa\"",
   "hiw_with_refittinglab": "✅ Con ReFittingLab",
   "hiw_realear_measurement_remrear": "Mediciones en Oído Real (REM/REAR/REIG)",
   "hiw_3_min": "~3 min",
