@@ -353,6 +353,7 @@ body::after {
 /* â”€â”€â”€ Hero â”€â”€â”€ */
 .hero {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -627,6 +628,7 @@ section {
     left: 0;
     width: 100%;
     height: 100vh;
+    height: 100dvh;
     background: var(--bg-navbar-mobile);
     flex-direction: column;
     justify-content: center;

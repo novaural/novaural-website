@@ -277,10 +277,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   } : null;
 
-  // ─── Subtle parallax on hero ──────────────────
+  // ─── Subtle parallax on hero (desktop only) ───
+  // On mobile, JS-driven transform on every scroll frame fights the
+  // browser's native scroll compositor, causing jank. The effect is
+  // barely noticeable on small screens, so we skip it entirely.
   const heroContent = document.querySelector('.hero-content');
+  const isDesktop = window.matchMedia('(min-width: 901px)').matches;
 
-  const updateHeroParallax = heroContent ? () => {
+  const updateHeroParallax = (heroContent && isDesktop) ? () => {
     const scrolled = window.scrollY;
     if (scrolled < window.innerHeight) {
       heroContent.style.transform = `translateY(${scrolled * 0.15}px)`;
@@ -381,5 +385,17 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   requestAnimationFrame(onScrollWork); // initial state — deferred to avoid forced reflow
+
+  // ─── Pause hero animations when off-screen (Fix 4) ───
+  // Waveform SVGs and ::before glow animate infinitely.
+  // Pausing them when the hero scrolls out saves GPU frames.
+  const heroEl = document.querySelector('.hero');
+  if (heroEl) {
+    heroEl.classList.add('hero-visible'); // visible on load
+    const heroVisObserver = new IntersectionObserver(([entry]) => {
+      heroEl.classList.toggle('hero-visible', entry.isIntersecting);
+    }, { threshold: 0 });
+    heroVisObserver.observe(heroEl);
+  }
 
 });

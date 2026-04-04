@@ -1039,7 +1039,8 @@ body::after {
    HERO SECTION
    ============================================= */
 .hero {
-  min-height: 100vh;
+  min-height: 100vh;   /* fallback for browsers without dvh support */
+  min-height: 100dvh;  /* dynamic vh — adjusts when mobile URL bar hides/shows */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2496,11 +2497,35 @@ section {
     left: 0;
     width: 100%;
     height: 100vh;
+    height: 100dvh;
     background: var(--bg-navbar-mobile);
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
     backdrop-filter: blur(20px);
+  }
+
+  /* ── Mobile scroll perf: disable backdrop-filter on cards ──
+     backdrop-filter: blur() forces GPU to re-composite the layer behind
+     every card on each scroll frame. On mid-range mobile GPUs this
+     saturates the compositor and causes scroll jank. Solid semi-transparent
+     backgrounds achieve a nearly identical look at zero GPU cost. */
+  .why-card,
+  .collab-card,
+  .form-wrapper,
+  .contact-card,
+  .about-card,
+  .stage-cta-card,
+  .partner-type,
+  .benefit-column,
+  .hero-badge {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  /* Remove will-change on mobile (parallax is disabled there) */
+  .hero-content {
+    will-change: auto;
   }
 
   .nav-links.active {
@@ -2602,6 +2627,14 @@ section {
   .collab-card-header {
     padding: 1.25rem 1.5rem;
   }
+}
+
+/* ── Pause hero animations when not in viewport ──
+   JS toggles .hero-visible via IntersectionObserver.
+   Pausing CSS animations saves GPU when user has scrolled past. */
+.hero:not(.hero-visible) .waveform,
+.hero:not(.hero-visible)::before {
+  animation-play-state: paused;
 }
 
 @media (max-width: 480px) {
