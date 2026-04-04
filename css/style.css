@@ -85,6 +85,9 @@
   --accent-purple: rgba(168, 130, 255, 0.08);
   --accent-amber: rgba(255, 183, 77, 0.08);
   --accent-safety: #ffab40;
+  --color-warning: #ff7043;
+  --color-nhs-start: #42a5f5;
+  --color-nhs-end: #66bb6a;
 
   /* Decorative */
   --dot-grid-color: rgba(77, 216, 204, 0.10);
@@ -288,6 +291,9 @@ button:focus-visible,
   --accent-purple: rgba(124, 58, 237, 0.06);
   --accent-amber: rgba(217, 119, 6, 0.06);
   --accent-safety: #D97706;
+  --color-warning: #E65100;
+  --color-nhs-start: #1976D2;
+  --color-nhs-end: #388E3C;
 
   /* Decorative */
   --dot-grid-color: rgba(15, 118, 110, 0.06);
