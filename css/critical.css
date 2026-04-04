@@ -647,6 +647,17 @@ section {
     display: none;
   }
   .nav-links.active ~ .lang-selector-container { display: flex; }
+  /* Mobile GPU fix: disable navbar backdrop-filter to prevent layer eviction */
+  .navbar {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    transition: background-color 0.4s ease, padding 0.4s ease;
+  }
+  .navbar.scrolled {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--bg-navbar);
+  }
   .hero { padding: 7rem 1.5rem 4rem; }
   .collab-hero { padding-top: 8rem; }
 }
