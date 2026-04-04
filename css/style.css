@@ -726,11 +726,15 @@ body::after {
 .nav-toggle {
   display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
   cursor: pointer;
   background: none;
   border: none;
   padding: 4px;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .nav-toggle span {
