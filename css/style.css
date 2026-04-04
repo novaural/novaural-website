@@ -2505,26 +2505,11 @@ section {
     backdrop-filter: blur(20px);
   }
 
-  /* ── Mobile GPU perf: disable backdrop-filter on navbar + cards ──
-     backdrop-filter: blur() forces each element into its own GPU
-     compositor layer. On mid-range mobile GPUs (Pixel 9a Mali-G715)
-     the layer budget is ~16-24 layers. index.html alone creates 9+
-     animated layers (waveforms, hero glow, body pseudo-elements).
-     Adding backdrop-filter to the fixed navbar pushes over budget,
-     causing Chrome Android to evict the navbar's compositor layer —
-     which makes it scroll away instead of staying fixed.
-     Solid near-opaque backgrounds are visually identical on mobile. */
-  .navbar {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    transition: background-color 0.4s ease, padding 0.4s ease;
-  }
-  .navbar.scrolled {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    background: var(--bg-navbar);
-  }
-
+  /* ── Mobile scroll perf: disable backdrop-filter on cards ──
+     backdrop-filter: blur() forces GPU to re-composite the layer behind
+     every card on each scroll frame. On mid-range mobile GPUs this
+     saturates the compositor and causes scroll jank. Solid semi-transparent
+     backgrounds achieve a nearly identical look at zero GPU cost. */
   .why-card,
   .collab-card,
   .form-wrapper,
