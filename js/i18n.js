@@ -9,10 +9,13 @@
   const DEFAULT_LANG = 'en';
 
   /* ── UI toggle ──────────────────────────────────────── */
-  /* Set to true when ready to expose the language selector to users. */
-  /* All i18n infrastructure (JSON files, data-i18n attributes, engine) */
-  /* remains fully functional — flip this flag to enable multi-language. */
-  const SHOW_SELECTOR = false;
+  /* SHOW_SELECTOR  — controls visibility of the language switcher.     */
+  /* ENABLED_LANGS  — whitelist of languages shown in the dropdown.     */
+  /*   Add codes here as translations are audited and production-ready. */
+  /*   SUPPORTED_LANGS stays intact so the engine can still load any    */
+  /*   JSON file if needed (e.g. via API or direct URL).                */
+  const SHOW_SELECTOR = true;
+  const ENABLED_LANGS = ['en', 'es'];
 
   const LANG_LABELS = {
     en: '🇬🇧 English',
@@ -32,7 +35,7 @@
 
   function detectBrowserLang() {
     const browserLang = (navigator.language || navigator.userLanguage || 'en').slice(0, 2).toLowerCase();
-    return SUPPORTED_LANGS.includes(browserLang) ? browserLang : DEFAULT_LANG;
+    return ENABLED_LANGS.includes(browserLang) ? browserLang : DEFAULT_LANG;
   }
 
   /* ── helpers ─────────────────────────────────────────── */
@@ -126,7 +129,7 @@
       const dropdown = document.createElement('div');
       dropdown.className = 'lang-dropdown';
 
-      SUPPORTED_LANGS.forEach(lang => {
+      ENABLED_LANGS.forEach(lang => {
         const item = document.createElement('button');
         item.type = 'button';
         item.className = 'lang-option' + (lang === currentLang ? ' active' : '');
