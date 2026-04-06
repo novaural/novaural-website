@@ -946,10 +946,10 @@ body::after {
 
 /* Visual separator between in-page sections and external pages */
 .nav-separator {
-  width: 1px;
-  height: 20px;
-  background: var(--border-subtle);
-  margin: 0 0.3rem;
+  width: 1.5px;
+  height: 22px;
+  background: var(--border-teal-med);
+  margin: 0 0.4rem;
   list-style: none;
   flex-shrink: 0;
 }
