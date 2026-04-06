@@ -300,7 +300,7 @@
     <link rel="stylesheet" href="css/animations.css">
   </noscript>
 <!-- [CRITICAL-CSS-END] -->
-                              <noscript><style>
+                                <noscript><style>
     .fade-in,.fade-in-left,.fade-in-right,.slide-up,.slide-left,.slide-right,
     .scale-in,.glow-in,.draw-border,.pipe-node,.pipe-arrow,.safety-card,
     .algo-feature,.compat-card,.about-card,.outcome-col,.why-card,.detail-step,
@@ -327,8 +327,9 @@
         <li><a href="#about" data-i18n="nav_about">About</a></li>
         <li><a href="#challenge" data-i18n="nav_challenge">The Challenge</a></li>
         <li><a href="#product" data-i18n="nav_refittinglab">ReFittingLab</a></li>
-        <li><a href="how-it-works.html" data-i18n="nav_how_it_works">How It Works</a></li>
         <li><a href="#stage" data-i18n="nav_our_stage">Our Stage</a></li>
+        <li class="nav-separator" aria-hidden="true"></li>
+        <li><a href="how-it-works.html" data-i18n="nav_how_it_works">How It Works</a></li>
         <li><a href="beyond-clinical.html" data-i18n="nav_consumer">Consumer</a></li>
         <li><a href="collaborate.html" class="nav-cta" data-i18n="nav_partner">Partner With Us</a></li>
       </ul>
@@ -569,90 +570,24 @@
         <div class="step fade-in">
           <div class="step-number">1</div>
           <h3 data-i18n="hiw_step1_title">Input Patient Profile</h3>
-          <p data-i18n="hiw_step1_text">Enter audiogram, current gains, and clinical context. The system configures the optimal test protocol automatically.</p>
         </div>
         <div class="step fade-in">
           <div class="step-number">2</div>
           <h3 data-i18n="hiw_step2_title">Administer Tests</h3>
-          <p data-i18n="hiw_step2_text">Guided phoneme discrimination testing at multiple levels, with speech-in-noise and directionality verification.</p>
         </div>
         <div class="step fade-in">
           <div class="step-number">3</div>
           <h3 data-i18n="hiw_step3_title">Analyse Results</h3>
-          <p data-i18n="hiw_step3_text">The algorithm maps phonemic errors to frequency bands and calculates precise gain adjustments for each channel.</p>
         </div>
         <div class="step fade-in">
           <div class="step-number">4</div>
           <h3 data-i18n="hiw_step4_title">Apply &amp; Verify</h3>
-          <p data-i18n="hiw_step4_text">Apply recommendations in your fitting software, then re-test to confirm measurable improvement in discrimination.</p>
-        </div>
-      </div>
-
-      <!-- Frequency adjustment visualisation -->
-      <div class="hiw-chart-wrapper fade-in mt-14">
-        <div class="about-card max-w-720 subtitle-centered">
-          <h3 class="chart-title" data-i18n="hiw_chart_title">Per-Band Gain Adjustment Example</h3>
-          <p class="chart-subtitle" data-i18n="hiw_chart_subtitle">Only frequency bands where the patient shows a measured speech discrimination deficit are modified. Healthy bands remain untouched.</p>
-
-          <div class="freq-bars chart-bars--index fade-in">
-            <!-- Baseline reference line -->
-            <div class="freq-chart-baseline"></div>
-            <div class="freq-chart-baseline-label">0 dB (baseline)</div>
-
-            <!-- 250 Hz -->
-            <div class="freq-bar freq-bar-col">
-              <span class="freq-bar-value">0 dB</span>
-              <div class="freq-bar-block freq-bar-block--neutral" style="height: 50px;"></div>
-              <span class="freq-bar-label">250 Hz</span>
-            </div>
-            <!-- 500 Hz -->
-            <div class="freq-bar freq-bar-col">
-              <span class="freq-bar-value">0 dB</span>
-              <div class="freq-bar-block freq-bar-block--neutral" style="height: 50px;"></div>
-              <span class="freq-bar-label">500 Hz</span>
-            </div>
-            <!-- 1000 Hz -->
-            <div class="freq-bar freq-bar-col">
-              <span class="freq-bar-value">0 dB</span>
-              <div class="freq-bar-block freq-bar-block--neutral" style="height: 50px;"></div>
-              <span class="freq-bar-label">1 kHz</span>
-            </div>
-            <!-- 2000 Hz -->
-            <div class="freq-bar freq-bar-col">
-              <span class="freq-bar-value freq-bar-value--active">+1.2 dB</span>
-              <div class="freq-bar-block freq-bar-block--active" style="height: 62px;"></div>
-              <span class="freq-bar-label freq-bar-label--active">2 kHz</span>
-            </div>
-            <!-- 4000 Hz - biggest deficit -->
-            <div class="freq-bar freq-bar-col">
-              <span class="freq-bar-value freq-bar-value--active">+3.0 dB</span>
-              <div class="freq-bar-block freq-bar-block--peak" style="height: 90px;"></div>
-              <span class="freq-bar-label freq-bar-label--active">4 kHz</span>
-            </div>
-            <!-- 8000 Hz -->
-            <div class="freq-bar freq-bar-col">
-              <span class="freq-bar-value freq-bar-value--active">+1.0 dB</span>
-              <div class="freq-bar-block freq-bar-block--active" style="height: 60px;"></div>
-              <span class="freq-bar-label freq-bar-label--active">8 kHz</span>
-            </div>
-          </div>
-
-          <div class="freq-chart-legend">
-            <div class="freq-chart-legend-item">
-              <div class="freq-chart-legend-swatch freq-chart-legend-swatch--neutral"></div>
-              <span class="freq-chart-legend-text" data-i18n="hiw_legend_no_deficit">No deficit detected</span>
-            </div>
-            <div class="freq-chart-legend-item">
-              <div class="freq-chart-legend-swatch freq-chart-legend-swatch--active"></div>
-              <span class="freq-chart-legend-text freq-chart-legend-text--active" data-i18n="hiw_legend_adjusted">Gain adjustment applied</span>
-            </div>
-          </div>
         </div>
       </div>
 
       <div class="text-center mt-10">
-        <a href="how-it-works.html" class="btn-primary btn-sm" data-i18n="hiw_cta_full_workflow">
-          See the Full Clinical Workflow, Safety System &amp; Algorithm →
+        <a href="how-it-works.html" class="btn-primary" data-i18n="hiw_cta_full_workflow">
+          8 steps · NFM algorithm · 5 safety layers · equipment — See the full clinical workflow →
         </a>
       </div>
     </div>
@@ -843,6 +778,31 @@
   </section>
 
   </main>
+
+  <!-- ============================================= -->
+  <!-- EXPLORE MORE (pre-footer discovery)           -->
+  <!-- ============================================= -->
+  <section class="explore-more" id="explore-more">
+    <div class="container">
+      <span class="section-label" data-i18n="explore_label">Explore More</span>
+      <h2 class="section-title" data-i18n="explore_title">Go Deeper</h2>
+
+      <div class="explore-grid">
+        <a href="how-it-works.html" class="explore-card fade-in" id="explore-hiw">
+          <div class="explore-card-icon">🔬</div>
+          <h3 data-i18n="explore_hiw_title">How It Works</h3>
+          <p data-i18n="explore_hiw_desc">The full 8-step clinical workflow, the NFM algorithm, 5 safety layers, calibration, and equipment — everything an audiologist needs to evaluate the platform.</p>
+          <span class="explore-card-cta" data-i18n="explore_hiw_cta">See the clinical workflow →</span>
+        </a>
+        <a href="beyond-clinical.html" class="explore-card fade-in" id="explore-consumer">
+          <div class="explore-card-icon">🎧</div>
+          <h3 data-i18n="explore_consumer_title">Beyond Clinical</h3>
+          <p data-i18n="explore_consumer_desc">How the same phonemic discrimination technology applies to consumer hearables, gaming headsets, AR/VR audio, and over-the-counter hearing devices.</p>
+          <span class="explore-card-cta" data-i18n="explore_consumer_cta">Explore consumer applications →</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- ============================================= -->
   <!-- FOOTER                                        -->

@@ -549,7 +549,7 @@
   "collab_ph_role": "Audiólogo / Director Clínico",
   "collab_ph_message": "Describe tu clínica o servicio, los retos principales que encuentras en el ajuste fino de audífonos, y cómo te gustaría evaluar o integrar esta tecnología.",
 
-  "hiw_cta_full_workflow": "Explorar el Flujo de Trabajo Completo, Seguridad y Metodología →",
+  "hiw_cta_full_workflow": "8 pasos · Algoritmo NFM · 5 capas de seguridad · Equipamiento — Ver el flujo clínico completo →",
   "product_title_intro": "Presentamos ",
   "collab_form_sending": "Enviando...",
   "beyond_clinical_link_pre": "Esta tecnología se desarrolló originalmente para",
@@ -597,5 +597,13 @@
   "hiw_cost_description": "Menos que el coste de una sola devolución de audífonos. El equipamiento dura miles de sesiones sin consumibles. Si ya dispones de un altavoz y un sonómetro adecuados, tu coste es cero.",
   "hiw_advisory_note": "¿No estás seguro de qué hardware elegir? Estaremos encantados de asesorarte sobre la especificación mínima que cumple los requisitos clínicos. No estamos afiliados, patrocinados ni recibimos comisiones de ningún fabricante de hardware — solo recomendamos lo que es suficiente para sesiones fiables y conformes con estándares.",
   "hiw_outcomes_subtitle": "ReFittingLab genera valor medible en todo el ecosistema de atención auditiva — desde centros públicos con miles de pacientes hasta clínicas privadas que compiten en calidad.",
-  "hiw_cta_subtitle": "Estamos buscando socios clínicos para validar ReFittingLab en entornos reales. Si eres audiólogo, técnico audioprotesista o responsable de un centro auditivo, nos encantaría saber de ti."
+  "hiw_cta_subtitle": "Estamos buscando socios clínicos para validar ReFittingLab en entornos reales. Si eres audiólogo, técnico audioprotesista o responsable de un centro auditivo, nos encantaría saber de ti.",
+  "explore_label": "Explora Más",
+  "explore_title": "Profundiza",
+  "explore_hiw_title": "Cómo Funciona",
+  "explore_hiw_desc": "El flujo clínico completo de 8 pasos, el algoritmo NFM, las 5 capas de seguridad, la calibración y el equipamiento — todo lo que un audiólogo necesita para evaluar la plataforma.",
+  "explore_hiw_cta": "Ver el flujo clínico →",
+  "explore_consumer_title": "Más Allá de la Clínica",
+  "explore_consumer_desc": "Cómo la misma tecnología de discriminación fonémica se aplica a auriculares de consumo, cascos gaming, audio AR/VR y dispositivos auditivos de venta libre.",
+  "explore_consumer_cta": "Explorar aplicaciones de consumo →"
 }

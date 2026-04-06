@@ -944,6 +944,16 @@ body::after {
   color: var(--text-on-teal);
 }
 
+/* Visual separator between in-page sections and external pages */
+.nav-separator {
+  width: 1px;
+  height: 20px;
+  background: var(--border-subtle);
+  margin: 0 0.3rem;
+  list-style: none;
+  flex-shrink: 0;
+}
+
 /* Mobile menu */
 .nav-toggle {
   display: none;
@@ -2514,6 +2524,73 @@ section {
   }
 }
 
+/* ─── Explore More (pre-footer discovery) ─────── */
+.explore-more {
+  padding: var(--section-padding);
+  text-align: center;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.explore-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-primary);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.explore-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px var(--shadow-card);
+  border-color: var(--border-glow);
+}
+
+.explore-card-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.explore-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.explore-card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.explore-card-cta {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--teal-400);
+  transition: color 0.2s ease;
+}
+
+.explore-card:hover .explore-card-cta {
+  color: var(--cyan-accent);
+}
+
 @media (max-width: 900px) {
   :root {
     --section-padding: 4rem 0;
@@ -2563,6 +2640,10 @@ section {
 
   .nav-links a {
     font-size: 1.2rem;
+  }
+
+  .nav-separator {
+    display: none;
   }
 
   .nav-toggle {
@@ -2632,6 +2713,10 @@ section {
 
   .collab-card-header {
     padding: 1.25rem 1.5rem;
+  }
+
+  .explore-grid {
+    grid-template-columns: 1fr;
   }
 }
 

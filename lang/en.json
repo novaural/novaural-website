@@ -545,7 +545,7 @@
   "collab_ph_org": "Royal London Hospital NHS Trust",
   "collab_ph_role": "Head of Audiology",
   "collab_ph_message": "Briefly describe your interest in partnering with Novaural. What challenges are you facing? How do you see our technology fitting into your work?",
-  "hiw_cta_full_workflow": "See the Full Clinical Workflow, Safety System & Algorithm →",
+  "hiw_cta_full_workflow": "8 steps · NFM algorithm · 5 safety layers · equipment — See the full clinical workflow →",
   "product_title_intro": "Introducing ",
   "collab_form_sending": "Sending...",
   "beyond_clinical_link_pre": "This technology was originally developed for",
@@ -593,6 +593,14 @@
   "hiw_cost_description": "Less than the cost of a single hearing aid return. Equipment lasts thousands of sessions with no consumables. If you already own a suitable speaker and sound level meter, your cost is zero.",
   "hiw_advisory_note": "Not sure which hardware to choose? We're happy to advise on the minimum specification that meets clinical requirements. We are not affiliated with, sponsored by, or receiving commissions from any hardware manufacturer — we only recommend what is sufficient for reliable, standards-compliant sessions.",
   "hiw_outcomes_subtitle": "ReFittingLab creates measurable value across the entire hearing care ecosystem — from NHS trusts managing thousands of patients to private practices competing on quality.",
-  "hiw_cta_subtitle": "We're seeking clinical partners to validate ReFittingLab in real-world settings. If you're an audiologist, hearing aid dispenser, or clinic manager, we'd love to hear from you."
+  "hiw_cta_subtitle": "We're seeking clinical partners to validate ReFittingLab in real-world settings. If you're an audiologist, hearing aid dispenser, or clinic manager, we'd love to hear from you.",
+  "explore_label": "Explore More",
+  "explore_title": "Go Deeper",
+  "explore_hiw_title": "How It Works",
+  "explore_hiw_desc": "The full 8-step clinical workflow, the NFM algorithm, 5 safety layers, calibration, and equipment — everything an audiologist needs to evaluate the platform.",
+  "explore_hiw_cta": "See the clinical workflow →",
+  "explore_consumer_title": "Beyond Clinical",
+  "explore_consumer_desc": "How the same phonemic discrimination technology applies to consumer hearables, gaming headsets, AR/VR audio, and over-the-counter hearing devices.",
+  "explore_consumer_cta": "Explore consumer applications →"
 }
 
