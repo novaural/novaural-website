@@ -15,7 +15,7 @@
   /*   SUPPORTED_LANGS stays intact so the engine can still load any    */
   /*   JSON file if needed (e.g. via API or direct URL).                */
   const SHOW_SELECTOR = true;
-  const ENABLED_LANGS = ['en', 'es'];
+  const ENABLED_LANGS = ['en', 'es', 'nl'];
 
   const LANG_LABELS = {
     en: '🇬🇧 English',
