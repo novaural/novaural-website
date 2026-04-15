@@ -1,4 +1,4 @@
-{
+﻿{
   "nav_about": "About",
   "nav_challenge": "The Challenge",
   "nav_refittinglab": "ReFittingLab",
@@ -468,7 +468,7 @@
   "priv_last_updated_29_march": "Last updated: 29 March 2026",
   "priv_summary_novaural_ltd_respects": "<strong>Summary:</strong> Novaural Ltd respects your privacy. We collect minimal data, only through our partnership enquiry form. We do not use analytics, advertising trackers, or third-party cookies. Your data is never sold or shared for marketing purposes.",
   "priv_1_who_we_are": "1. Who We Are",
-  "priv_novaural_ltd_is_a": "<strong>Novaural Ltd</strong> is a company registered in England &amp; Wales (Company No. 17120454), with its registered address at 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom.",
+  "priv_novaural_ltd_is_a": "<strong>Novaural Ltd</strong> is a company registered in England & Wales (Company No. 17120454), with its registered address at 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom.",
   "priv_for_data_protection_purposes": "For data protection purposes, Novaural Ltd is the <strong>data controller</strong>. If you have any questions about how we handle your data, please contact us at <a href=\"mailto:enquiries@novaural.com\">enquiries@novaural.com</a>.",
   "priv_2_what_data_we": "2. What Data We Collect",
   "priv_we_only_collect_personal": "We only collect personal data that you voluntarily provide through our <strong>Partnership Enquiry Form</strong> on the <a href=\"collaborate.html\">Partner With Us</a> page. This may include:",
@@ -490,11 +490,11 @@
   "priv_under_the_uk_general": "Under the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018, we process your personal data on the basis of:",
   "priv_legitimate_interest_article_61f": "<strong>Legitimate interest</strong> (Article 6(1)(f)) — to respond to professional enquiries about partnership opportunities.",
   "priv_consent_by_voluntarily_submitting": "<strong>Consent</strong> — by voluntarily submitting the form, you consent to us processing the data you provide for the stated purpose.",
-  "priv_5_data_sharing_amp": "5. Data Sharing &amp; Third Parties",
+  "priv_5_data_sharing_amp": "5. Data Sharing & Third Parties",
   "priv_your_data_is_not": "Your data is <strong>not sold, rented, or shared</strong> with third parties for their own purposes. However, we use the following service provider to process form submissions:",
   "priv_formspree_a_secure_form": "<strong>Formspree</strong> — a secure form processing service that receives your form data and forwards it to us via email. Formspree processes data in accordance with their own <a href=\"https://formspree.io/legal/privacy-policy\" target=\"_blank\" rel=\"noopener\">privacy policy</a>. Data transmitted to Formspree is encrypted in transit (HTTPS/TLS).",
   "priv_we_do_not_use": "We do not use any other third-party services that process your personal data (no analytics platforms, no advertising networks, no social media tracking pixels).",
-  "priv_6_cookies_amp_local": "6. Cookies &amp; Local Storage",
+  "priv_6_cookies_amp_local": "6. Cookies & Local Storage",
   "priv_this_website_does_not": "This website <strong>does not use cookies</strong> for tracking, analytics, or advertising.",
   "priv_we_may_store_a": "We may store a language preference in your browser's <strong>localStorage</strong> (a browser feature similar to cookies) if multi-language support is activated in the future. This is a strictly functional preference and contains no personal data. It is stored only on your device and is never transmitted to our servers.",
   "priv_you_can_clear_localstorage": "You can clear localStorage at any time through your browser settings.",

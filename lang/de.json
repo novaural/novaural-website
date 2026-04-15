@@ -1,4 +1,4 @@
-{
+﻿{
   "nav_about": "Über Uns",
   "nav_challenge": "Die Herausforderung",
   "nav_refittinglab": "ReFittingLab",
@@ -348,7 +348,7 @@
   "hiw_prescriptive_formula": "Prescriptive Formula",
   "priv_maintain_a_record_of": "Maintain a record of our professional communications",
   "hiw_step_5": "STEP 5",
-  "priv_5_data_sharing_amp": "5. Data Sharing &amp; Third Parties",
+  "priv_5_data_sharing_amp": "5. Data Sharing & Third Parties",
   "hiw_100_onetime_use_per": "~£100 · One-time use per setup",
   "hiw_if_unhappy_clinician_adjusts": "If unhappy, clinician adjusts gains based on vague subjective feedback with no data on <em>which sounds</em> are problematic",
   "hiw_4_mpo_headroom_verification": "4. MPO Headroom Verification",
@@ -453,7 +453,7 @@
   "hiw_step_2": "STEP 2",
   "hiw_full_audit_trail_every": "Full audit trail: every test, every recommendation, every re-test is documented and IEC 62304 traceable",
   "hiw_effective_audibility_ea": "Effective Audibility (EA)",
-  "priv_6_cookies_amp_local": "6. Cookies &amp; Local Storage",
+  "priv_6_cookies_amp_local": "6. Cookies & Local Storage",
   "hiw_trial_and_error_adjust": "<strong>Trial and error</strong> — Adjust gains, send patient home, wait for next appointment",
   "hiw_every_test_result_every": "Every test result, every recommendation, every safety check, every re-test is recorded in an IEC 62304 traceable audit trail. Useful for clinical governance, audits (NHS/CQC), and longitudinal patient outcomes tracking.",
   "priv_13_changes_to_this": "13. Changes to This Policy",
@@ -495,7 +495,7 @@
   "hiw_what_happens_during_a": "What Happens During a ReFittingLab Session",
   "hiw_what_happens_today_during": "❌ What happens today during fine-tuning",
   "hiw_closedloop": "Closed-loop",
-  "priv_novaural_ltd_is_a": "<strong>Novaural Ltd</strong> is a company registered in England &amp; Wales (Company No. 17120454), with its registered address at 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom.",
+  "priv_novaural_ltd_is_a": "<strong>Novaural Ltd</strong> is a company registered in England & Wales (Company No. 17120454), with its registered address at 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom.",
   "hiw_verified_outcome_discharge": "Verified Outcome & Discharge",
   "hiw_step_4": "STEP 4",
   "hiw_siiweighted_prioritisation": "SII-Weighted Prioritisation",
